@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Comandos</title>
+    <style>
+        th, td { text-align: left; padding: 10px;}
+    </style>
+</head>
+<body>
+    <header><h1>Notas de Comandos</h1></header>
+    <article>
+        <h2>Terminal</h2>
+        <ul>
+            <table>
+                <tr><th>Nombre del Comando </th><th>Descripción</th></tr>
+                <tr><th><li>cls</li></th><td>Limpiar pantalla</td></tr>
+                <tr><th><li>ls</li></th><td>Mostrar elementos contenidos</td></tr>
+                <tr><th><li>mkdir</li></th><td>Crear nueva carpeta</td></tr>
+                <tr><th><li>cd ..</li></th><td>Retroceder un nivel</td></tr>
+                <tr><th><li>cd nombre</li></th><td>Accede al elemento del nivel por nombre ingresado</td></tr>
+                <tr><th><li>q</li></th><td>Salir de un archivo cuando arroja (END)</td></tr>
+            </table>
+        </ul>
+    </article>
+
+    <article>
+        <h2>Git</h2>
+        <ol>
+            <table>
+                <tr><th>Nombre del Comando</th><th>Descripción</th></tr>
+                <tr><th><li>git status</li></th><td>Muestra el estado del commit (sin repo, libre, con cambios pendientes)</td></tr>
+                <tr><th><li>git init</li></th><td>Crea un nuevo repositorio</td></tr>
+                <tr><th><li>git add -A</li></th><td>Anexa todos los cambios pendientes (nuevo, modificado o eliminado)</td></tr>
+                <tr><th><li>git commit -m "etiqueta"</li></th><td>Crea un nuevo commit (version) en la rama actual, etiqueta forzosa</td></tr>
+                <tr><th><li>git log</li></th><td>Enlista todos los commits de la linea temporal (id, etiqueta, usuario, fecha)</td></tr>
+                <tr><th><li>git log --oneline</li></th><td>Enlista todos los commits de la linea temporal (hash, etiqueta)</td></tr>
+                <tr><th><li>git checkout hash</li></th><td>Visualiza la version del hash ingresado, util para revisiones</td></tr>
+                <tr><th><li>git checkout NombreRama</li></th><td>Direcciona la rama</td></tr>
+                <tr><th><li>git checkout -b NombreRama</li></th><td>Direcciona la rama, si no existe, la crea</td></tr>
+                <tr><th><li>git switch --detach</li></th><td>Hash direcciona el puntero HEAD a la version con el hash ingresado</td></tr>
+                <tr><th><li>git switch -c Nombre</li></th><td>Crea una nueva rama a partir de la version a la que apunta el HEAD</td></tr>
+                <tr><th><li>git branch</li></th><td>Muestra la lista de ramales</td></tr>
+                <tr><th><li>git branch -D NombreRama</li></th><td>Elimina la rama con el nombre ingresado</td></tr>
+                <tr><th><li>git cherry-pick hash</li></th><td>Anexa en la version actual (HEAD) los cambios de la version del hash</td></tr>
+                <tr><th></th><td>En conflicto por sobreestricuta se puede: Conservar cambios de la version pasada, de la actual o ambos</td></tr>
+                <tr><th><li>git merge</li></th><td>Anexa en la version actual los cambios de un ramal y extrae su historial de versiones</td></tr>
+                <tr><th></th><td>En conflicto por sobreestricuta se puede: Conservar cambios de la version pasada, de la actual o ambos</td></tr>
+                <tr><th><li>git remote add NombreRepo https://link-github</li></th><td>Anexa un repositorio remoto de github a git</td></tr>
+                <tr><th><li>git push NombreRepo master</li></th><td>Envia y sube las versiones de la rama master al repositorio remoto</td></tr>
+                <tr><th><li>git pull</li></th><td>Actualiza el repositorio local con los cambios de otros colaboradores</td></tr>
+                <tr><th><li>git fetch</li></th><td>Descarga los cambios de otros colaboradores para revisarlos antes de aplicarlos</td></tr>
+            </table>
+        </ol>
+    </article>
+
+    <a href="index.html">Volver</a>
+    <footer>
+        <h5>V4.0 Merge de rama-comandos</h5>
+    </footer>
+</body>
+</html>
