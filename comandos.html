@@ -9,10 +9,36 @@
     <header><h1>Notas de Comandos</h1></header>
     <article>
         <h2>Terminal</h2>
+        <ul>
+            <li>cls        limpiar pantalla</li>
+            <li>ls         mostrar elementos contenidos</li>
+            <li>mkdir      crear nueva carpeta</li>
+            <li>cd ..      retroceder un nivel</li>
+            <li>cd name    accede a un elemento del nivel</li>
+        </ul>
     </article>
 
     <article>
         <h2>Git</h2>
+        <ul>
+            <li>status      muestra el estado del commit (sin repo, libre, con cambios pendientes)</li>
+            <li>init        crea un nuevo repositorio</li>
+            <li>add -A      anexa todos los cambios pendientes (nuevo, modificado o eliminado)</li>
+            <li>commit -m   crea un nuevo commit (version) en la rama actual</li>
+            <li>log         enlista todos los commits de la linea temporal (id, etiqueta, usuario, fecha)</li>
+            <li>log -oneline    enlista todos los commits de la linea temporal (hash, etiqueta)</li>
+            <li>checkout hash   visualiza la version del hash ingresado, util para revisiones</li>
+            <li>checkout rama   direcciona la rama</li>
+            <li>switch --detach hash direcciona el puntero HEAD a la version con el hash ingresado</li>
+            <li>switch -c name  crea una nueva rama a partir de la version a la que apunta el HEAD</li>
+            <li>branch          muestra la lista de ramales</li>
+            <li>remote add name https://link... anexa un repositorio remoto a github</li>
+            <li>push name master envia las versiones de la rama master al repositorio remoto</li>
+        </ul>
     </article>
+
+    <footer>
+        <h5>V2.2 Listas anexadas</h5>
+    </footer>
 </body>
 </html>
