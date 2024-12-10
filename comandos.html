@@ -47,17 +47,31 @@
                 <tr><th></th><td>En conflicto por sobreestricuta se puede: Conservar cambios de la version pasada, de la actual o ambos</td></tr>
                 <tr><th><li>git merge</li></th><td>Anexa en la version actual los cambios de un ramal y extrae su historial de versiones</td></tr>
                 <tr><th></th><td>En conflicto por sobreestricuta se puede: Conservar cambios de la version pasada, de la actual o ambos</td></tr>
-                <tr><th><li>git remote add NombreRepo https://link-github</li></th><td>Anexa un repositorio remoto de github a git</td></tr>
-                <tr><th><li>git push NombreRepo master</li></th><td>Envia y sube las versiones de la rama master al repositorio remoto</td></tr>
+                <tr><th><li>git clone https://link-github</li></th><td>Clona un repositorio remoto al local en una nueva carpeta del mismo nombre</td></tr>
+                <tr><th><li>git remote add aliasRepo https://link-github</li></th><td>Anexa un repositorio remoto de github a git y lo nombra</td></tr>
+                <tr><th><li>git remote get-url aliasRepo</li></th><td>Obtiene la url del repositorio ingresando su nombre</td></tr>
+                <tr><th><li>git push aliasRepo master</li></th><td>Envia y sube las versiones de la rama master al repositorio remoto</td></tr>
+                <tr><th><li>git push aliasRepo ramaLocal:ramaRemota</li></th><td>Enivia las versiones de la rama local a una remota nueva o existente</td></tr>
                 <tr><th><li>git pull</li></th><td>Actualiza el repositorio local con los cambios de otros colaboradores</td></tr>
                 <tr><th><li>git fetch</li></th><td>Descarga los cambios de otros colaboradores para revisarlos antes de aplicarlos</td></tr>
             </table>
         </ol>
     </article>
 
+    <article>
+        <h2>Vim</h2>
+        <ul>
+            <table>
+                <tr><th><li>esc + :q</li></th><td>Salir solo si no hay cambios pendientes</td></tr>
+                <tr><th><li>esc + :q!</li></th><td>Salir sin guardar cambios</td></tr>
+                <tr><th><li>esc + :wq</li></th><td>Guardar y salir</td></tr>
+            </table>
+        </ul>
+    </article>
+
     <a href="index.html">Volver</a>
     <footer>
-        <h5>V4.0 Merge de rama-comandos</h5>
+        <h5>V5.0 Nuevos Comandos Anexados</h5>
     </footer>
 </body>
 </html>
