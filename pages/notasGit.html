@@ -7,66 +7,59 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/estilo01.css">
-    <title>Lista de Comandos</title>
+    <title>Contenido Git</title>
 </head>
 <body>
     <nav>
-        <h1>Notas de Comandos</h1>
-        <a href="./comandos.html#terminal">Terminal</a>
-        <a href="./comandos.html#git">Git</a>
-        <a href="./comandos.html#vim">Vim</a>
-        <a href="../index.html">Volver al Inicio</a>
+        <h1>Notas de Git</h1>
+        <a href="./notasGit.html#instalacion">Instalación</a>
+        <a href="./notasGit.html#comandos">Todos los Comandos</a>
+        <a href="./notasGit.html#glosario">Glosario</a>
     </nav>
     <main>
-        <section id="terminal">
-            <h2>Terminal <a href="">CMD Windows</a><a href="">PowerShell</a><a href="">Git Bash</a><a href="">VSC</a></h2>
-            <ul>
-                <table>
-                    <tr><th>Nombre del Comando </th><th>Descripción</th></tr>
-                    <tr> <td><li>cls</li></td><td>Limpiar pantalla</td></tr>
-                    <tr class="unix"><td><li>ls</li></td><td>Mostrar elementos contenidos</td></tr>
-                    <tr class="cmdwindows"><td><li>dir</li></td><td>(Windows) Mostrar elementos contenidos de la carpeta padre</td></tr>
-                    <tr class="unix"><td><li>mkdir nombre</li></td><td>Crear y nombrar una nueva carpeta</td></tr>
-                    <tr class="unix"><td><li>cd ..</li></td><td>Retroceder un nivel</td></tr>
-                    <tr class="unix"><td><li>cd nombre</li></td><td>Accede al elemento del nivel por nombre ingresado</td></tr>
-                    <tr class="unix"><td><li>cd nomb[Tecla TAB]</li></td><td>Autocompleta el nombre del elemento al que se busca acceder dentro del nivel</td></tr>
-                    <tr class="unix"><td><li>cd "C:\ruta completa "</li></td><td>Accede a un elemento colocando su ruta especifica entre comillas, no depende del nivel actual</td></tr>
-                    <tr class="cmdwindows"><td><li>driverquery</li></td><td>Retorna una lista de los drivers instalados en el ordenador</td></tr>
-                    <tr class="cmdwindows"><td><li>netstat</li></td><td>TCP/IP: Estado de conexiones y puertos</td></tr>
-                    <tr class="cmdwindows"><td><li>tracert direcciónHost (o página)</li></td><td>Retorna todos los redireccionamientos que realiza la conexión para llegar al destino</td></tr>
-                    <tr class="cmdwindows"><td><li>pwd</li></td><td>Retorna la ruta completa actual donde se encuentra la terminal</td></tr>
-                    <tr class="cmdwindows"><td><li>time</li></td><td>Retorna la hora excata del ordenador</td></tr>
-                    <tr class="cmdwindows"><td><li>ver</li></td><td>Retorna la versión actual de Windows</td></tr>
-                    <tr class="cmdwindows"><td><li>q</li></td><td>Salir de un archivo cuando arroja (END)</td></tr>
-                </table>
-            </ul>
-        </section>
-
-        <section id="atajos">
-            <h2>Atajos de teclado para VSC</h2>
+        <section id="instalacion">
+            <h2>Instalación y Configuración en Windows</h2>
             <ol>
-                <table>
-                    <tr><th>Nombre del Atajo</th><th>Descripción</th></tr>
-                    <tr><td>c + TAB</td>Abre un bloque de comentarios</tr>
-                    <tr><td><li><code>alt + z</code></li></td><td>Ajuste al desbordamiento del código</td></tr>
-                    <tr><td><li><code>ctrl + s</code></li></td><td>Guardar Cambios</td></tr>
-                    <tr><td><li><code>shift + alt + a</code></li></td><td>Comentar y descomentar Código</td></tr>
-                    <tr><td><li><code>shift + alt + f</code></li></td><td>Tabulación del código</td></tr>
-                </table>
+                <li>Abrir la terminal con windows+r cmd o en PowerShell</li>
+                <li>Verificar que Git este instalado en la terminal ingresando el comando git --version</li>
+                <li>De marcar error, continuar con el proceso de instalación</li>
+                <li>Descargar Git desde su página oficial https://git-scm.com/downloads</li>
+                <a href="https://git-scm.com/downloads">Enlace de Descarga</a>
+                <li>Ejecutar Git y habilitar permisos y realizar ajustes recomendados en la configuración de instalación:
+                    <ol><li>En la sección de Select Components habilitar: Add a Git Bash Porfile to Windows Termnal</li>
+                        <li>En la sección de Choosing the default editor used by Git seleccionar VisualStudioCode as Git's default</li></ol></li>
+                <li>Abrir la terminal de PowerShell o CMD</li>
+                <li>Ejecutar el comando git para visualizar que Git se ejecute correctamente, de lo contrario abrir la terminal de bash</li>
+                <li>Configurar el nombre de usuario: Ejecutar el comando git config --global user.name "Nombre de Usuario"</li>
+                <li>Para corroborar la configuración del nombre de usuario, ejecutar el comando git config --list que mostrará el nombre de usuario al final de la lista</li>
+                <li>Configurar el nombre de usuario: Ejecutar el comando git config --global user.email "ejemplo@ejemplo.com"</li>
+                <li>Ejecutar nuevamente el comando git config --list para corroborar la configuración del email</li>
+                <li>La configuración esta lista para usar Git</li>
             </ol>
         </section>
-
-        <section id="git">
-            <h2>Git</h2>
+        <section id="comandos">
+            <h2>Comandos </h2>
+            <a href="">Navegación</a>
+            <a href="">Commits</a>
+            <a href="">Ramas</a>
+            <a href="">Repo Remotos</a>
             <ol>
                 <table>
                     <tr><th>Nombre del Comando</th><th>Descripción</th></tr>
+                    <tr><td><li>git --version</li></td><td>Muestra la versión de Git</td></tr>
                     <tr><td><li>git status</li></td><td>Muestra el estado del commit (sin repo, libre, con cambios pendientes)</td></tr>
                     <tr><td><li>git init</li></td><td>Crea un nuevo repositorio</td></tr>
-                    <tr><td><li>git add -A</li></td><td>Anexa todos los cambios pendientes (nuevo, modificado o eliminado)</td></tr>
+                    <tr><td><li>git diff</li></td><td>Muestra la comparativa de los cambios realizados desde el commit actual</td></tr>
+                    <tr><td><li>git add -A</li></td><td>Anexa todos los cambios pendientes (nuevo, modificado o eliminado) al Staging</td></tr>
+                    <tr><td><li>git add text*</li></td><td>Anexa todos los cambios que empiezan con los caracteres antes de * al Staging</td></tr>
+                    <tr><td><li>git add *.ext</li></td><td>Anexa todos los cambios que terminan con los caracteres despues de * al Staging</td></tr>
+                    <tr><td><li>git add ./RutaArchivo</li></td><td>Anexa los cambios de una carpeta o archivo referenciado por su nombre al Staging</td></tr>
+                    <tr><td><li>git reset ./RutaArchivo</li></td><td>Descarta los cambios de una carpeta o archivo referenciado por su nombre del Staging</td></tr>
+                    <tr><td><li>git reset --hard NameCommit</li></td><td>Se redirige la cabeza al commit ingresado y borra los cambios no guardados</td></tr>
                     <tr><td><li>git commit -m "etiqueta"</li></td><td>Crea un nuevo commit (version) en la rama actual, etiqueta forzosa</td></tr>
                     <tr><td><li>git log</li></td><td>Enlista todos los commits de la linea temporal (id, etiqueta, usuario, fecha)</td></tr>
                     <tr><td><li>git log --oneline</li></td><td>Enlista todos los commits de la linea temporal (hash, etiqueta)</td></tr>
+                    <tr><td><li>git show</li></td><td>Muestra información del último commit creado o del commit actual</td></tr>
                     <tr><td><li>git checkout hash</li></td><td>Visualiza la version del hash ingresado, util para revisiones</td></tr>
                     <tr><td><li>git checkout NombreRama</li></td><td>Direcciona la rama</td></tr>
                     <tr><td><li>git checkout -b NombreRama</li></td><td>Direcciona la rama, si no existe, la crea</td></tr>
@@ -82,8 +75,6 @@
                     <tr><td><li>git remote add aliasRepo https://link-github</li></td><td>Anexa un repositorio remoto de github a git y lo nombra</td></tr>
                     <tr><td><li>git remote get-url aliasRepo</li></td><td>Obtiene la url del repositorio remoto ingresando su nombre</td></tr>
                     <tr><td><li>git remote -v</li></td><td>Obtiene el nombre y url de un repositorio remoto existente</td></tr>
-                    <tr><td><li>git reset RutaArchivo</li></td><td>Borra un archivo</td></tr>
-                    <tr><td><li>git reset --hard NameCommit</li></td><td>Se redirige la cabeza al commit ingresado y borra los cambios no guardados</td></tr>
                     <tr><td><li>git rm NombreArchivo</li></td><td>Borra un archivo del Sistema de Archivos y del Área de Archivos</td></tr>
                     <tr><td><li>git rm --cached NameFile</li></td><td>Excluye el archivo del área de preparación para el próximo commit</td></tr>
                     <tr><td><li>git push aliasRepo master</li></td><td>Envia y sube las versiones de la rama master al repositorio remoto</td></tr>
@@ -93,21 +84,18 @@
                 </table>
             </ol>
         </section>
-
-        <section id="vim">
-            <h2>Vim</h2>
-            <ul>
-                <table>
-                    <tr><td><li>esc + :q</li></td><td>Salir solo si no hay cambios pendientes</td></tr>
-                    <tr><td><li>esc + :q!</li></td><td>Salir sin guardar cambios</td></tr>
-                    <tr><td><li>esc + :wq</li></td><td>Guardar y salir</td></tr>
-                </table>
-            </ul>
+        <section id="glosario">
+            <h2>Glosario</h2>
+            <ol>
+                <li>Commit: Es el espacio que almacena los cambios, actua como un punto de guardado, todos los commit conforman el historial de versiones</li>
+                <li>Staging: Es el espacio donde se preparan los cambios de los archivos y carpetas que se desean guardar en un commit</li>
+            </ol>
+        </section>
+        <section>
+            <h2>.gitignore</h2>
         </section>
     </main>
-
     <footer>
-        <a href="../index.html">Volver al Inicio</a>
         <h5>V9.0 Nuevo HTML para Git, ajustes en las tablas enlistadas y estilización mejorada</h5>
     </footer>
 </body>
