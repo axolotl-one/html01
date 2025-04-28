@@ -7,8 +7,16 @@
     font-size: 20px;
 }
 
+code{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #333333;
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+
 body{
     background-color: #222222;
+    line-height: 30px;
 }
 
 table{

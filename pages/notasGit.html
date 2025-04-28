@@ -13,15 +13,17 @@
     <nav>
         <h1>Notas de Git</h1>
         <a href="./notasGit.html#instalacion">Instalación</a>
+        <a href="./notasGit.html#branches">Ramificaciones</a>
         <a href="./notasGit.html#comandos">Todos los Comandos</a>
         <a href="./notasGit.html#glosario">Glosario</a>
+        <a href="../index.html">Volver al Inicio</a>
     </nav>
     <main>
         <section id="instalacion">
             <h2>Instalación y Configuración en Windows</h2>
             <ol>
                 <li>Abrir la terminal con windows+r cmd o en PowerShell</li>
-                <li>Verificar que Git este instalado en la terminal ingresando el comando git --version</li>
+                <li>Verificar que Git este instalado en la terminal ingresando el comando <code>git --version</code></li>
                 <li>De marcar error, continuar con el proceso de instalación</li>
                 <li>Descargar Git desde su página oficial https://git-scm.com/downloads</li>
                 <a href="https://git-scm.com/downloads">Enlace de Descarga</a>
@@ -30,15 +32,46 @@
                         <li>En la sección de Choosing the default editor used by Git seleccionar VisualStudioCode as Git's default</li></ol></li>
                 <li>Abrir la terminal de PowerShell o CMD</li>
                 <li>Ejecutar el comando git para visualizar que Git se ejecute correctamente, de lo contrario abrir la terminal de bash</li>
-                <li>Configurar el nombre de usuario: Ejecutar el comando git config --global user.name "Nombre de Usuario"</li>
-                <li>Para corroborar la configuración del nombre de usuario, ejecutar el comando git config --list que mostrará el nombre de usuario al final de la lista</li>
-                <li>Configurar el nombre de usuario: Ejecutar el comando git config --global user.email "ejemplo@ejemplo.com"</li>
+                <li>Configurar el nombre de usuario: Ejecutar el comando <code>git config --global user.name "Nombre de Usuario"</code></li>
+                <li>Corroborar el nombre de usuario: ejecutar el comando <code>git config --list</code> que mostrará el nombre de usuario al final de la lista</li>
+                <li>Configurar el nombre de usuario: Ejecutar el comando <code>git config --global user.email "ejemplo@ejemplo.com"</code></li>
                 <li>Ejecutar nuevamente el comando git config --list para corroborar la configuración del email</li>
                 <li>La configuración esta lista para usar Git</li>
             </ol>
         </section>
+
+        <section id="branches">
+            <h2>Comandos para ramificar (branches)</h2>
+            <ol>
+                <li><details>
+                    <summary>Crear una rama nueva: <code>git chackout -b nombreRama hashCommit</code></summary>
+                    <p><code>git checkout -b</code> Direcciona el <code>HEAD</code> a la rama señalada por <code>nombreRama</code>. Si no existe la rama, la crea. 
+                    <code>hashCommit</code> Apunta al hash (7 primeros caracteres) del commit donde será el punto de inicio de la bifurcación. 
+                    Es necesario que el <code>HEAD</code> apunte a la rama sobre la que se hará la bifurcación</p>
+                </details></li>
+                <li><details>
+                    <summary>Crear commits dentro de la rama: <code>git add -A</code> <code>git commit -m "etiqueta"</code></summary>
+                    <p>Se crean los commits como normalmente se trabajan. Es necesario que el <code>HEAD</code> apunte a la rama donde se crearán los commits</p>
+                </details></li>
+                <li><details>
+                    <summary>Reconectar una rama desde la rama master: <code>git merge nombreRama</code></summary>
+                    <p>Es necesario que el <code>HEAD</code> apunte a la rama principal (master o main), para realizarlo, ingresar la instrucción
+                        <code>git checkout master</code></p>
+                </details></li>
+                <li><details>
+                    <summary>Enviar rama reconectada a la rama master a repositorio remoto: <code>git push origen master</code></summary>
+                    <p>Es necesario que el <code>HEAD</code> apunte a la rama principal (master o main)</p>
+                </details></li>
+                <li><details>
+                    <summary>Enviar cambios de una rama sin reconectar a repositorio remoto: <code>git push -u origen nombreRama</code></summary>
+                    <p>El subcomando <code>-u</code> indica la relación de seguimiento (tracking branch) entre la rama local y la rama remota. Después de la primera 
+                    interacción, no es necesario colocar este subcomando mientras el <code>HEAD</code> se encuentre sobre la rama</p>
+                </details></li>
+            </ol>
+        </section>
+
         <section id="comandos">
-            <h2>Comandos </h2>
+            <h2>Todos los Comandos </h2>
             <a href="">Navegación</a>
             <a href="">Commits</a>
             <a href="">Ramas</a>
@@ -96,7 +129,9 @@
         </section>
     </main>
     <footer>
-        <h5>V9.0 Nuevo HTML para Git, ajustes en las tablas enlistadas y estilización mejorada</h5>
+        <a href="../index.html">Volver al Inicio</a>
+        <h5 class="legendVersion"></h5>
     </footer>
+    <script src="../scripts/updateVersion.js"></script>
 </body>
 </html>
