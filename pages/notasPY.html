@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/estilo01.css">
+    <title>Notas Python</title>
+</head>
+<body>
+    <nav>
+        <h1>Notas Python</h1>
+        <a href="../index.html">Volver al Inicio</a>
+    </nav>
+    <main>
+        <section>
+            <h3>Caracteristicas de Python</h3>
+            <ol>
+                <li><details>
+                    <summary>Al declarar una variable, Python identifica los tipos de dato automaticamente</summary>
+                    <p>Se puede asignar una etiqueta sobre el tipo de dato de una variable al declararla, pero Python ignorará
+                        por completo <a href="./notasPY.html#tiposDatos">Ver Tipos de Datos de Python</a></p>
+                </details></li>
+                <li><details>
+                    <summary></summary>
+                </details></li>
+            </ol>
+        </section>
+        <section>
+            <h3>Operadores</h3>
+
+            <h4>Aritmeticos</h4>
+            <ol>
+                <li><code>+</code> Suma</li>
+                <li><code>-</code> Resta</li>
+                <li><code>*</code> Multiplicación</li>
+                <li><code>/</code> División</li>
+                <li><code>//</code> División Entera</li>
+                <li><code>**</code> Potenciación</li>
+                <li><code>%</code> Módulo Residual</li>
+                <li><code>_</code> Ans | Último Resultado</li>
+            </ol>
+
+            <h4>Relacionales</h4>
+            <ol>
+                <li><code>==</code> igual que</li>
+                <li><code>!=</code> diferente de</li>
+                <li><code>>=</code> mayor o igual que</li>
+                <li><code>&lt;=</code> menor o igual que</li>
+                <li><code>&lt;</code> menor que</li>
+                <li><code>></code> mayor que</li>
+            </ol>
+
+            <h4>Asignación</h4>
+            <ol>
+                <li><code>=</code> </li>
+                <li><code>+=</code> Incremento</li>
+                <li><code>-=</code> Decremento</li>
+                <li><code>*=</code></li>
+                <li><code>/=</code></li>
+            </ol>
+
+            <h4>Lógicos</h4>
+            <ol>
+                <li><code>and</code></li>
+                <li><code>or</code></li>
+                <li><code>not</code></li>
+            </ol>
+        </section>
+        <section id="tiposDatos">
+            <h3>Tipos de Datos</h3>
+            <ol>
+                <li><code>int</code> númerico entero. Ej: <code>a = 50</code></li>
+                <li><code>float</code> númerico decimal. Ej: <code>b = 12.12</code></li>
+                <li><code>str</code> cadena de caracteres. Ej: <code>c = "¡hola, mundo! (mayo, 2025)"</code></li>
+                <li><code>bool</code> valores booleanos. Ej: <code>d = True</code></li>
+                <li><code>list</code> lista de datos. Ej: <code>frutas = ["toronja", "limon", "piña"]</code></li>
+                <li><code>tuple</code> tupla de datos Ej: <code>coordena = (12,7)</code></li>
+                <li><code>dict</code> Diccionario clave, dato. Ej:
+                    <code>mascote = {"especie": "perro", "raza": "golden", "nombre": "solovino"}</code></li>
+            </ol>
+        </section>
+        <section>
+            <h3>Estructuras de Control</h3>
+            <article>
+                <fieldset>
+                    <legend><h3>Condicional if - elif - else</h3></legend>
+                    <pre><code>if condicion1:</code></pre>
+                    <pre><code>     #bloque de instrucciones si se cumple condicion1</code></pre>
+                    <pre><code>elif condicion2:</code></pre>
+                    <pre><code>     #bloque de instrucciones si se cumple condicion2</code></pre>
+                    <pre><code>elif condicionN:</code></pre>
+                    <pre><code>     #bloque de instrucciones si se cumple condicionN</code></pre>
+                    <pre><code>else:</code></pre>
+                    <pre><code>     #bloque de instrucciones si no se cumplió ninguna de las condiciones anteriores</code></p>
+                </fieldset>
+            </article>
+            <fieldset>
+                <legend><h3>Ciclo for (foreach)</h3></legend>
+                <pre><code>for letra in palabra:            # similar a foreach(letra in palabra) en c#</code></pre>
+                <pre><code>     print(letra) # trabaja con cada letra de una palabra, siendo letra cada elemento de una lista</code></pre>
+            </fieldset>
+            <fieldset>
+                <legend><h3>Ciclo for - range (for tradicional)</h3></legend>
+                <pre><code>for i in range(inicial, limite, paso):       # similar a for(int i = inicial; i &lt; limite; paso)</code></pre>
+                <pre><code>     print(i)</code></pre>
+                <pre></pre>
+            </fieldset>
+            <fieldset>
+                <legend><h3>Ciclo for - range (for con repeticiones establecidas)</h3></legend>
+                <pre><code>for i in range(nRepeticiones):</code></pre>
+                <pre><code>     print(nRepeticiones)</code></pre>
+            </fieldset>
+            <fieldset>
+                <legend><h3>Ciclo while (while tradicional)</h3></legend>
+                <pre><code>while condicion:</code></pre>
+                <pre><code>     # bloque de instrucciones, la condicion debe ser falsa en algún punto para cerrar el ciclo</code></pre>
+            </fieldset>
+            <fieldset>
+                <legend><h3>Ciclo while (do-while)</h3></legend>
+                <pre><code>while true:</code></pre>
+                <pre><code>     #bloque de instrucciones</code></pre>
+                <pre><code>     if(condicionCierre)</code></pre>
+                <pre><code>         break       # Si se cumple la condición de cierre, termina el ciclo con "break"</code></pre>
+            </fieldset>
+            <fieldset>
+                <legend><h3>Controles de Bucles</h3></legend>
+                <p><code>break</code>: Forza el cierre del bucle</p>
+                <p><code>continue</code>: salta a la próxima iteración</p>
+                <p><code>pass</code>: marcador nulo del bloque iterado</p>
+            </fieldset>
+        </section>
+        <section>
+            <h3>Estructuras de código</h3>
+            <table>
+                <tr><th></th><th>Estructura</th></tr>
+                <tr><td>Declaración de una Variable</td><td><code>nombreVariable = valor</code></td></tr>
+                <tr><td>Comentario por linea</td><td><code># Línea de Comentario después del "#"</code></td></tr>
+                <tr><td>Comentario por bloque</td><td><code>"""Comentario que incluye saltos de línea"""</code></td></tr>
+            </table>
+        </section>
+        <section>
+            <h3>Palabras reservadas</h3>
+            <table>
+                <tr><th>Palabra Reservada</th></tr>
+                <tr><td><code>global</code>:_Da acceso a modificar una variable global desde un ámbito local, dentro de funciones
+                    por ejemplo.</td></tr>
+            </table>
+            <ol>
+                <li><code>global</code>: Da acceso a modificar una variable global desde un ámbito local, dentro de funciones
+                    por ejemplo.</li>
+            </ol>
+        </section>
+        <section>
+            <h3>Funciones de Python</h3>
+            <article>
+                <fieldset>
+                    <legend><h3>input</h3></legend>
+                    <p><code>nombreVariable = input("Mensaje del programa")</code></p>
+                    <p>Captura un dato de entrada de tipo string por defecto en una variable</p>
+                    <p><code>nombreVariable = int(input("Mensaje del programa"))</code></p>
+                    <p>Captura y convierte el tipo de dato que captura a tipo int en una variable</p>
+                </fieldset>
+            </article>
+            <article>
+                <fieldset>
+                    <legend><h3>type</h3></legend>
+                    <p><code>type(nombreVariable)</code></p>
+                    <p>Devuelve el tipo de dato de una variable</p>
+                </fieldset>
+            </article></li>
+        </section>
+        <section>
+            <h3>Atajos en VSC</h3>
+            <ol>
+                <table>
+                    <tr><td><li><code>ctrl + k + c</code> Comentar código</li></td></tr>
+                    <tr><td><li><code>crtl + k + u</code> Descomentar código</li></td></tr>
+                </table>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>
