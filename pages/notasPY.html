@@ -23,7 +23,10 @@
                         por completo <a href="./notasPY.html#tiposDatos">Ver Tipos de Datos de Python</a></p>
                 </details></li>
                 <li><details>
-                    <summary></summary>
+                    <summary>La tabulación del código altera directamente al programa</summary>
+                </details></li>
+                <li><details>
+                    <summary>Una lista permite almacenar datos de cualquier tipo, similar a un arreglo en JavaScript</summary>
                 </details></li>
             </ol>
         </section>
@@ -153,7 +156,60 @@
             </ol>
         </section>
         <section>
+            <h3>Estructuras de Funciones</h3>
+            <fieldset>
+                <legend>Sin parametros</legend>
+                <pre><code>def nombreFuncion():</code></pre>
+                <pre><code>     # bloque de código</code></pre>
+            </fieldset>
+            <fieldset>
+                <legend>Con n cantidad de parametros</legend>
+                <pre><code>def nombreFuncion(var1, var2, var3, ..., varN):</code></pre>
+                <pre><code>     # bloque de código</code></pre>
+            </fieldset>
+            <fieldset>
+                <legend>Con parametros prestablecidos</legend>
+                <pre><code>def nombreFuncion(varSinPrestablecer, varPrestablecida1 = dato1, varPrestablecidaN = datoN)</code></pre>
+                <pre><code>     # bloque de código</code></pre>
+            </fieldset>
+            <fieldset>
+                <legend>Con cantidad indefenida de parametros no prestablecidos</legend>
+                <pre><code>def nombreFuncion(*args)</code></pre>
+                <pre><code>     # bloque de código</code></pre>
+                <pre><code># Ejemplo: </code></pre>
+                <pre><code>def ImprimirNParametros(*args)</code></pre>
+                <pre><code>     for parametro in args:</code></pre>
+                <pre><code>         print(parametro)</code></pre>
+                <pre><code>ImprimirNParametros(2, "fierro", 2.4, "HDMI") # Imprime: 2 fierro 2.4 HDMI</code></pre>
+            </fieldset>
+            <fieldset>
+                <legend>Con cantidad indefenida de parametros con variable asignada</legend>
+                <pre><code>def nombreFuncion(**kwargs)</code></pre>
+                <pre><code>     # bloque de código</code></pre>
+                <pre><code># Ejemplo</code></pre>
+                <pre><code>def ImprimirNParametros(**kwargs)</code></pre>
+                <pre><code>     for llave in kwargs:</code></pre>
+                <pre><code>         print(kwargs[llave])</code></pre>
+                <pre><code>ImprimirNParametros(a=2, f="fierro", dr=2.4, w="HDMI") # Imprime: 2 fierro 2.4 HDMI</code></pre>
+            </fieldset>
+            <fieldset>
+                <legend>Con retorno</legend>
+                <pre><code>def nombreFuncion(varN)</code></pre>
+                <pre><code>     # bloque de código</code></pre>
+                <pre><code>     return variable</code></pre>
+            </fieldset>
+        </section>
+        <section>
             <h3>Funciones de Python</h3>
+            <article>
+                <fieldset>
+                    <legend><h3>print</h3></legend>
+                    <p><code>print("Mensaje")</code></p>
+                    <p><code>print("Mensaje", nombreVariable)</code>  # Los argumentos se separan por espacios automaticos</p>
+                    <p><code>print("Mensaje " + variable1 + " Mensaje")</code> # Los argumentos se separan con espacios explicitos</p>
+                    <p><code>print(f"Mensaje {var1 * var2} Mensaje)</code> # Las variables se formatizan dentro del mensaje</p>
+                </fieldset>
+            </article>
             <article>
                 <fieldset>
                     <legend><h3>input</h3></legend>
@@ -170,6 +226,71 @@
                     <p>Devuelve el tipo de dato de una variable</p>
                 </fieldset>
             </article></li>
+        </section>
+        <section>
+            <h3>Listas</h3>
+            <fieldset>
+                <legend>Declaración</legend>
+                <pre><code>nombreLista = []      # Inicialización vacía</code></pre>
+                <pre><code>nombreLista = [dato1, dato2, dato3, ..., datoN]      # Inicialización con datos cargados</code></pre>
+                <pre><code>nombreLista = [""]*n     # Multiplica n cantidad de veces la inicialización vacía de strings</code></pre>
+            </fieldset>
+            <fieldset>
+                <legend>len</legend>
+                <code>len(nombreLista)</code>
+                <p>Devuelve la cantidad de elementos de una lista</p>
+            </fieldset>
+            <fieldset>
+                <legend>append</legend>
+                <p>Agrega elementos al final de la lista</p>
+            </fieldset>
+            <fieldset>
+                <legend>pop</legend>
+                <p><code>datoExtraido = nombreLista.pop(indice)</code></p>
+                <p>Retorna un elemento de la lista indicado por su indice y lo elimina de la lista</p>
+            </fieldset>
+            <fieldset>
+                <legend>index</legend>
+                <p><code>indice = nombreLista.index(dato)</code></p>
+                <p>Retorna el indice del primer elemento encontrado indicado por el dato</p>
+            </fieldset>
+            <fieldset>
+                <legend>count</legend>
+                <p><code>cont = nombreLista.count(dato)</code></p>
+                <p>Retorna la cantidad de elementos repetidos hay en una lista indicado por el dato</p>
+            </fieldset>
+            <fieldset>
+                <legend>insert</legend>
+                <p><code>nombreLista.insert(indice, dato)</code></p>
+                <p>Agrega elementos especificando el indice, recorre los elementos posteriores a la posición</p>
+            </fieldset>
+            <fieldset>
+                <legend>extend</legend>
+                <p><code>lista1.extend(lista2)</code></p>
+                <p>Agrega los elementos de la lista 2 al final de la lista 1</p>
+            </fieldset>
+            <fieldset>
+                <legend>sort</legend>
+                <p>Ordena los elementos de la lista de forma ascendente</p>
+            </fieldset>
+            <fieldset>
+                <legend>reverse</legend>
+                <p>Ordena los elementos de la lista de forma descendente</p>
+            </fieldset>
+            <fieldset>
+                <legend>del</legend>
+                <p><code>del nombreLista[indice]</code></p>
+                <p>Borra un elemento de la lista indicado por el indice</p>
+            </fieldset>
+        </section>
+        <section>
+            <h3>Diccionarios</h3>
+            <fieldset>
+                <legend>Declaración</legend>
+                <pre><code>nombreDicc = {}     # Inicialización vacía</code></pre>
+                <pre><code>nombreDicc = {"clave1";"valor1","clave2";"valor2", ..., "claveN"; "valorN"}</code></pre>
+                <pre><code>nombreDicc[clave] = valor     # Asigna un nuevo elemento de clave-valor al Diccionario existente</code></pre>
+            </fieldset>
         </section>
         <section>
             <h3>Atajos en VSC</h3>
