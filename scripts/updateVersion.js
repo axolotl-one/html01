@@ -1,2 +1,2 @@
-const footer = document.querySelector(".legendVersion");
-footer.textContent = "V10.0 Section ramificaiciones (Git), code styles, leyenda desde JS";
+document.getElementById("legendVersion").textContent = "V10.1 ID legendVersion JS";
+document.getElementById("mainHeader").textContent = "Hola Mundo, este es un commit para mi decima version master de Git!"
