@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/estilo01.css">
+    <link rel="stylesheet" href="../styles/tabulador.css">
+    <title>Notas Python</title>
+</head>
+<body>
+    <nav>
+        <h1>Notas Python</h1>
+        <a href="../">Volver al Inicio</a>
+    </nav>
+    <main>
+        <section id="singularPython">
+            <h3>Caracteristicas de Python</h3>
+            <ol>
+                <li><details>
+                    <summary>Al declarar una variable, Python identifica los tipos de dato automaticamente</summary>
+                    <p>Se puede asignar una etiqueta sobre el tipo de dato de una variable al declararla, pero Python ignorará
+                        por completo <a href="./notasPY.html#tiposDatos">Ver Tipos de Datos de Python</a></p>
+                </details></li>
+                <li><details>
+                    <summary>La tabulación del código altera directamente al programa</summary>
+                </details></li>
+                <li><details>
+                    <summary>Una lista permite almacenar datos de cualquier tipo, similar a un arreglo en JavaScript</summary>
+                </details></li>
+            </ol>
+        </section>
+        <section><details>
+            <summary>No aplica en Python</summary>
+            <ol>
+                <li><details>
+                    <summary>Incremento (<code>++</code>)</summary>
+                    <p>Ejemplo: <code>contador++</code></p>
+                    <p>Sutitución: <code>contador+=1</code></p>
+                </details></li>
+                <li><details>
+                    <summary>Decremento (<code>--</code>)</summary>
+                    <p>Ejemplo: <code>contador--</code></p>
+                    <p>Sutitución: <code>contador-=1</code></p>
+                </details></li>
+                <li><details>
+                    <summary>Estructura Selectiva <code>switch</code></summary>
+                    <p>Sustitución: Condicional <code>if - elif - else</code><a href="">Ver Estructura</a></p>
+                </details></li>
+                <li><details>
+                    <summary>Estructura Iterativa <code>do - while</code></summary>
+                    <p>Sustitución: <code>while(true) - if(condition) break</code><a href="">Ver Estructura</a></p>
+                </details></li>
+                <li><details>
+                    <summary>Estructura Iterativa <code>for (int i = 0; i &lt; limite; i++)</code></summary>
+                    <p>Sustitución para comportamiento original: <code>for i in range(inicial, limite, i+=1):</code></p>
+                    <p>Sustitución nativa de Python para recorrer listas (arreglos): <code>for (elemento in lista)</code></p>
+                </details></li>
+            </ol>
+        </details></section>
+        <section><details>
+            <summary>Operadores</summary>
+
+            <h4>Aritmeticos</h4>
+            <ol>
+                <li><code>+</code> Suma</li>
+                <li><code>-</code> Resta</li>
+                <li><code>*</code> Multiplicación</li>
+                <li><code>/</code> División</li>
+                <li><code>//</code> División Entera</li>
+                <li><code>**</code> Potenciación</li>
+                <li><code>%</code> Módulo Residual</li>
+                <li><code>_</code> Ans | Último Resultado</li>
+            </ol>
+
+            <h4>Relacionales</h4>
+            <ol>
+                <li><code>==</code> igual que</li>
+                <li><code>!=</code> diferente de</li>
+                <li><code>>=</code> mayor o igual que</li>
+                <li><code>&lt;=</code> menor o igual que</li>
+                <li><code>&lt;</code> menor que</li>
+                <li><code>></code> mayor que</li>
+            </ol>
+
+            <h4>Asignación</h4>
+            <ol>
+                <li><code>=</code> </li>
+                <li><code>+=</code> Suma con</li>
+                <li><code>-=</code> Resta a</li>
+                <li><code>*=</code> Multiplica con</li>
+                <li><code>/=</code> Dividido entre</li>
+            </ol>
+
+            <h4>Lógicos</h4>
+            <ol>
+                <li><code>and</code> Ambos argumentos verdaderos (True) retorna <code>True</code>, sino retorna <code>False</code></li>
+                <li><code>or</code> Ningún argumento verdadero (True) retorna <code>False</code>, sino retorna <code>True</code></li>
+                <li><code>not</code> Retorna el opuesto de un argunmento. <code>False</code> si es True, <code>True</code> si es False</li>
+            </ol>
+
+            <h4>No aplica a Python</h4>
+            <ol>
+                <li><code>++</code> Incremento</li>
+                <li><code>--</code> Decremento</li>
+            </ol>
+        </details></section>
+        <section id="tiposDatos"><details>
+            <summary>Tipos de Datos</summary>
+            <ol>
+                <li><code>int</code> númerico entero. Ej: <code>a = 50</code></li>
+                <li><code>float</code> númerico decimal. Ej: <code>b = 12.12</code></li>
+                <li><code>str</code> cadena de caracteres. Ej: <code>c = "¡hola, mundo! (mayo, 2025)"</code></li>
+                <li><code>bool</code> valores booleanos. Ej: <code>d = True</code></li>
+                <li><code>list</code> lista de datos. Ej: <code>frutas = ["toronja", "limon", "piña"]</code></li>
+                <li><code>tuple</code> tupla de datos Ej: <code>coordena = (12,7)</code></li>
+                <li><code>dict</code> Diccionario clave, dato. Ej:
+                    <code>mascote = {"especie": "perro", "raza": "golden", "nombre": "solovino"}</code></li>
+            </ol>
+        </details></section>
+        <section><details>
+            <summary>Estructuras de Control</summary>
+            <article>
+                <fieldset>
+                    <legend><h3>Condicional if - elif - else</h3></legend>
+                    <code class="codeblock">
+                        <pre>if condicion1:</pre>
+                        <pre>     # bloque de instrucciones si se cumple condicion1</pre>
+                        <pre>elif condicion2:</pre>
+                        <pre>     # bloque de instrucciones si se cumple condicion2</pre>
+                        <pre>elif condicionN:</pre>
+                        <pre>     # bloque de instrucciones si se cumple condicionN</pre>
+                        <pre>else:</pre>
+                        <pre>     # bloque de instrucciones si no se cumplió ninguna de las condiciones anteriores</pre>
+                    </code>
+                </fieldset>
+            </article>
+            <fieldset>
+                <legend><h3>Ciclo for (foreach)</h3></legend>
+                <code class="codeblock">
+                    <pre>for letra in palabra:</pre>
+                    <pre>     # similar a foreach(letra in palabra) en C#</pre>
+                    <pre>     print(letra) # trabaja con cada letra de una palabra, siendo letra cada elemento de una lista</pre>
+                </code>
+            </fieldset>
+            <fieldset>
+                <legend><h3>Ciclo for - range (for tradicional)</h3></legend>
+                <code class="codeblock">
+                    <pre>for i in range(inicial, limite, paso):</pre>
+                    <pre>     # similar a for(int i = inicial; i &lt; limite; paso)</pre>
+                    <pre>     print(i)</pre>
+                </code>
+            </fieldset>
+            <fieldset>
+                <legend><h3>Ciclo for - range (for con repeticiones establecidas)</h3></legend>
+                <code class="codeblock">
+                    <pre>for i in range(nRepeticiones):</pre>
+                    <pre>     print(nRepeticiones)</pre>
+                </code>
+            </fieldset>
+            <fieldset>
+                <legend><h3>Ciclo while (while tradicional)</h3></legend>
+                <code class="codeblock">
+                    <pre>while condicion:</pre>
+                    <pre>     # bloque de instrucciones, la condicion debe ser falsa en algún punto para cerrar el ciclo</pre>
+                </code>
+            </fieldset>
+            <fieldset>
+                <legend><h3>Ciclo while (do-while)</h3></legend>
+                <code class="codeblock">
+                    <pre>while true:</pre>
+                    <pre>     # bloque de instrucciones</pre>
+                    <pre>     if(condicionCierre)</pre>
+                    <pre>          break      # Si se cumple la condición de cierre, termina el ciclo con "break"</pre>
+                </code>
+            </fieldset>
+            <fieldset>
+                <legend><h3>Controles de Bucles</h3></legend>
+                <p><code>break</code>: Forza el cierre del bucle</p>
+                <p><code>continue</code>: salta a la próxima iteración</p>
+                <p><code>pass</code>: marcador nulo del bloque iterado</p>
+            </fieldset>
+        </details></section>
+        <section><details>
+            <summary>Estructuras de código</summary>
+            <table>
+                <tr><th></th><th>Estructura</th></tr>
+                <tr><td>Declaración de una Variable</td><td><code>nombreVariable = valor</code></td></tr>
+                <tr><td>Comentario por linea</td><td><code># Línea de Comentario después del "#"</code></td></tr>
+                <tr><td>Comentario por bloque</td><td><code>"""Comentario que incluye saltos de línea"""</code></td></tr>
+            </table>
+        </details></section>
+        <section><details>
+            <summary>Palabras reservadas</summary>
+            <ol>
+                <li><code>global</code>: Da acceso a modificar una variable global desde un ámbito local, dentro de funciones
+                    por ejemplo.</li>
+            </ol>
+        </details></section>
+        <section><details>
+            <summary>Estructuras de Funciones</summary>
+            <fieldset>
+                <legend>Sin parametros</legend>
+                <code class="codeblock">
+                    <pre>def nombreFuncion():</pre>
+                    <pre>     # bloque de código</pre>
+                    <pre>     # Ejemplo: print("Función sin parametros")</pre>
+                </code>
+            </fieldset>
+            <fieldset>
+                <legend>Con n cantidad de parametros contemplados</legend>
+                <code class="codeblock">
+                    <pre>def nombreFuncion(var1, var2, var3, ..., varN):</pre>
+                    <pre>     # bloque de código</pre>
+                    <pre>     # Ejemplo: print("Primer variable: " + var1 + ". Segunda variable: " + var2 + "...")</pre>
+                </code>
+            </fieldset>
+            <fieldset>
+                <legend>Con parametros prestablecidos</legend>
+                <code class="codeblock">
+                    <pre>def nombreFuncion(varSinPrestablecer, varPrestablecida1 = dato1, varPrestablecidaN = datoN):</pre>
+                    <pre>     # Nota: las variables prestablecidas deben definirse después de las variables no prestablecidas</pre>
+                    <pre>     # bloque de código</pre>
+                    <pre> </pre>
+                    <pre># Ejemplo:</pre>
+                    <pre>def imprimirVariables(var1, varPrest1 = "rueda", varPrest2 = 10):</pre>
+                    <pre>     print("Primera: " + var1 + ". Segunda: " varPrest1 + ". Tercera: " + varPrest2)"</pre>
+                    <pre> </pre>
+                    <pre>imprimirVariables("prueba", "rodillo", 21)  # Imprime: Primera: prueba. Segunda: rodillo. Tercera: 21</pre>
+                    <pre>imprimirVariables("estado")                 # Imprime: Primera: estado. Segunda: rueda. Tercera: 10</pre>
+                </code>
+            </fieldset>
+            <fieldset>
+                <legend>Con cantidad indefenida de parametros no prestablecidos</legend>
+                <code class="codeblock">
+                    <pre>def nombreFuncion(*args):</pre>
+                    <pre>     # bloque de código</pre>
+                    <pre> </pre>
+                    <pre># Ejemplo:</pre>
+                    <pre>def ImprimirNParametros(*args):</pre>
+                    <pre>     for parametro in args:</pre>
+                    <pre>          print(parametro)</pre>
+                    <pre> </pre>
+                    <pre>ImprimirNParametros(2, "fierro", 2.4, "HDMI")   # Imprime: 2 fierro 2.4 HDMI</pre>
+                </code>
+            </fieldset>
+            <fieldset>
+                <legend>Con cantidad indefenida de parametros con variable asignada</legend>
+                <code class="codeblock">
+                    <pre>def nombreFuncion(**kwargs):</pre>
+                    <pre>     # bloque de código</pre>
+                    <pre> </pre>
+                    <pre># Ejemplo:</pre>
+                    <pre>def ImprimirNParametros(**kwargs):</pre>
+                    <pre>     for llave in kwargs:</pre>
+                    <pre>          print(kwargs[llave])</pre>
+                    <pre> </pre>
+                    <pre>ImprimirNParametros(a=2, f="fierro", dr=2.4, w="HDMI")   # Imprime: 2 fierro 2.4 HDMI</pre>
+                </code>
+            </fieldset>
+            <fieldset>
+                <legend>Con retorno</legend>
+                <code class="codeblock">
+                    <pre>def FuncionConRetorno(varN):</pre>
+                    <pre>     # bloque de código</pre>
+                    <pre>     return respuesta                        # puede ser una variable o una operación</pre>
+                    <pre>captura = FuncionConRetorno("parametro")     # captura el retorno en una variable</pre>
+                    <pre>otraFuncion(FuncionConRetorno("parametro"))  # envia el retorno como parámetro a otra función</pre> 
+                </code>
+            </fieldset>
+        </details></section>
+        <section><details>
+            <summary>Funciones de Python</summary>
+            <article>
+                <fieldset>
+                    <legend><h3>print</h3></legend>
+                    <code class="codeblock">
+                        <pre>print("Mensaje de Texto")                   # Imprime cualquier texto string mientras este entre ""</pre>
+                        <pre>print("Texto", nombreVariable)              # Los argumentos se separan por espacios automáticos</pre>
+                        <pre>print("Texto " + variable1 + " texto")      # Los argumentos se separan con espacios explicitos</pre>
+                        <pre>print("Valor Númerico: " + str(valor1))     # Para imprimir valores númericos, se deben convertir a string</pre>
+                        <pre>print(f"V1: {var1}, V2: {var2}...{varN}")   # Las variables se formatizan dentro de una string usando "{}"</pre>
+                        <pre>print(f"Mensaje {var1 * var2} Mensaje")     # Se pueden hacer operaciones dentro de las "{}"</pre>
+                    </code>
+                </fieldset>
+            </article>
+            <article>
+                <fieldset>
+                    <legend><h3>input</h3></legend>
+                    <code class="codeblock">
+                        <pre>var1 = input("Mensaje prompt")       # Captura un dato de entrada (de tipo string por defecto) en una variable</pre>
+                        <pre>var1 = int(input("Mensaje prompt"))  # Convierte el tipo de dato string a tipo int y se captura en una variable</pre>
+                    </code>
+                </fieldset>
+            </article>
+            <article>
+                <fieldset>
+                    <legend><h3>type</h3></legend>
+                    <p><code>type(nombreVariable)</code></p>
+                    <p>Devuelve el tipo de dato de una variable</p>
+                </fieldset>
+            </article></li>
+        </details></section>
+        <section><details>
+            <summary>Listas</summary>
+            <fieldset>
+                <legend>Declaración</legend>
+                <pre><code>nombreLista = []      # Inicialización vacía</code></pre>
+                <pre><code>nombreLista = [dato1, dato2, dato3, ..., datoN]      # Inicialización con datos cargados</code></pre>
+                <pre><code>nombreLista = [""]*n     # Multiplica n cantidad de veces la inicialización vacía de strings</code></pre>
+            </fieldset>
+            <fieldset>
+                <legend>len</legend>
+                <p><code>len(nombreLista)</code></p>
+                <p>Devuelve la cantidad de elementos de una lista</p>
+            </fieldset>
+            <fieldset>
+                <legend>append</legend>
+                <p><code>nombreLista.append(elemento)</code></p>
+                <p>Agrega elementos al final de la lista</p>
+            </fieldset>
+            <fieldset>
+                <legend>pop</legend>
+                <p><code>datoExtraido = nombreLista.pop(indice)</code></p>
+                <p>Retorna un elemento de la lista indicado por su indice y lo elimina de la lista</p>
+            </fieldset>
+            <fieldset>
+                <legend>index</legend>
+                <p><code>indice = nombreLista.index(dato)</code></p>
+                <p>Retorna el indice del primer elemento encontrado indicado por el dato</p>
+            </fieldset>
+            <fieldset>
+                <legend>count</legend>
+                <p><code>cont = nombreLista.count(dato)</code></p>
+                <p>Retorna la cantidad de elementos repetidos hay en una lista indicado por el dato</p>
+            </fieldset>
+            <fieldset>
+                <legend>insert</legend>
+                <p><code>nombreLista.insert(indice, dato)</code></p>
+                <p>Agrega elementos especificando el indice, recorre los elementos posteriores a la posición</p>
+            </fieldset>
+            <fieldset>
+                <legend>extend</legend>
+                <p><code>lista1.extend(lista2)</code></p>
+                <p>Agrega los elementos de la lista 2 al final de la lista 1</p>
+            </fieldset>
+            <fieldset>
+                <legend>sort</legend>
+                <p>Ordena los elementos de la lista de forma ascendente</p>
+            </fieldset>
+            <fieldset>
+                <legend>reverse</legend>
+                <p>Ordena los elementos de la lista de forma descendente</p>
+            </fieldset>
+            <fieldset>
+                <legend>del</legend>
+                <p><code>del nombreLista[indice]</code></p>
+                <p>Borra un elemento de la lista indicado por el indice</p>
+            </fieldset>
+        </details></section>
+        <section><details>
+            <summary>Diccionarios</summary>
+            <fieldset>
+                <legend>Declaración</legend>
+                <pre><code>nombreDicc = {}     # Inicialización vacía</code></pre>
+                <pre><code>nombreDicc = {"clave1";"valor1","clave2";"valor2", ..., "claveN"; "valorN"}</code></pre>
+                <pre><code>nombreDicc[clave] = valor     # Asigna un nuevo elemento de clave-valor al Diccionario existente</code></pre>
+            </fieldset>
+        </details></section>
+        <section>
+            <details>
+                <summary>Clases</summary>
+                <fieldset>
+                    <legend>Estructura Básica</legend>
+                    <code class="codeblock">
+                        <pre>class nombreClase():</pre>
+                        <pre>     # Creación del constructor</pre>
+                        <pre>     def __init__(self, param1, param2, ..., paramN):</pre>
+                        <pre>          self.param1 = param1</pre>
+                        <pre>          self.param2 = param2</pre>
+                        <pre>          # ...</pre>
+                        <pre>          self.paramN = paramN</pre>
+                        <pre> </pre>
+                        <pre>     def metodo01(self):</pre>
+                        <pre>          print("Mostrar param1 (cadena string): " + param1)</pre>
+                        <pre>          print("Mostrar param2 (numero): + str(param2))</pre>
+                        <pre> </pre>
+                        <pre># Crear Objeto de Clase:</pre>
+                        <pre>nombreObjeto = nombreCLase(valor1, valor2, ..., valorN)</pre>
+                        <pre> </pre>
+                        <pre># Acceso a Propiedades</pre>
+                        <pre>print(nombreObjeto.param1)    # Obtiene la propiedad "param1" del objeto "nombreObjeto y la imprime"</pre>
+                        <pre>nombreObjeto.param1 = valor   # Modifica (reasigna) un "valor" a la propiedad "param1" de "nombreObjeto"</pre>
+                        <pre># Acceso a Métodos</pre>
+                        <pre>nombreObjeto.metodo01()</pre>
+                    </code>
+                </fieldset>
+                <fieldset>
+                    <legend>Estructura de Herencia</legend>
+                    <code class="codeblock">
+                        <pre>class claseHijo(clasePadre):</pre>
+                        <pre>     # Definir Constructor</pre>
+                        <pre>     def __init__(self, paramPadre1, paramPadre2, ..., paramPadreN, param1,  param2, ..., paramN)</pre>
+                        <pre>          # Construir propiedades a partir de la clase padre</pre>
+                        <pre>          super().__init__(paramPadre1, paramPadre2, ..., paramPadreN)</pre>
+                        <pre>          # Construir propiedades propias de la clase</pre>
+                        <pre>          self.param1 = param1</pre>
+                        <pre>          self.param2 = param2</pre>
+                        <pre>          ...</pre>
+                        <pre>          self.paramN = paramN</pre>
+                        <pre> </pre>
+                        <pre>     metodoPadre(self):</pre>
+                        <pre>          # Método de la clase padre modificado en esta clase (polimorfismo)</pre>
+                        <pre>          # Se llama al método de la clase padre por su nombre y se sobreescribe el bloque de código</pre>
+                    </code>
+                </fieldset>
+            </details>
+        </section>
+        <section><details>
+            <summary>Atajos en VSC</summary>
+            <ol>
+                <table>
+                    <tr><td><li><code>ctrl + k + c</code> Comentar código</li></td></tr>
+                    <tr><td><li><code>crtl + k + u</code> Descomentar código</li></td></tr>
+                </table>
+            </ol>
+        </details></section>
+    </main>
+    <footer>
+        <a href="../">Volver al Inicio</a>
+        <h5 id="legendVersion"></h5>
+    </footer>
+</body>
+</html>

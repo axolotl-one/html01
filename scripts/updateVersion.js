@@ -1,2 +1,2 @@
-document.getElementById("legendVersion").textContent = "V10.1 ID legendVersion JS";
-document.getElementById("mainHeader").textContent = "Hola Mundo, este es un commit para mi decima version master de Git!"
+document.getElementById("legendVersion").textContent = "V11.0 Merge Notas Python";
+document.getElementById("mainHeader").textContent = "Hola Mundo, este es un commit para mi undecima version master de Git!"
