@@ -6,7 +6,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/estilo01.css">
-    <link rel="stylesheet" href="../styles/tabulador.css">
     <title>Notas Python</title>
 </head>
 <body>
@@ -37,20 +36,37 @@
                 <li><details>
                     <summary>Incremento (<code>++</code>)</summary>
                     <p>Ejemplo: <code>contador++</code></p>
-                    <p>Sutitución: <code>contador+=1</code></p>
+                    <p>Sustitución: <code>contador+=1</code></p>
                 </details></li>
                 <li><details>
                     <summary>Decremento (<code>--</code>)</summary>
                     <p>Ejemplo: <code>contador--</code></p>
-                    <p>Sutitución: <code>contador-=1</code></p>
+                    <p>Sustitución: <code>contador-=1</code></p>
                 </details></li>
                 <li><details>
                     <summary>Estructura Selectiva <code>switch</code></summary>
-                    <p>Sustitución: Condicional <code>if - elif - else</code><a href="">Ver Estructura</a></p>
+                        <p>Sustitución: Condicional <code>if - elif - else</code></p>
+                        <code class="codeblock">
+                            <pre>if condicion-caso1:</pre>
+                            <pre>     # Bloque de código para el caso 1</pre>
+                            <pre>elif condicion-caso2:</pre>
+                            <pre>     # Bloque de código para el caso 2</pre>
+                            <pre># ...</pre>
+                            <pre>elif condicion-casoN:</pre>
+                            <pre>     # Bloque de código para el caso N</pre>
+                            <pre>else:</pre>
+                            <pre>     # Bloque de código para los casos restantes, simulando un "dafault"</pre>
+                        </code>
                 </details></li>
                 <li><details>
                     <summary>Estructura Iterativa <code>do - while</code></summary>
-                    <p>Sustitución: <code>while(true) - if(condition) break</code><a href="">Ver Estructura</a></p>
+                    <p>Sustitución: <code>while(true) - if(condition) break</code></p>
+                    <code class="codeblock">
+                        <pre>while(true):</pre>
+                        <pre>     # Bloque de código a ejecutar al menos una vez</pre>
+                        <pre>     if(condicionCierre):</pre>
+                        <pre>          break  # break cierra el ciclo while</pre>
+                    </code>
                 </details></li>
                 <li><details>
                     <summary>Estructura Iterativa <code>for (int i = 0; i &lt; limite; i++)</code></summary>
