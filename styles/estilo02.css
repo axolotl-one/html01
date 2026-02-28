@@ -1,23 +1,24 @@
 * {
-    margin: 0px;
-    box-sizing: border-box;
     color: #dddddd;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
     font-family: 'Tinos', 'serif';
     font-weight: 500;
     font-style: normal;
     font-size: 20px;
-}
-
-code{
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #333333;
-    border-radius: 5px;
-    padding: 2px 4px;
-}
-
-body{
     background-color: #222222;
     line-height: 30px;
+}
+
+nav {
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+    padding: 5px 10px;
+    gap: 5px;
 }
 
 table{
@@ -53,26 +54,20 @@ tr:hover {
     background-color: #444444;
 }
 
-nav{
-    display: flex;
-    align-items: center;
-    height: 80px;
-}
-
 h1{
-    font-size: 34px;
+    font-size: 36px;
 }
 
 h2{
-    font-size: 32px;
+    font-size: 30px;
 }
 
 h3{
-    font-size: 28px;
+    font-size: 24px;
 }
 
 h4{
-    font-size: 24px;
+    font-size: 20px;
     font-style: italic;
 }
 
@@ -80,12 +75,19 @@ h5{
     font-size: 15px;
 }
 
-summary{
-    font-size: 24px;
+summary * {
+    display: inline;
 }
 
 #singularPython summary{
     font-size: inherit;
+}
+
+code{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #333333;
+    border-radius: 5px;
+    padding: 2px 4px;
 }
 
 code.codeblock {
@@ -114,4 +116,3 @@ code.codeblock p, code.codeblock pre{
 .tab3{
     padding-left: 40px;
 }
-

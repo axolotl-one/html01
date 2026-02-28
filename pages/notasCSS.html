@@ -6,11 +6,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/estilo01.css">
+    <link rel="stylesheet" href="../styles/estilo02.css">
     <title>Notas de CSS</title>
 </head>
 <body>
-    <nav>
+<nav>
+    <header>
         <h1>Notas de componentes de CSS</h1>
         <a href="./notasCSS.html#propiedadesBasicas">Propiedades Báscias</a>
         <a href="./notasCSS.html#propiedadesFlex">Propiedades de Flex</a>
@@ -18,8 +19,42 @@
         <a href="./notasCSS.html#modeloCajas">Modelo de Cajas</a>
         <a href="./notasCSS.html#pseudoclases">Pseudoclases</a>
         <a href="../">Volver al Inicio</a>
-    </nav>
+    </header>
     <main>
+        <section id="t1">
+            <details>
+                <summary><h2>Conceptos Básicos</h2></summary>
+                <article>
+                    <h3><code>CSS ("Cascading Style Sheets" u "Hoja de Estilos en Cascada")</code></h3>
+                    <p>Es un lenguaje utilizado para darle estilo a una página web, un maquillador que la hace atractiva para los usuarios.</p>
+                    <p>Separa el contenido de una página web de su diseño, organiza mejor el código para el programador y hace la página más ágil</p>
+                    <ol><li>Aplicar estilos de manera selectiva</li><li>Crear diseños reponsivos</li><li>Adaptar la página a multiples tamaños de pantalla</li></ol></p>
+                </article>
+                <article>
+                    <h3><code>Ejemplo de Estructura de un Selector</code></h3>
+                    <code class="codeblock">
+                        <pre>p { </pre>
+                        <pre>   color : red; /* Cambia el color de fuente a rojo */</pre>
+                        <pre>}</pre>
+                    </code>
+                    <p><code>p</code>: es el selector (id, clase, tipo, étc)</p>
+                    <p><code>color</code>: es una propiedad del selector</p>
+                    <p><code>red</code>: es un valor de la propiedad mencionada</p>
+                    <p><code>color : red;</code>: juntas hacen una declaración para el selector</p>
+                    <p><code>/* Cambia el color de fuente a rojo */</code>: es un comentario</p>
+                </article>
+            </details>
+        </section>
+        <section id="">
+            <h2>Especificidad de CSS</h2>
+            <table>
+                <thead><th><code>#</code>ID</th><th><code>.</code>Clase</th><th><code>nombre</code> de Etiqueta HTML</th><th><code>*</code> General</th></thead>
+                <tbody>
+                    <tr><td>(1,0,0)</td><td>(0,1,0)</td><td>(0,0,1)</td><td>(0,0,0)</td></tr>
+                    <tr><td>ei</td></tr>
+                </tbody>
+            </table>
+        </section>
         <section id="propiedadesBasicas">
             <h2>Propiedades Básicas</h2>
             <article>
@@ -145,6 +180,7 @@
         <a href="../">Volver al Inicio</a>
         <h5 id="legendVersion"></h5>
     </footer>
-    <script src="../scripts/updateVersion.js"></script>
+</nav>
+<script src="../scripts/updateVersion.js"></script>
 </body>
 </html>
