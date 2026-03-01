@@ -17,12 +17,18 @@ nav {
     display: grid;
     min-height: 100dvh;
     grid-template-rows: auto 1fr auto;
-    padding: 5px 10px;
+    padding: 5px 8px;
     gap: 5px;
 }
 
+nav, main, section, article {
+    min-width: 100%;
+}
+
 table{
+    display: block;
     border-collapse: collapse;
+    overflow: auto;
 }
 
 td, th {
@@ -30,7 +36,20 @@ td, th {
     padding: 10px;
 }
 
-a {
+table code, th {
+    text-wrap: nowrap;
+}
+
+tr:hover {
+    background-color: #444444;
+}
+
+thead tr:hover {
+    background-color: inherit;
+}
+
+
+a, label {
     display: inline-block;
     text-decoration: none;
     border-style: groove;
@@ -39,20 +58,17 @@ a {
     margin: 5px;
 }
 
-a:hover{
+a:hover, label:hover {
     border-color: #aaaaaa;
     background-color: rgba(69, 69, 69, 0.099);
 }
 
-a:active{
+a:active, label:active {
     border-color: rgba(44, 44, 44, 0.412);
     background-color: rgba(91, 91, 91, 0.168);
     color: #aaaaaa;
 }
 
-tr:hover {
-    background-color: #444444;
-}
 
 h1{
     font-size: 36px;
@@ -79,6 +95,10 @@ summary * {
     display: inline;
 }
 
+section {
+    display: none;
+}
+
 #singularPython summary{
     font-size: inherit;
 }
@@ -92,15 +112,16 @@ code{
 
 code.codeblock {
     display: block;
+    overflow: auto;
     font-family: 'Courier New', Courier, monospace;
     background-color: #333333;
     border-radius: 5px;
-    padding: 5px 5px;
+    padding: 5px 10px;
+    margin: 10px 0;
+    max-width: 98dvw;
 }
 
 code.codeblock p, code.codeblock pre{
-    text-wrap: wrap;
-    word-break: break-all;
     font-family: inherit;
     margin: 0;
 }
@@ -115,4 +136,21 @@ code.codeblock p, code.codeblock pre{
 
 .tab3{
     padding-left: 40px;
+}
+
+input[type="radio"]{
+    appearance: none;
+}
+
+#inicio{
+    display: block;
+}
+
+@media screen and (max-width: 800px){
+    body {
+        font-size: 15px;
+    }
+    tr {
+        border-bottom: dotted 2px;
+    }
 }
