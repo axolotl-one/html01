@@ -12,7 +12,7 @@
 <body>
 <nav>
     <header>
-        <h1>Notas de componentes de CSS</h1>
+        <h1>EXPEDIENTE CSS </h1>
         <label><input type="radio" name="indice" onclick="verBloque('section','inicio')">
             Inicio</label>
         <label><input type="radio" name="indice" onclick="verBloque('section','selectores')">
@@ -27,6 +27,8 @@
             Pseudoclases</label>
         <label><input type="radio" name="indice" onclick="verBloque('section','pseudoelementos')">
             Pseudoelementos</label>
+        <label><input type="radio" name="indice" onclick="verBloque('section','pre-estilos')">
+            Estilos Predefinidos</label>
         <a href="../">Volver al Inicio</a>
     </header>
     <main>
@@ -59,37 +61,80 @@
                 <h3>Niveles de Especificidad sobre Selectores de CSS</h3>
                 <table>
                     <thead><tr><th>Nivel</th><th>Tipo de Selector</th><th>Sintaxis</th><th>Ejemplo Selector</th><th>Ejemplo de Elemento Asociado</th></tr></thead>
-                    <tr><td>(1,0,0)</td><td>ID</td><td><code>#id { &equiv; }</code></td><td><code>#seccion-aguila { &equiv; }</code></td><td><code>&lt;div id="seccion-aguila" class="ave"></code></td></tr>
-                    <tr><td>(0,1,0)</td><td>Clase</td><td><code>.clase { &equiv; }</code></td><td><code>.ave { &equiv; }</code></td>
+                    <tr><td>(1,0,0)</td><td>ID</td><td><code>#id</code> <code>{ &equiv; }</code></td><td><code>#seccion-aguila</code> <code>{ &equiv; }</code></td><td><code>&lt;div id="seccion-aguila" class="ave"></code></td></tr>
+                    <tr><td>(0,1,0)</td><td>Clase</td><td><code>.clase</code> <code>{ &equiv; }</code></td><td><code>.ave</code> <code>{ &equiv; }</code></td>
                         <td><p><code>&lt;div id="seccion-aguila" class="ave"></code></p><p><code>&lt;div id="seccion-halcon" class="ave"></code></p></td></tr>
-                    <tr><td>(0,1,0)</td><td>Atributo</td><td><code>[atributo] { &equiv; }</code></td><td><code>input[type="submit"] { &equiv; }</code></td>
+                    <tr><td>(0,2,0)</td><td>Clase con Clase</td><td><code>.clase1.clase2</code> <code>{ &equiv; }</code></td><td><code>.ave.grande</code> <code>{ &equiv; }</code></td>
+                        <td><p><code>&lt;p class="ave grande">Aguila&lt;/p></code></p><p><code>&lt;p class="ave grande">Halcón&lt;/p></code></p></td></tr>
+                    <tr><td>(0,1,0)</td><td>Atributo</td><td><code>[atributo]</code> <code>{ &equiv; }</code></td><td><code>input[type="submit"]</code> <code>{ &equiv; }</code></td>
                         <td><p><code>&lt;input type"submit" value="Enviar Solicitud"></code></p><p><code>&lt;input type"submit" value="Iniciar Sesión"></code></p></td></tr>
-                    <tr><td>(0,1,0)</td><td>Pseudoclase</td><td><code>:pseudoclase { &equiv; }</code></td><td><code>button:hover { &equiv; }</code></td></tr>
-                    <tr><td>(0,0,1)</td><td><p>Elemento</p><p>(Etiqueta HTML)</p></td><td><code>elemento { &equiv; }</code></td><td><code>p { &equiv; }</code></td>
+                    <tr><td>(0,1,0)</td><td>Pseudoclase</td><td><code>:pseudoclase</code> <code>{ &equiv; }</code></td><td><code>button:hover { &equiv; }</code></td>
+                        <td><p><code>&lt;button>Click Aquí&lt;/button></code></p></td></tr>
+                    <tr><td>(0,0,1)</td><td><p>Elemento</p><p>(Etiqueta HTML)</p></td><td><code>elemento</code> <code>{ &equiv; }</code></td><td><code>p</code> <code>{ &equiv; }</code></td>
                         <td><p><code>&lt;p><span id="mainHeader"></span>&lt;/p></code></p><p><code>&lt;p>Lorem ipsum dolor sit amet consectetur.&lt;/p></code></p></td></tr>
-                    <tr><td>(0,0,1)</td><td>Pseudoelemento</td><td><code>::pseudoelemento { &equiv; }</code></td></tr>
-                    <tr><td>(0,0,0)</td><td>Universal</td><td><code>* { &equiv; }</code></td><td>* { &equiv; }</td><td><p></p></td></tr>
+                    <tr><td>(0,1,1)</td><td>Elemento con Clase</td><td><code>elemento.clase</code> <code>{ &equiv; }</code></td><td><code>p.nocturno</code> <code>{ &equiv; }</code></td>
+                        <td><p><code>&lt;p class="ave nocturno">Lechuza&lt;/p></code></p><p><code>&lt;p class="ave nocturno">Buho&lt;/p></code></p></td></tr>
+                    <tr><td>(0,0,1)</td><td>Pseudoelemento</td><td><code>::pseudoelemento</code> <code>{ &equiv; }</code></td></tr>
+                    <tr><td>(0,0,0)</td><td>Universal</td><td><code>*</code> <code>{ &equiv; }</code></td><td><code>*</code> <code>{ &equiv; }</code></td>
+                        <td><p><code>&lt;p>Lorem ipsum dolor sit amet consectetur.&lt;/p></code></p></td></tr>
                 </table>
             </article>
             <article>
                 <h3>Selectores Combinados</h3>
                 <p>Se combinan distintos selectores para seleccionar elementos (etiqutas HTML) basadas en su interrelación dentro del maquetado HTML</p>
                 <table>
-                    <thead><tr><th>Nivel</th><th>Tipo de Combinación</th><th>Sintaxis</th><th>Descripción</th></tr></thead>
-                    <tr><td>()</td><td>Descendiente General</td><td><code>padre descendiente { &equiv; }</code></td></tr>
-                    <tr><td>()</td><td>Hijo Directo</td><td><code>padre > hijo { &equiv; }</code></td></tr>
-                    <tr><td>()</td><td>Hermano General</td><td><code>hermano ~ hermano-menor { &equiv; }</code></td></tr>
-                    <tr><td>()</td><td>Hermano Menor Directo</td><td><code>hermano + hermano-menor-directo { &equiv; }</code></td></tr>
-                    <tr><td></td><td> como descendientes (article p), hijos (div > p), o hermanos (h1 + p). </td></tr>
+                    <thead><tr><th>Tipo de Combinación</th><th>Sintaxis</th><th>Descripción</th></tr></thead>
+                    <tr><td>Descendiente General</td><td><code>padre descendiente { &equiv; }</code></td><td>Selecciona todos los elementos <code>descendiente</code> de cualquier generación contenida en el elemento <code>padre</code>.</td></tr>
+                    <tr><td>Hijo Directo</td><td><code>padre > hijo { &equiv; }</code></td><td>Selecciona todos los elementos del selector <code>hijo</code> que son hijos directos de primera generación contenida en el elemento <code>padre</code>.</td></tr>
+                    <tr><td>Hermano General</td><td><code>hermano ~ hermano-menor { &equiv; }</code></td><td>Selecciona todos los elementos <code>hermano-menor</code> que son hermanos del elemento <code>hermano</code> y estan después de él.</td></tr>
+                    <tr><td>Hermano Menor Directo</td><td><code>hermano + hermano-directo { &equiv; }</code></td><td>Selecciona al primer elemento <code>hermano-directo</code> que esta después del elemento <code>hermano</code>.</td></tr>
                 </table>
                 <h3>Ejemplos de Selectores Combinados</h3>
                 <table>
-                    <thead><tr><th>Nivel</th><th>Combinación de Selectores</th><th></th><th>Elementos Asociados</th><th>Lógica</th></tr></thead>
-                    <tr><td>(0,0,2)</td><td><code>main p</code></td></tr>
+                    <thead><tr><th>Nivel</th><th>Combinación de Selectores</th><th>Lógica</th><th>Elementos Asociados</th></tr></thead>
+                    <tr><td>(0,0,2)</td><td><code>footer h2</code></td><td>Selecciona todos los <code>h2</code> descendientes de cualquier generación de <code>footer</code></td>
+                        <td><p><code>25. &lt;h2>Versión 11.1.5&lt;/h2></code></p></td></tr>
+                    <tr><td>(0,1,2)</td><td><code>main p.grande</code></td><td>Selecciona todos los <code>p</code> con clase <code>grande</code> descendientes de cualquier generación de <code>main</code></td>
+                        <td><p><code>10. &lt;p class="ave grande">Aguila&lt;/p></code></p><p><code>11. &lt;p class="ave grande">Halcón&lt;/p></code></p>
+                            <p><code>17. &lt;p class="lagarto grande">Dragón de Komodo&lt;/p></code></p><p><code>18. &lt;p class="lagarto grande">Iguana&lt;/p></code></p></td></tr>
+                    <tr><td>(0,1,1)</td><td><code>p.lagarto</code></td><td>Selecciona <code>p</code> con la clase <code>lagarto</code></td><td><p><code>17. &lt;p class="lagarto grande">Dragón de Komodo&lt;/p></code></p>
+                        <p><code>18. &lt;p class="lagarto grande">Iguana&lt;/p></code></p><p><code>19. &lt;p class="lagarto chico">Camaleón&lt;/p></code></p><p><code>20. &lt;p class="lagarto chico">Lagartija&lt;/p></code></p></td></tr>
+                    <tr><td>(0,0,2)</td><td><code>main > p</code></td><td>Selecciona todos los <code>p</code> que son hijos directos de <code>main</code></td>
+                        <td><p><code>22. &lt;p>Fin de la lista&lt;/p></code></p></td></tr>
+                    <tr><td>(0,0,2)</td><td><code>h1 + p</code></td><td>Selecciona el primer hermano <code>p</code> encontrado después de un <code>h1</code></td>
+                        <td><p><code>04. &lt;p>Bienvenidos a esta página web&lt;/p></code></p></td></tr>
+                    <tr><td>(0,0,2)</td><td><code>h1 ~ p</code></td><td>Selecciona todos los hermanos <code>p</code> encontrados después de un <code>h1</code></td>
+                        <td><p><code>04. &lt;p>Bienvenidos a esta página web&lt;/p></code></p><p><code>05. &lt;p>Aquí presentamos una lista de Animales&lt;/p></code></p></td></tr>
                 </table>
-                <p>Maquetado de Refencia:</p> <!-- TODO: Hacer el maquetado de ejemplo -->
+                <p>Maquetado de Refencia:</p>
                 <code class="codeblock">
-                    <pre></pre>
+                    <pre>1. &lt;body></pre>
+                    <pre>2. &lt;header></pre>
+                    <pre>3.        &lt;h1>Hola Mundo!&lt;/h1></pre>
+                    <pre>4.        &lt;p>Bienvenidos a esta página web&lt;/p></pre>
+                    <pre>5.        &lt;p>Aquí presentamos una lista de Animales&lt;/p></pre>
+                    <pre>6.    &lt;/header></pre>
+                    <pre>7.    &lt;main></pre>
+                    <pre>8.        &lt;section></pre>
+                    <pre>9.            &lt;h2 id="lista-aves">Lista de Aves&lt;/h2></pre>
+                    <pre>10.           &lt;p class="ave grande">Aguila&lt;/p></pre>
+                    <pre>11.           &lt;p class="ave grande">Halcón&lt;/p></pre>
+                    <pre>12.           &lt;p class="ave nocturno">Lechuza&lt;/p></pre>
+                    <pre>13.           &lt;p class="ave nocturno">Buho&lt;/p></pre>
+                    <pre>14.       &lt;/section></pre>
+                    <pre>15.       &lt;section></pre>
+                    <pre>16.           &lt;h2 id="lista-lagartos">Lista de Lagartos&lt;/h2></pre>
+                    <pre>17.           &lt;p class="lagarto grande">Dragón de Komodo&lt;/p></pre>
+                    <pre>18.           &lt;p class="lagarto grande">Iguana&lt;/p></pre>
+                    <pre>19.           &lt;p class="lagarto chico">Camaleón&lt;/p></pre>
+                    <pre>20.           &lt;p class="lagarto chico">Lagartija&lt;/p></pre>
+                    <pre>21.       &lt;/section></pre>
+                    <pre>22.       &lt;p>Fin de la lista&lt;/p></pre>
+                    <pre>23.   &lt;/main></pre>
+                    <pre>24.   &lt;footer></pre>
+                    <pre>25.       &lt;h2>Versión 11.1.5&lt;/h2></pre>
+                    <pre>26.   &lt;/footer></pre>
+                    <pre>27.&lt;/body></pre>
                 </code>
             </article>
         </section>
@@ -226,6 +271,21 @@
                 <tr><td>::after</td><td>Después</td></tr>
                 <tr><td>::before</td><td>Antes</td></tr>
             </table>
+        </section>
+        <section id="pre-estilos">
+            <h2>Estilos Predifinidos</h2>
+            <article>
+                <h3>Desbordamiento horizontal con scroll auto sobre elementos inline-block</h3>
+                <code class="codeblock">
+                    <pre>.contenedor-padre {</pre>
+                    <pre>   white-space: nowrap; /* Impide saltos de línea automáticos */</pre>
+                    <pre>   overflow-x: auto;    /* Muestra scroll horizontal si es necesario */</pre>
+                    <pre>   overflow-y: hidden;  /* Oculta scroll vertical si lo hubiera */</pre>
+                    <pre>   width: 100% }        /* Define el ancho */</pre>
+                    <pre>.elemento-hijo {</pre>
+                    <pre>   display: inline-block }</pre>
+                </code>
+            </article>
         </section>
     </main>
     <footer>

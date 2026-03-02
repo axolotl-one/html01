@@ -32,11 +32,12 @@ table{
 }
 
 td, th {
+    min-width: 100px;
     text-align: left;
     padding: 10px;
 }
 
-table code, th {
+table code {
     text-wrap: nowrap;
 }
 
@@ -139,18 +140,46 @@ code.codeblock p, code.codeblock pre{
 }
 
 input[type="radio"]{
-    appearance: none;
+    display: none;
 }
 
-#inicio{
+#inicio {
     display: block;
+}
+
+header h1 {
+    display: inline-block;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+header, table, code.codeblock {
+    scrollbar-color: #555 #222;
 }
 
 @media screen and (max-width: 800px){
     body {
         font-size: 15px;
     }
+    a, label{
+        overflow-wrap: nowrap;
+    }
     tr {
         border-bottom: dotted 2px;
+    }
+    td, th {
+        min-width: 80px;
+    }
+    header div#navbar {
+        max-height: 70px;
+        max-width: 100%;
+        overflow-x: auto;
     }
 }
