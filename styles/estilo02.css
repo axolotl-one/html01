@@ -165,7 +165,7 @@ header, table, code.codeblock {
 }
 
 @media screen and (max-width: 800px){
-    body {
+    body, table td p {
         font-size: 15px;
     }
     a, label{

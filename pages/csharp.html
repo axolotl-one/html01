@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/estilo02.css">
+    <title>Expediente C#</title>
+</head>
+<body>
+<nav>
+<header>
+    <h1>EXPEDIENTE C#</h1>
+    <label>Inicio<input type="radio" name="indice" onclick="verBloque('section','inicio')"></label>
+    <label>Vectores<input type="radio" name="indice" onclick="verBloque('section','vectores')"></label>
+</header>
+<main>
+    <section id="inicio">
+        <h2>Conceptos Básicos</h2>
+        <h3>Tipos de Datos</h3>
+        <table>
+            <thead><tr><th>Tipo de Dato</th><th>Definición</th><th>Rango</th></tr></thead>
+            <tr><td><code>byte</code></td><td>Entero de 8 bits</td><td>-127 a 127</td></tr>
+            <tr><td><code>short</code></td><td>Entero de 16 bits</td><td>-32 767 a 32 767</td></tr>
+            <tr><td><code>int</code></td><td>Entero de 32 bits</td><td>-2147M a 2147</td></tr>
+            <tr><td><code>string</code></td><td>Cadena de Caracteres</td><td>No Aplica</td></tr>
+        </table>
+    </section>
+    <section id="vectores">
+        <h2>Vectores (Arreglos Unidimensionales)</h2>
+        <h3>Sintaxis de Arreglo Vacío de N-Elementos </h3>
+        <code class="codeblock">
+            <pre>tipo_de_dato[] nombre_variable = new tipo_de_dato[n_elementos]</pre>
+            <pre>// genera elementos vacíos: { 0, 0, 0, ..., n_elementos }</pre>
+        </code>
+    </section>
+</main>
+<footer>
+    <h5>V11.1.5 Maquetado Expediente C#</h5>
+</footer>
+</nav>
+<script>
+    function verBloque(selector,id){
+        document.querySelectorAll(selector).forEach(sec=>sec.style.display = 'none');
+        document.getElementById(id).style.display = 'block'
+    }
+</script>
+</body>
+</html>
