@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/estilo02.css">
     <title>Expediente C#</title>
 </head>
@@ -11,31 +14,109 @@
 <header>
     <h1>EXPEDIENTE C#</h1>
     <label>Inicio<input type="radio" name="indice" onclick="verBloque('section','inicio')"></label>
+    <label>Tipos de Datos<input type="radio" name="indice" onclick="verBloque('section','tipos-datos')"></label>
     <label>Vectores<input type="radio" name="indice" onclick="verBloque('section','vectores')"></label>
 </header>
 <main>
     <section id="inicio">
-        <h2>Conceptos Básicos</h2>
-        <h3>Tipos de Datos</h3>
         <table>
-            <thead><tr><th>Tipo de Dato</th><th>Definición</th><th>Rango</th></tr></thead>
-            <tr><td><code>byte</code></td><td>Entero de 8 bits</td><td>-127 a 127</td></tr>
-            <tr><td><code>short</code></td><td>Entero de 16 bits</td><td>-32 767 a 32 767</td></tr>
-            <tr><td><code>int</code></td><td>Entero de 32 bits</td><td>-2147M a 2147</td></tr>
-            <tr><td><code>string</code></td><td>Cadena de Caracteres</td><td>No Aplica</td></tr>
+            <thead><tr><th>Palabra Reservada</th><th>Descripción</th></tr></thead>
+            <tr><td><code>abstract</code></td><td></td></tr>
+            <tr><td><code>as</code></td><td></td></tr>
+            <tr><td><code>base</code></td><td></td></tr>
+            <tr><td><code>bool</code></td><td></td></tr>
+            <tr><td><code>break</code></td><td></td></tr>
+            <tr><td><code>byte</code></td><td></td></tr>
+            <tr><td><code>case</code></td><td></td></tr>
+            <tr><td><code>catch</code></td><td></td></tr>
+            <tr><td><code>typeof</code></td><td></td></tr>
+            <tr><td><code>unsafe</code></td><td></td></tr>
+            <tr><td><code>volatile</code></td><td></td></tr>
+            <tr><td><code>virtual</code></td><td></td></tr>
+            <tr><td><code>add</code></td><td></td></tr>
+            <tr><td><code>const</code></td><td></td></tr>
+            <tr><td><code>class</code></td><td></td></tr>
+            <tr><td><code>checked</code></td><td></td></tr>
+            <tr><td><code>char</code></td><td></td></tr>
+            <tr><td><code>continue</code></td><td></td></tr>
+            <tr><td><code>decimal</code></td><td></td></tr>
+            <tr><td><code>defailt</code></td><td></td></tr>
+            <tr><td><code>delegate</code></td><td></td></tr>
+            <tr><td><code>async</code></td><td></td></tr>
+            <tr><td><code>await</code></td><td></td></tr>
+            <tr><td><code>acending</code></td><td></td></tr>
+            <tr><td><code>decimal</code></td><td></td></tr>
+            <tr><td><code>double</code></td><td></td></tr>
+            <tr><td><code>do</code></td><td></td></tr>
+            <tr><td><code>else</code></td><td></td></tr>
+            <tr><td><code>if</code></td><td></td></tr>
+            <tr><td><code>enum</code></td><td></td></tr>
+        </table>
+    </section>
+    <section id="tipos-datos">
+        <h2>Tipos de Datos</h2>
+        <h3>Tipos de Datos Numéricos Enteros con Signo ( &plusmn; )</h3>
+        <table>
+            <thead><tr><th>Keyword</th><th>Tipo de Dato</th><th>Uso de Memoria</th><th>Equivalencia</th><th>Rango<sub>2</sub><th>Rango<sub>10</sub></th><th>Sufijo de Dato Numérico</th></tr></thead>
+            <tr><td><code>sbyte</code></td><td>Entero</td><td>8 bits</td><td>1 byte</td><td>-2<sup>7</sup> a 2<sup>7</sup>-1</td><td>-128 a 127</td><td>C# infiere el Tipo</td></tr>
+            <tr><td><code>short</code></td><td>Entero</td><td>16 bits</td><td>2 bytes</td><td>-2<sup>15</sup> a 2<sup>15</sup>-1</td><td>-32 768 a 32 767</td><td>C# infiere el Tipo</td></tr>
+            <tr><td><code>int</code></td><td>Entero</td><td>32 bits</td><td>4 bytes</td><td>-2<sup>31</sup> a 2<sup>31</sup>-1</td><td>-2,147,483,648 a 2,147,483,647</td><td>C# infiere el Tipo</td></tr>
+            <tr><td><code>long</code></td><td>Entero</td><td>64 bits</td><td>8 bytes</td><td>-2<sup>63</sup> a 2<sup>63</sup>-1</td><td>-9,223,372,036,854,775,808 a -9,223,372,036,854,775,808</td><td>C# infiere el Tipo (L)</td></tr>
+        </table>
+        <h3>Tipos de Datos Numéricos Enteros sin Signo Negativo</h3>
+        <table>
+            <thead><tr><th>Keyword</th><th>Tipo de Dato</th><th>Uso de Memoria</th><th>Equivalencia</th><th>Rango<sub>2</sub><th>Rango<sub>10</sub></th><th>Sufijo de Dato Numérico</th></tr></thead>
+            <tr><td><code>byte</code></td><td>Entero</td><td>8 bits</td><td>1 byte</td><td>0 a 2<sup>8</sup>-1</td><td>0 a 255</td><td>U</td></tr>
+            <tr><td><code>ushort</code></td><td>Entero</td><td>16 bits</td><td>2 bytes</td><td>0 a 2<sup>16</sup>-1</td><td>0 a 65,535</td><td>U</td></tr>
+            <tr><td><code>uint</code></td><td>Entero</td><td>32 bits</td><td>4 bytes</td><td>0 a 2<sup>32</sup>-1</td><td>0 a 4,294,967,295</td><td>U</td></tr>
+            <tr><td><code>ulong</code></td><td>Entero</td><td>64 bits</td><td>8 bytes</td><td>0 a 2<sup>64</sup>-1</td><td>0 a 18,446,744,073,709,551,615</td><td>UL</td></tr>
+        </table>
+        <h3>Tipos de Datos Numéricos con Decimales</h3>
+        <table>
+            <thead><tr><th>Keyword</th><th>Tipo de Dato</th><th>Uso de Memoria</th><th>Equivalencia</th><th>Rango<sub>2</sub><th>Rango<sub>10</sub></th><th>Sufijo de Dato Numérico</th></tr></thead>
+            <tr><td><code>float</code></td><td>Real</td><td>32 bits</td><td>4 byte</td><td>-2<sup>7</sup> a 2<sup>7</sup>-1</td><td>-128 a 127</td><td>F</td></tr>
+            <tr><td><code>double</code></td><td>Real</td><td>64 bits</td><td>8 bytes</td><td>-2<sup>15</sup> a 2<sup>15</sup>-1</td><td>-32 768 a 32 767</td><td>C# infiere el Tipo (D)</td></tr>
+            <tr><td><code>decimal</code></td><td>Real</td><td>128 bits</td><td>16 bytes</td><td>-2<sup>31</sup> a 2<sup>31</sup>-1</td><td>-2,147,483,648 a 2,147,483,647</td><td>M</td></tr>
+        </table>
+        <h3>Otros Tipos de Datos</h3>
+        <table>
+            <thead><tr><th>Keyword</th><th>Tipo de Dato</th><th>Uso de Memoria</th><th>Caracteristicas</th></tr></thead>
+            <tr><td><code>bolean</code></td><td>Lógico</td><td>1 bit</td><td>Unicamente maneja valores <code>false</code> (0) y <code>true</code> (1)</td></tr>
+            <tr><td><code>char</code></td><td>Caracter</td><td>16 bits</td><td>Solo puede almacenar un caracter marcado entre <code>' '</code></td></tr>
+            <tr><td><code>string</code></td><td>Cadena de Caracteres</td><td>No Aplica</td><td>Almacena n-cantidad de caracteres marcados entre <code>" "</code></td></tr>
+            <tr><td><code>object</code></td><td>Objeto Genérico</td><td>No Aplica</td><td>Declara un variable que posteriormente puede adquirir métodos y propiedades de una clase</td></tr>
         </table>
     </section>
     <section id="vectores">
         <h2>Vectores (Arreglos Unidimensionales)</h2>
-        <h3>Sintaxis de Arreglo Vacío de N-Elementos </h3>
+        <h3>Sintaxis de Vector Vacío de N-Elementos</h3>
         <code class="codeblock">
-            <pre>tipo_de_dato[] nombre_variable = new tipo_de_dato[n_elementos]</pre>
-            <pre>// genera elementos vacíos: { 0, 0, 0, ..., n_elementos }</pre>
+            <pre><span title="Ej: int, float, string, object, étc..."> tipo_de_dato[] </span>nombre_vector = new tipo_de_dato[n_elementos];</pre>
+            <pre>// genera elementos vacíos: <span title='Para strings: { "", "", "", ..., n_elementos }'>{ 0, 0, 0, ..., n_elementos }</span></pre>
         </code>
     </section>
+    <section id="matrices">
+        <h2>Matrices (Arreglos Bidimensionales)</h2>
+        <h3>Sintaxis de Matriz Vacía de N-Elemntos</h3>
+        <code class="codeblock">
+            <pre>tipo_de_dato[,] nombre_matriz = new tipo_de_dato[m_elementos, n_elementos]</pre>
+            <pre>// genera elementos vacíos: { 0, 0, 0, ..., m*n_elementos }</pre>
+        </code>
+    </section>
+    <section id="arr-de-arrs">
+        
+    </section>
+    <div id="navbar-mobile">
+        <label for="quit-navbar-mobile">&equiv;</label>
+        <input type="checkbox" id="quit-navbar-mobile">
+        <label>Inicio<input type="radio" name="indice" onclick="verBloque('section','inicio')"></label>
+        <label>Tipos de Datos<input type="radio" name="indice" onclick="verBloque('section','tipos-datos')"></label>
+        <label>Vectores<input type="radio" name="indice" onclick="verBloque('section','vectores')"></label>
+        <label>Matrices<input type="radio" name="indice" onclick="verBloque('section','matrices')"></label>
+    </div>
 </main>
 <footer>
-    <h5>V11.1.5 Maquetado Expediente C#</h5>
+    <h5>V11.2.0 Navbar Inferior para Móviles</h5>
 </footer>
 </nav>
 <script>
@@ -43,6 +124,6 @@
         document.querySelectorAll(selector).forEach(sec=>sec.style.display = 'none');
         document.getElementById(id).style.display = 'block'
     }
-</script>
+    </script>
 </body>
 </html>

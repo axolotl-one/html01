@@ -53,18 +53,20 @@ thead tr:hover {
 a, label {
     display: inline-block;
     text-decoration: none;
+    background-color: #222;
     border-style: groove;
     border-radius: 20px;
     padding: 10px 20px;
     margin: 5px;
+    transition: all 0.3s;
 }
 
-a:hover, label:hover {
+a:hover, label:hover, button:hover {
     border-color: #aaaaaa;
-    background-color: rgba(69, 69, 69, 0.099);
+    background-color: #252525;
 }
 
-a:active, label:active {
+a:active, label:active, button:active {
     border-color: rgba(44, 44, 44, 0.412);
     background-color: rgba(91, 91, 91, 0.168);
     color: #aaaaaa;
@@ -98,6 +100,8 @@ summary * {
 
 section {
     display: none;
+    margin-bottom: auto;
+    /* Empuja navbar-mobile al fondo */
 }
 
 #singularPython summary{
@@ -139,7 +143,7 @@ code.codeblock p, code.codeblock pre{
     padding-left: 40px;
 }
 
-input[type="radio"]{
+input[type="radio"], input[type="checkbox"]{
     display: none;
 }
 
@@ -160,11 +164,50 @@ header {
     width: 100%;
 }
 
-header, table, code.codeblock {
+header, table, code.codeblock, #navbar-mobile {
     scrollbar-color: #555 #222;
 }
 
+[title]{
+    display: inline-block;
+    border-radius: 7px;
+    transition: 0.5s;
+}
+
+[title]:hover {
+  background-color: #444;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+#navbar-mobile {
+    display: flex;
+    position: sticky;
+    bottom: 1dvh;
+    flex-direction: row-reverse;
+    align-items: center;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+#navbar-mobile input[type="checkbox"] ~ label {
+    transition: 0.5s;
+}
+
+#navbar-mobile input[type="checkbox"]:checked ~ label {
+    position: relative;
+    transform: translateY(120%);
+}
+
 @media screen and (max-width: 800px){
+    header h1 ~ label {
+        display: none;
+    }
     body, table td p {
         font-size: 15px;
     }
