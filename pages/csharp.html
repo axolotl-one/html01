@@ -153,8 +153,13 @@
         <h2>Vectores (Arreglos Unidimensionales)</h2>
         <h3>Sintaxis de Vector Vacío de N-Elementos</h3>
         <code class="codeblock">
-            <pre><span title="Ej: int, float, string, object, étc..."> tipo_de_dato[] </span>nombre_vector = new tipo_de_dato[n_elementos];</pre>
-            <pre>// genera elementos vacíos: <span title='Para strings: { "", "", "", ..., n_elementos }'>{ 0, 0, 0, ..., n_elementos }</span></pre>
+            <pre><span title="Ej: int, float, string, object, étc...">tipo_de_dato[] </span><span title="ID para vector creado"> nombre_vector </span> = new tipo_de_dato<span title="Cantidad de elementos designados para el vector">[n_elementos]</span>;</pre>
+            <pre>// Genera elementos vacíos: <span title='Para strings: { "", "", "", ..., n_elementos }'>{ 0, 0, 0, ..., n_elementos }</span></pre>
+        </code>
+        <h3>Sintaxis de Vector Precargado en el Programa</h3>
+        <code class="codeblock">
+            <pre>tipo_de_dato[] nombre_vector = { elemento01, elemento02, elemento03, ..., elementoN }</pre>
+            <pre>// Genera elementos del tipo de dato declarado</pre>
         </code>
     </section>
     <section id="matrices">
@@ -178,7 +183,7 @@
     </div>
 </main>
 <footer>
-    <h5>V11.2.1 Keywords</h5>
+    <h5>V11.2.2 Ajuste del Contexto para las Sintaxis</h5>
 </footer>
 </nav>
 <script>
