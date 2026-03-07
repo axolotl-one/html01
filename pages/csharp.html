@@ -19,101 +19,7 @@
 </header>
 <main>
     <section id="inicio">
-        <table>
-            <thead><tr><th>Palabra Reservada</th><th>Descripción</th></tr></thead>
-            <tr><td><code>abstract</code></td><td></td></tr>
-            <tr><td><code>as</code></td><td></td></tr>
-            <tr><td><code>base</code></td><td></td></tr>
-            <tr><td><code>bool</code></td><td></td></tr>
-            <tr><td><code>break</code></td><td></td></tr>
-            <tr><td><code>byte</code></td><td></td></tr>
-            <tr><td><code>case</code></td><td></td></tr>
-            <tr><td><code>catch</code></td><td></td></tr>
-            <tr><td><code>typeof</code></td><td></td></tr>
-            <tr><td><code>unsafe</code></td><td></td></tr>
-            <tr><td><code>volatile</code></td><td></td></tr>
-            <tr><td><code>virtual</code></td><td></td></tr>
-            <tr><td><code>add</code></td><td></td></tr>
-            <tr><td><code>const</code></td><td></td></tr>
-            <tr><td><code>class</code></td><td></td></tr>
-            <tr><td><code>checked</code></td><td></td></tr>
-            <tr><td><code>char</code></td><td></td></tr>
-            <tr><td><code>continue</code></td><td></td></tr>
-            <tr><td><code>decimal</code></td><td></td></tr>
-            <tr><td><code>default</code></td><td></td></tr>
-            <tr><td><code>delegate</code></td><td></td></tr>
-            <tr><td><code>async</code></td><td></td></tr>
-            <tr><td><code>await</code></td><td></td></tr>
-            <tr><td><code>acending</code></td><td></td></tr>
-            <tr><td><code>decimal</code></td><td></td></tr>
-            <tr><td><code>double</code></td><td></td></tr>
-            <tr><td><code>do</code></td><td></td></tr>
-            <tr><td><code>else</code></td><td></td></tr>
-            <tr><td><code>if</code></td><td></td></tr>
-            <tr><td><code>enum</code></td><td></td></tr>
-            <tr><td><code>descendng</code></td></tr>
-            <tr><td><code>by</code></td></tr>
-            <tr><td><code>event</code></td></tr>
-            <tr><td><code>explicit</code></td></tr>
-            <tr><td><code>extern</code></td></tr>
-            <tr><td><code>false</code></td></tr>
-            <tr><td><code>from</code></td></tr>
-            <tr><td><code>equals</code></td></tr>
-            <tr><td><code>finally</code></td></tr>
-            <tr><td><code>fixed</code></td></tr>
-            <tr><td><code>float</code></td></tr>
-            <tr><td><code>for</code></td></tr>
-            <tr><td><code>group</code></td></tr>
-            <tr><td><code>global</code></td></tr>
-            <tr><td><code>foreach</code></td></tr>
-            <tr><td><code>goto</code></td></tr>
-            <tr><td><code>implicit</code></td></tr>
-            <tr><td><code>let</code></td></tr>
-            <tr><td><code>join</code></td></tr>
-            <tr><td><code>in</code></td></tr>
-            <tr><td><code>int</code></td></tr>
-            <tr><td><code>interface</code></td></tr>
-            <tr><td><code>internal</code></td></tr>
-            <tr><td><code>orderby</code></td></tr>
-            <tr><td><code>partial</code></td></tr>
-            <tr><td><code>is</code></td></tr>
-            <tr><td><code>lock</code></td></tr>
-            <tr><td><code>long</code></td></tr>
-            <tr><td><code>ramespace</code></td></tr>
-            <tr><td><code>remove</code></td></tr>
-            <tr><td><code>set</code></td></tr>
-            <tr><td><code>new</code></td></tr>
-            <tr><td><code>null</code></td></tr>
-            <tr><td><code>object</code></td></tr>
-            <tr><td><code>operator</code></td></tr>
-            <tr><td><code>value</code></td></tr>
-            <tr><td><code>when</code></td></tr>
-            <tr><td><code>out</code></td></tr>
-            <tr><td><code>override</code></td></tr>
-            <tr><td><code>params</code></td></tr>
-            <tr><td><code>private</code></td></tr>
-            <tr><td><code>while</code></td></tr>
-            <tr><td><code>yield</code></td></tr>
-            <tr><td><code>protected</code></td></tr>
-            <tr><td><code>public</code></td></tr>
-            <tr><td><code>readonly</code></td></tr>
-            <tr><td><code>ref</code></td></tr>
-            <tr><td><code>alias</code></td></tr>
-            <tr><td><code>ulong</code></td></tr>
-            <tr><td><code>return</code></td></tr>
-            <tr><td><code>sealed</code></td></tr>
-            <tr><td><code>unchecked</code></td></tr>
-            <tr><td><code>static</code></td></tr>
-            <tr><td><code>sizeof</code></td></tr>
-            <tr><td><code>throw</code></td></tr>
-            <tr><td><code>this</code></td></tr>
-            <tr><td><code>stackalloc</code></td></tr>
-            <tr><td><code>struct</code></td></tr>
-            <tr><td><code>get</code></td></tr>
-            <tr><td><code>set</code></td></tr>
-            <tr><td><code>var</code></td></tr>
-            <tr><td><code>void</code></td></tr>
-        </table>
+        <table id="tab-keywords"></table>
     </section>
     <section id="tipos-datos">
         <h2>Tipos de Datos</h2>
@@ -183,7 +89,7 @@
     </div>
 </main>
 <footer>
-    <h5>V11.2.2 Ajuste del Contexto para las Sintaxis</h5>
+    <h5>V11.3.0 Prueba de Carga con JSON</h5>
 </footer>
 </nav>
 <script>
@@ -191,6 +97,7 @@
         document.querySelectorAll(selector).forEach(sec=>sec.style.display = 'none');
         document.getElementById(id).style.display = 'block'
     }
-    </script>
+</script>
+<script type="module" src="../scripts/csharp.js"></script>
 </body>
 </html>
