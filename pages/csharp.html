@@ -75,6 +75,22 @@
             <pre>tipo_de_dato[,] nombre_matriz = new tipo_de_dato[m_elementos, n_elementos]</pre>
             <pre>// genera elementos vacíos: { 0, 0, 0, ..., m*n_elementos }</pre>
         </code>
+        <h3>Sintaxis de Matriz Precargada en el Programa</h3>
+        <code class="codeblock">
+            <pre>tipo_de_dato[,] nombre_matriz =</pre>
+            <pre>{</pre>
+            <pre>   { e11, e12, e13, ..., e1n },    // fila 0</pre>
+            <pre>   { e21, e22, e23, ..., e2n },    // fila 1</pre>
+            <pre>   { e31, e32, e33, ..., e3n },    // fila 2</pre>
+            <pre>   { ..., ..., ..., ..., ... },    // ...</pre>
+            <pre>   { en1, en2, en3, ..., enn }     // fila n</pre>
+            <pre>}</pre>
+            <pre>// genera la matriz con elementos del tipo de dato declarado</pre>
+        </code>
+        <h3>Longitudes</h3>
+        <p><code>matriz.length // Devuelve la cantidad de elementos totales de la matriz</code></p>
+        <p><code>matriz.GetLength(0) // Devuelve el tamaño de filas</code></p>
+        <p><code>matriz.GetLength(1) // Devuelve el tamaño de columnas</code></p>
     </section>
     <section id="arr-de-arrs">
         
@@ -89,7 +105,7 @@
     </div>
 </main>
 <footer>
-    <h5>V11.3.0 Prueba de Carga con JSON</h5>
+    <h5>V11.3.1 Matrices</h5>
 </footer>
 </nav>
 <script>
