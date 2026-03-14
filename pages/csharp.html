@@ -88,9 +88,45 @@
             <pre>// genera la matriz con elementos del tipo de dato declarado</pre>
         </code>
         <h3>Longitudes</h3>
-        <p><code>matriz.length // Devuelve la cantidad de elementos totales de la matriz</code></p>
-        <p><code>matriz.GetLength(0) // Devuelve el tamaño de filas</code></p>
-        <p><code>matriz.GetLength(1) // Devuelve el tamaño de columnas</code></p>
+        <p><code class="codeblock">matriz.length // Devuelve la cantidad de elementos totales de la matriz</code></p>
+        <p><code class="codeblock">matriz.GetLength(0) // Devuelve el tamaño de filas</code></p>
+        <p><code class="codeblock">matriz.GetLength(1) // Devuelve el tamaño de columnas</code></p>
+        <h2>Matrices 3D</h2>
+        <h3>Sintaxis de Matriz Vacía de N-Elemntos</h3>
+        <code class="codeblock">
+            <pre>tipo_de_dato[,,] nombre_matriz = new tipo_de_dato[x_elementos, y_elementos, z_elementos]</pre>
+            <pre>// genera elementos vacíos: { 0, 0, 0, ..., x*y*z_elementos }</pre>
+        </code>
+        <h3>Sintaxis de Matriz Precargada en el Programa</h3>
+        <code class="codeblock">
+            <pre>tipo_de_dato[,] nombre_matriz =</pre>
+            <pre>{</pre>
+            <pre>   {  // Matriz 1</pre>
+            <pre>      { e111, e112, e113, ..., e11n },    // fila 0</pre>
+            <pre>      { e121, e122, e123, ..., e12n },    // fila 1</pre>
+            <pre>      { e131, e132, e133, ..., e13n },    // fila 2</pre>
+            <pre>      { ..., ..., ..., ..., ... },    // ...</pre>
+            <pre>      { e1n1, e1n2, e1n3, ..., e1nn }     // fila n</pre>
+            <pre>   },</pre>
+            <pre>   {  // Matriz 2</pre>
+            <pre>      { e211, e212, e213, ..., e21n },    // fila 0</pre>
+            <pre>      { e221, e222, e223, ..., e22n },    // fila 1</pre>
+            <pre>      { e231, e232, e233, ..., e23n },    // fila 2</pre>
+            <pre>      { ..., ..., ..., ..., ... },    // ...</pre>
+            <pre>      { e2n1, e2n2, e2n3, ..., e2nn }     // fila n</pre>
+            <pre>   },</pre>
+            <pre>   // ...</pre>
+            <pre>   {  // Matriz N</pre>
+            <pre>      { en11, en12, en13, ..., en1n },    // fila 0</pre>
+            <pre>      { en21, en22, en23, ..., en2n },    // fila 1</pre>
+            <pre>      { en31, en32, en33, ..., en3n },    // fila 2</pre>
+            <pre>      { ..., ..., ..., ..., ... },    // ...</pre>
+            <pre>      { enn1, enn2, enn3, ..., ennn }     // fila n</pre>
+            <pre>   },</pre>
+            <pre>}</pre>
+            <pre>// genera un arreglo de matrices con elementos del tipo de dato declarado</pre>
+            <pre>// también puede interpretarse como una matriz cubica o como un paralelepípedo</pre>
+        </code>
     </section>
     <section id="arr-de-arrs">
         
@@ -105,7 +141,7 @@
     </div>
 </main>
 <footer>
-    <h5>V11.3.1 Matrices</h5>
+    <h5>V11.3.2 Matrices 3D</h5>
 </footer>
 </nav>
 <script>
