@@ -55,6 +55,20 @@
             <tr><td><code>object</code></td><td>Objeto Genérico</td><td>No Aplica</td><td>Declara un variable que posteriormente puede adquirir métodos y propiedades de una clase</td></tr>
         </table>
     </section>
+    <section id="declaraciones">
+        <h2>Declaraciones</h2>
+        <h3>Sintaxis de Declaración de Variable</h3>
+        <code class="codeblock"><pre>tipo_de_dato identificador = valor</pre></code>
+        <h2>Errores al asignar un Identificador</h2>
+        <code class="codeblock">
+            <pre>int valor#1 = 0;  // Error al usar caracteres especiales "#, &, %, !, ñ, ..."</pre>
+            <pre>int tamaño = 5;  // Error al usar caracteres especiales "#, &, %, !, ñ, ..."</pre>
+            <pre>int 5to = 5;  // Error al iniciar el ID con un número"</pre>
+            <pre>int decimal = 4;  // Error al usar una palabra reservada como ID"</pre>
+            <pre>byte valor = 300; // Error al usar un valor que excede el limite de bits del tipo de dato</pre>
+            <pre>char letra = "a"; // Error al usar comillas dobles para char, se debe usar comillas simples</pre>
+        </code>
+    </section>
     <section id="vectores">
         <h2>Vectores (Arreglos Unidimensionales)</h2>
         <h3>Sintaxis de Vector Vacío de N-Elementos</h3>
@@ -136,12 +150,13 @@
         <input type="checkbox" id="quit-navbar-mobile">
         <label>Inicio<input type="radio" name="indice" onclick="verBloque('section','inicio')"></label>
         <label>Tipos de Datos<input type="radio" name="indice" onclick="verBloque('section','tipos-datos')"></label>
+        <label>Declaraciones<input type="radio" name="indice" onclick="verBloque('section','declaraciones')"></label>
         <label>Vectores<input type="radio" name="indice" onclick="verBloque('section','vectores')"></label>
         <label>Matrices<input type="radio" name="indice" onclick="verBloque('section','matrices')"></label>
     </div>
 </main>
 <footer>
-    <h5>V11.3.2 Matrices 3D</h5>
+    <h5>V11.3.3 Nueva section: declaraciones</h5>
 </footer>
 </nav>
 <script>
