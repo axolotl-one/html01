@@ -74,6 +74,18 @@
             <pre>11. char letra = "a";   // Error al usar comillas dobles para char, se debe usar comillas simples</pre>
         </code>
     </section>
+    <section id="concatenaciones">
+        <h2>Operador + </h2>
+        <p>1. Identifica el tipo de dato de ambos operandos</p>
+        <p>2. Si ambos son de tipo númerico, el operador + realiza una suma aritmetica.</p>
+        <p>3. Si al menos uno de los operandos es string, el operador + convierte a string y los une en una sola</p>
+        <p>4. int + bool => error</p>
+        <code class="codeblock">
+            <pre>30 + 7     // int + int = int => 30 + 7 = 37</pre>
+            <pre>"ok" + 3   // str + int => str + str => "ok" + "3" = "ok3"</pre>
+            <pre>3 + "ok"   // int + str => str + str => "3" + "ok" = "3ok"</pre>
+        </code>
+    </section>
     <section id="vectores">
         <h2>Vectores (Arreglos Unidimensionales)</h2>
         <h3>Sintaxis de Vector Vacío de N-Elementos</h3>
@@ -156,12 +168,13 @@
         <label>Inicio<input type="radio" name="indice" onclick="verBloque('section','inicio')"></label>
         <label>Tipos de Datos<input type="radio" name="indice" onclick="verBloque('section','tipos-datos')"></label>
         <label>Declaraciones<input type="radio" name="indice" onclick="verBloque('section','declaraciones')"></label>
+        <label>Concatenaciones<input type="radio" name="indice" onclick="verBloque('section','concatenaciones')"></label>
         <label>Vectores<input type="radio" name="indice" onclick="verBloque('section','vectores')"></label>
         <label>Matrices<input type="radio" name="indice" onclick="verBloque('section','matrices')"></label>
     </div>
 </main>
 <footer>
-    <h5>V11.3.4 Cambios en Declaración de variables.</h5>
+    <h5>V11.3.5 Nueva Section: Concatencaciones.</h5>
 </footer>
 </nav>
 <script>
