@@ -78,8 +78,7 @@
         <h2>Operador <code>+</code></h2>
         <p>1. Identifica el tipo de dato de ambos operandos</p>
         <p>2. Si ambos son de tipo númerico, el operador <code>+</code> realiza una suma aritmetica.</p>
-        <p>3. Si al menos uno de los operandos es <code>string</code>, el operador <code>+</code> convierte a string y los une en una sola</p>
-        <p>4. int + bool => error</p>
+        <p>3. Si al menos uno de los operandos es <code>string</code>, el operador <code>+</code> lo convierte a string y los une en un solo <code>string</code></p>
         <code class="codeblock">
             <pre> 30 + 7     // int + int = int => 30 + 7 = 37</pre>
             <pre>"30" + 7   // str + int => str + str => "30" + "7" = "307"</pre>
@@ -92,6 +91,11 @@
             <pre>   str  +  str</pre>
             <pre>  "10"  +  "5"</pre>
             <pre>  = "105"</pre>
+        </code>
+        <h2>Errores de Concatenación</h2>
+        <code class="codeblock">
+            <pre>int + bool => error por incompatibilidad de los tipos de datos</pre>
+            <pre>int + int => error si el resultado se asigna a un <code>string</code></pre>
         </code>
     </section>
     <section id="vectores">
@@ -182,7 +186,7 @@
     </div>
 </main>
 <footer>
-    <h5>V11.3.5.1 Ejemplo de Concatencación multiple.</h5>
+    <h5>V11.3.5.2 Errores de Concatenación</h5>
 </footer>
 </nav>
 <script>
