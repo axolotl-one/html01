@@ -56,33 +56,33 @@
         </table>
     </section>
     <section id="declaraciones">
-        <h2>Declaraciones</h2>
-        <h3>Sintaxis de Declaración de Variable</h3>
+        <h2>Declaraciones de Variables</h2>
+        <h3>Sintaxis para Declaración de Variables</h3>
         <code class="codeblock"><pre>tipo_de_dato identificador = valor</pre></code>
-        <h2>Errores al asignar un Identificador</h2>
+        <h3>Errores de Sintaxis para Declaración de Variables</h3>
         <code class="codeblock">
             <pre>01. int valor#1 = 0;</pre>
-            <pre>  > Error al usar caracteres especiales "#, &, %, !, ñ, ..."</pre>
+            <pre class="sintax-error">  > Error al usar caracteres especiales "#, &, %, !, ñ, ..."</pre>
             <pre>02. int tamaño = 5;</pre>
-            <pre>  > Error al usar caracteres especiales "#, &, %, !, ñ, ..."</pre>
+            <pre class="sintax-error">  > Error al usar caracteres especiales "#, &, %, !, ñ, ..."</pre>
             <pre>03. Int x = 87;</pre>
-            <pre>  > Error al usar el declarador de tipo con mayuscula</pre>
+            <pre class="sintax-error">  > Error al usar el declarador de tipo con mayuscula</pre>
             <pre>04. int y = 30</pre>
-            <pre>  > Error al no terminar la declaración con punto y coma ";"</pre>
+            <pre class="sintax-error">  > Error al no terminar la declaración con punto y coma ";"</pre>
             <pre>05. int z = 7 &lt; 10;</pre>
-            <pre>  > Error al asignar un dato de tipo incompatible (asigna un dato bool en una variable int)</pre>
+            <pre class="sintax-error">  > Error al asignar un dato de tipo incompatible (asigna un dato bool en una variable int)</pre>
             <pre>06. double 8vo = 1 / 8; </pre>
-            <pre>  > Error al iniciar el ID con un número"</pre>
+            <pre class="sintax-error">  > Error al iniciar el ID con un número"</pre>
             <pre>07. float decimal = 4;</pre>
-            <pre>  > Error al usar una palabra reservada como ID"</pre>
+            <pre class="sintax-error">  > Error al usar una palabra reservada como ID"</pre>
             <pre>08. float n = 8.23</pre>
-            <pre>  > Error al no colocar el sufijo "f" para float después del valor númerico</pre>
+            <pre class="sintax-error">  > Error al no colocar el sufijo "f" para float después del valor númerico</pre>
             <pre>09. byte valor = 300;</pre>
-            <pre>  > Error al usar un valor que excede el limite de bits del tipo de dato</pre>
+            <pre class="sintax-error">  > Error al usar un valor que excede el limite de bits del tipo de dato</pre>
             <pre>10. int z = 7;</pre>
-            <pre>  > Error al declarar una variable con ID ya existente (linea 5)</pre>
+            <pre class="sintax-error">  > Error al declarar una variable con ID ya existente (linea 5)</pre>
             <pre>11. char letra = "a";</pre>
-            <pre>  > Error al usar comillas dobles para char, se debe usar comillas simples</pre>
+            <pre class="sintax-error">  > Error al usar comillas dobles para char, se debe usar comillas simples</pre>
         </code>
     </section>
     <section id="concatenaciones">
@@ -197,7 +197,7 @@
     </div>
 </main>
 <footer>
-    <h5>V11.3.5.3 Cambios en Legibilidad de Errores</h5>
+    <h5>V11.3.5.4 Cambios de Estilos para Sintax Error</h5>
 </footer>
 </nav>
 <script>

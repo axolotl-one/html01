@@ -110,6 +110,7 @@ section {
 
 code{
     font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     background-color: #333333;
     border-radius: 5px;
     padding: 2px 4px;
@@ -127,8 +128,15 @@ code.codeblock {
 }
 
 code.codeblock p, code.codeblock pre{
+    min-width: fit-content;
     font-family: inherit;
     margin: 0;
+}
+
+.sintax-error {
+    background-color: #292929;
+    border-radius: 5px;
+    color: #aaa;
 }
 
 /* .tab1{
