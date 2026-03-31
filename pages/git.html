@@ -7,16 +7,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/estilo01.css">
-    <title>Contenido Git</title>
+    <title>PATRON GIT</title>
 </head>
 <body>
     <nav>
-        <h1>Notas de Git</h1>
+        <h1>PATRON GIT</h1>
         <a href="./notasGit.html#instalacion">Instalación</a>
         <a href="./notasGit.html#branches">Ramificaciones</a>
         <a href="./notasGit.html#comandos">Todos los Comandos</a>
         <a href="./notasGit.html#glosario">Glosario</a>
-        <a href="../">Volver al Inicio</a>
     </nav>
     <main>
         <section id="instalacion">
@@ -66,6 +65,23 @@
                     <summary>Enviar cambios de una rama sin reconectar a repositorio remoto: <code>git push -u origen nombreRama</code></summary>
                     <p>El subcomando <code>-u</code> indica la relación de seguimiento (tracking branch) entre la rama local y la rama remota. Después de la primera 
                     interacción, no es necesario colocar este subcomando mientras el <code>HEAD</code> se encuentre sobre la rama</p>
+                </details></li>
+            </ol>
+        </section>
+
+        <section id="renombrar-rama">
+            <h2>Pasos para renombrar una rama aun con commits creados</h2>
+            <p>Al renombrar una rama, los commits no se pierden, solo cambia la referencia (rama)</p>
+            <ol>
+                <li><details>
+                    <summary>Renombrar la rama localmente: <code>git branch -m [nombre-antiguo] [nuevo-nombre]</code></summary>
+                    <p>Si estás posicionado en la rama a renombrar: <code>git branch -m [nuevo-nombre]</code></p>
+                </details></li>
+                <li><details>
+                    <summary>Eliminar la rama antigua en el servidor: <code>git push origin --delete [nombre-antiguo]</code></summary>
+                </details></li>
+                <li><details>
+                    <summary>Subir la nueva rama: <code>git push origin -u [nuevo-nombre]</code></summary>
                 </details></li>
             </ol>
         </section>
@@ -130,8 +146,12 @@
     </main>
     <footer>
         <a href="../">Volver al Inicio</a>
-        <h5 id="legendVersion"></h5>
+        <details>
+            <summary id="version-legend"></summary>
+            <p id="version-commit"></p>
+            <div id="version-readme"></div>
+        </details>
     </footer>
-    <script src="../scripts/updateVersion.js"></script>
+    <script src="../scripts/get-version.js"></script>
 </body>
 </html>

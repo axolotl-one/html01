@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/estilo02.css">
+    <title>PATRON JS</title>
+</head>
+<body>
+<nav>
+<header>
+    <h1>PATRON JS</h1>
+</header>
+<main>
+    <section id="inicio">
+        <h2>Elemplo de Árboles Binarios</h2>
+        <code class="codeblock">
+        <pre>
+function Node(value){
+  this.left = null;
+  this.right = null;
+  this.value = value;
+}
+
+const root = new Node(inicio);
+const node1 = new Node(izq);
+const node2 = new Node(der);
+root.left = node1;
+root.right = node2;
+
+function inorder(node){
+  if(node === null) return;
+  inorder(node.left);
+  console.log(node.value);
+  inorder(node.right);
+}
+
+inorder(node);
+
+function preorder(node){
+  if(node === null) return;
+  console.log(node.value);
+  preorder(node.left);
+  preorder(node.right);
+}
+
+function postorder(node){
+  if(node === null) return;
+  postorder(node.left);
+  postorder(node.right);
+  console.log(node.value);
+}
+        </pre>
+        </code>
+    </section>
+</main>
+<footer>
+    <details>
+        <summary id="version-legend"></summary>
+        <p id="version-commit"></p>
+        <div id="version-readme"></div>
+    </details>
+</footer>
+</nav>
+<script src="../scripts/get-version.js"></script>
+</body>
+</html>

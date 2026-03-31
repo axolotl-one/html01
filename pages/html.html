@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/estilo01.css">
-    <title>Notas de HTML</title>
+    <title>PATRON HTML</title>
 </head>
 <body>
     <nav>
-        <h1>Notas de HTML</h1>
+        <h1>PATRON HTML</h1>
         <a href="./notasHTML.html#semanticas">Etiquetas semánticas</a>
         <a href="../">Volver al Inicio</a>
     </nav>
@@ -62,8 +62,12 @@
     </main>
     <footer>
         <a href="../">Volver al Inicio</a>
-        <h5 id="legendVersion"></h5>
+        <details>
+            <summary id="version-legend"></summary>
+            <p id="version-commit"></p>
+            <div id="version-readme"></div>
+        </details>
     </footer>
-    <script src="../scripts/updateVersion.js"></script>
+    <script src="../scripts/get-version.js"></script>
 </body>
 </html>

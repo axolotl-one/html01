@@ -7,12 +7,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/estilo02.css">
-    <title>Notas de CSS</title>
+    <title>PATRON CSS</title>
 </head>
 <body>
 <nav>
     <header>
-        <h1>EXPEDIENTE CSS </h1>
+        <h1>PATRON CSS </h1>
         <label><input type="radio" name="indice" onclick="verBloque('section','inicio')">
             Inicio</label>
         <label><input type="radio" name="indice" onclick="verBloque('section','selectores')">
@@ -71,7 +71,7 @@
                     <tr><td>(0,1,0)</td><td>Pseudoclase</td><td><code>:pseudoclase</code> <code>{ &equiv; }</code></td><td><code>button:hover { &equiv; }</code></td>
                         <td><p><code>&lt;button>Click Aquí&lt;/button></code></p></td></tr>
                     <tr><td>(0,0,1)</td><td><p>Elemento</p><p>(Etiqueta HTML)</p></td><td><code>elemento</code> <code>{ &equiv; }</code></td><td><code>p</code> <code>{ &equiv; }</code></td>
-                        <td><p><code>&lt;p><span id="mainHeader"></span>&lt;/p></code></p><p><code>&lt;p>Lorem ipsum dolor sit amet consectetur.&lt;/p></code></p></td></tr>
+                        <td><p><code>&lt;p><span>Remplazo MainHeader</span>&lt;/p></code></p><p><code>&lt;p>Lorem ipsum dolor sit amet consectetur.&lt;/p></code></p></td></tr>
                     <tr><td>(0,1,1)</td><td>Elemento con Clase</td><td><code>elemento.clase</code> <code>{ &equiv; }</code></td><td><code>p.nocturno</code> <code>{ &equiv; }</code></td>
                         <td><p><code>&lt;p class="ave nocturno">Lechuza&lt;/p></code></p><p><code>&lt;p class="ave nocturno">Buho&lt;/p></code></p></td></tr>
                     <tr><td>(0,0,1)</td><td>Pseudoelemento</td><td><code>::pseudoelemento</code> <code>{ &equiv; }</code></td></tr>
@@ -290,10 +290,24 @@
     </main>
     <footer>
         <a href="../">Volver al Inicio</a>
-        <h5 id="legendVersion"></h5>
+        <details>
+            <summary id="version-legend"></summary>
+            <p id="version-commit"></p>
+            <div id="version-readme"></div>
+        </details>
     </footer>
 </nav>
-<script src="../scripts/updateVersion.js"></script>
+<script src="../scripts/get-version.js"></script>
+<!-- TODO:
+ Selector Universal (*): Selecciona todos los elementos del documento.
+Selector de Tipo/Etiqueta: Selecciona elementos por su etiqueta (p.ej.p``div``h1).
+Selector de Clase (.class): Selecciona elementos con un atributo class específico (p.ej..boton).
+Selector de ID (#id): Selecciona un único elemento con un ID único (p.ej.#header).
+Selector de Atributo: Selecciona elementos según sus atributos (p.ej.[type="text"]``a[title]).
+Pseudo-clases (:pseudo-class): Selecciona elementos en estados específicos (p.ej.:hover``:first-child).
+Pseudo-elementos (::pseudo-element): Estiliza partes específicas de un elemento (p.ej.::before``::after``::first-line).
+Selectores Combinadores: Definen relaciones entre elementos, como descendientes (article p), hijos (div > p), o hermanos (h1 + p).  -->
+
 <script>
     function verBloque(selector,id){
         document.querySelectorAll(selector).forEach(sec=>sec.style.display = 'none');

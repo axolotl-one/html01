@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/estilo01.css">
+    <title>Notas de ReactJS</title>
+</head>
+<body>
+    <nav>
+        <h1>ReactJS con Vite</h1>
+        <a href="../">Volver al Inicio</a>
+    </nav>
+    <main>
+        <section>
+            <details>
+                <summary>Instalación rápida</summary>
+                <code class="codeblock">
+                    <pre>npm create vite@latest nombreProyectoNuevo --- --template react</pre>
+                    <pre>cd nombreProyectoNuevo</pre>
+                    <pre>npm install</pre>
+                    <pre>npm run dev</pre>
+                </code>
+            </details>
+        </section>
+        <section>
+            <details>
+                <summary>Hooks</summary>
+                <ol>
+                    <li><fieldset>
+                        <h3><code>useRef</code></h3>
+                        <p>Referencia al DOM (elementos del DOM), este hook devuelve un objeto mutable con la propiedad .current;</p>
+                        <p>Persiste durante todo el ciclo de vida del componente</p>
+                        <p>Actualizar su valor no provoca un nuevo renderizadao</p>
+                        <p>Es como una "caja" donde se guarda algo sin que React se enetere de sus cambios</p>
+                        <p>Ejemplos de uso: manejar el foco de un input, el ID de un temporizador</p>
+                        <details>
+                            <summary>Manejo del foco de un input</summary>
+                            <code class="codeblock">
+                                <pre>import { useRef } from react;</pre>
+                                <pre>function FocusInput() {</pre>
+                                <pre>     // const refObject = useRef( valorInicial )</pre>
+                                <pre>     const inputApuntado = useRef(null);</pre>
+                                <pre>     const onButtonClick = () => {</pre>
+                                <pre>          inputApuntado.current.focus();</pre>
+                                <pre>          // current apunta al elemento de input montado</pre>
+                                <pre>     }</pre>
+                                <pre>     return (</pre>
+                                <pre>          &lt;></pre>
+                                <pre>               &lt;input ref = {inputApuntado} type = "text"/></pre>
+                                <pre>               &lt;button onClick = {onButtonClick}>Poner foco en el Input&lt;/button></pre>
+                                <pre>          &lt;/></pre>
+                                <pre>     )</pre>
+                                <pre>}</pre>
+                            </code>
+                        </details>
+                    </fieldset></li>
+                    <li><fieldset>
+                        <h3><code>useCallback</code></h3>
+                        <p>Memorizar la definición de una función para que no se cree una nueva instancia de esa función en cada renderizado</p>
+                        <p>En JS, una función es un objeto</p>
+                        <details>
+                            <summary>Estructura</summary>
+                            <code class="codeblock">
+                                <pre>import { useCallback } from react;</pre>
+                                <pre>function principal() {</pre>
+                                <pre>     useCallback(</pre>
+                                <pre>          () => {</pre>
+                                <pre>               function(a, b)</pre>
+                                <pre>          },</pre>
+                                <pre>          [a,b]</pre>
+                                <pre>     );</pre>
+                                <pre>}</pre>
+                            </code>
+                        </details>
+                    </fieldset></li>
+                    <li><fieldset>
+                        <h3><code>useReducer</code></h3>
+                        <p>Maneja lógica de estado compleja o interdependiente</p>
+                        <p>Centraliza lógicas de actualización en una función reductora</p>
+                        <details>
+                            <summary>Ejemplo de aplicación: actualización de un contador</summary>
+                            <code class="codeblock">
+                            <pre>import { useReducer } from react;</pre>
+                            <pre>// Se recomienda aplicar las funciones reductoras fuera de la función del componente para reutilizar en otros archivos</pre>
+                            <pre>// Si se declara la función reductora dentro del componente, únicamente aplicará a ese componente</pre>
+                            <pre>const estadoInicial = { contador : 0 }</pre>
+                            <pre>function reducer(state, action) {</pre>
+                            <pre>     switch (action.type) {</pre>
+                            <pre>          case 'incrementar':</pre>
+                            <pre>               return { contador : estado.contador + 1; }</pre>
+                            <pre>          case 'decrementar':</pre>
+                            <pre>               return { contador : estado.contador - 1; }</pre>
+                            <pre>          case 'resetear':</pre>
+                            <pre>               return { contador : 0; }</pre>
+                            <pre>          default:</pre>
+                            <pre>               throw new Error();</pre>
+                            <pre>     }</pre>
+                            <pre>}</pre>
+                            <pre>function Contador() {</pre>
+                            <pre>     const [state, dispatch] = useReducer(reducer, estadoInicial)</pre>
+                            <pre>     return (</pre>
+                            <pre>          &lt;></pre>
+                            <pre>               Contador: { state.contador }</pre>
+                            <pre>               &lt;button onClick = {() => dispatch({ type: 'incrementar' })}>+&lt;/button></pre>
+                            <pre>               &lt;button onClick = {() => dispatch({ type: 'decrementar' })}>-&lt;/button></pre>
+                            <pre>               &lt;button onClick = {() => dispatch({ type: 'resetear' })}>Resetear&lt;/button></pre>
+                            <pre>         &lt;/></pre>
+                            <pre>     );</pre>
+                            <pre>}</pre>
+                            <pre>export default Contador;</pre>
+                        </code>
+                    </details>
+                    <details>
+                        <summary>Ejemplo de aplicación: Actualización de un Temporizador</summary>
+                        <code class="codeblock">
+                            <pre>import { useRef } from 'react';</pre>
+                            <pre>function Temporizador() {</pre>
+                            <pre>     const timerRef = useRef(null);</pre>
+                            <pre>     const iniciarTemporizador = () => {</pre>
+                            <pre>          timerRef.current = setTimeout(() => {</pre>
+                            <pre>               alert('Tiempo agotado!');</pre>
+                            <pre>          }, 3000);</pre>
+                            <pre>     };</pre>
+                            <pre>     const cancelarTemporizador = () => {</pre>
+                            <pre>          clearTimeout(timerRef.current);</pre>
+                            <pre>     };</pre>
+                            <pre>     return (</pre>
+                            <pre>          &lt;div></pre>
+                            <pre>               &lt;button onClick={iniciarTemporizador}>Iniciar&lt;/button></pre>
+                            <pre>               &lt;button onClick={cancelarTemporizador}>Cancelar&lt;/button></pre>
+                            <pre>          &lt;/div></pre>
+                            <pre>     );</pre>
+                            <pre>}</pre>
+                        </code>
+                </details>
+            </fieldset></li>
+        </details></section>
+        <section><details>
+            <summary>react-router-dom</summary>
+            <p>Se encarga de gestionar la barra de búsqueda del navegador para simular rutas URL</p>
+            <details>
+                <summary>Componentes</summary>
+                <!-- <code class="codeblock">
+                    <pre>&lt;BrowserRouter>{/*...*/}&lt;/BrowserRouter></pre>
+                    <pre>// Envuelve a la raíz de la aplicación para que router-dom sea ejecutable.</pre>
+                    <pre>// Conecta a la barra de búsqueda del navegador para gestionar el historial</pre>
+                    <pre>&lt;Routes>{*...*}&lt;/Routes></pre>
+                    <pre>// Envuelve una lista de rutas y renderiza a la primera ruta que coincida con la URL actual</pre>
+                    <pre>&lt;Route path='url' element={&lt;Componente />} /></pre>
+                    <pre>// Asigna una URL a un componente</pre>
+                    <pre>&lt;Link to='url'>Click Aquí&lt;/Link></pre>
+                    <pre>// Sustituye a la etiqueta &lt;a></pre>
+                </code> -->
+                <fieldset>
+                    <p><code>&lt;BrowserRouter>{/*...*/}&lt;/BrowserRouter></code></p>
+                    <p>- Envuelve a la raíz de la aplicación para que router-dom sea ejecutable.</p>
+                    <p>- Conecta a la barra de búsqueda del navegador para gestionar el historial</p>
+                    <p><code>&lt;Routes>{*...*}&lt;/Routes></code></p>
+                    <p>- Envuelve una lista de rutas y renderiza a la primera ruta que coincida con la URL actual</p>
+                    <p><code>&lt;Route path='url' element={&lt;Componente />} /></code></p>
+                    <p>- Asigna una URL a un componente</p>
+                    <p><code>&lt;Link to='url'>Click Aquí&lt;/Link></code></p>
+                    <p>- Sustituye a la etiqueta &lt;a></p>
+                </fieldset>
+            </details>
+            <details>
+                <summary>Instalación en el proyecto (V7)</summary>
+                <fieldset>
+                    <p>Comandos de Instalación</p>
+                    <code class="codeblock">
+                        <pre>npx create-vite@latest</pre>
+                        <pre>npm install react-router</pre>
+                    </code>
+                    <p>Estructura de Emboltura del Proyecto</p>
+                    <code class="codeblock">
+                        <pre>import React from "react";</pre>
+                        <pre>import ReactDOM from "react-dom/client";</pre>
+                        <pre>import { BrowserRouter } from "react-router";</pre>
+                        <pre>import App from "./app";</pre>
+                        <pre> </pre>
+                        <pre>const root = document.getElementById("root");</pre>
+                        <pre> </pre>
+                        <pre>ReactDOM.createRoot(root).render(</pre>
+                        <pre>  &lt;BrowserRouter></pre>
+                        <pre>    &lt;App /></pre>
+                        <pre>  &lt;/BrowserRouter>,</pre>
+                        <pre>);</pre>
+                    </code>
+                    <p>Estructura de Enrutamiento</p>
+                    <code class="codeblock">
+                        <pre>import { BrowserRouter, Routes, Route } from 'react-router-dom'</pre>
+                        <pre>import Inicio from 'rutaLocalComponente1'</pre>
+                        <pre>import ComponenteDeRuta2 from 'rutaLocalComponente2'</pre>
+                        <pre>import ComponenteDeRuta3 from 'rutaLocalComponente3'</pre>
+                        <pre>// ...</pre>
+                        <pre> </pre>
+                        <pre>function App() {</pre>
+                        <pre>     return (</pre>
+                        <pre>          &lt;BrowserRouter></pre>
+                        <pre>               &lt;Routes></pre>
+                        <pre>                    &lt;Route path='/' element={&lt;Inicio />} /></pre>
+                        <pre>                    &lt;Route path='/urlRuta2' element={&lt;ComponenteDeRuta2 />} /></pre>
+                        <pre>                    &lt;Route path='/urlRuta3' element={&lt;ComponenteDeRuta3 />} /></pre>
+                        <pre>               &lt;/Routes></pre>
+                        <pre>          &lt;/BrowserRouter></pre>
+                        <pre>     );</pre>
+                        <pre>};</pre>
+                        <pre> </pre>
+                        <pre>export default App</pre>
+                    </code>
+                </fieldset>
+            </details>
+            <details>
+                <summary>Ejemplo de Hook useParams</summary>
+                <fieldset>
+                    <p>En el componente padre:</p>
+                    <code class="codeblock">
+                        <pre>import componenteHijo from './rutaLocal'</pre>
+                        <pre>&lt;Routes></pre>
+                        <pre>     {/*Otras rutas*/}</pre>
+                        <pre>     &lt;Route path="/url/ :id" element={&lt;componenteHijo />} /></pre>
+                        <pre>&lt;/Routes></pre>
+                    </code>
+                    <p>En el componente hijo:</p>
+                    <code class="codeblock">
+                        <pre>import { useParams } from 'react-router-dom'</pre>
+                        <pre>function componenteHijo() {</pre>
+                        <pre>     const { id } = useParams();</pre>
+                        <pre>     return(</pre>
+                        <pre>          &lt;div></pre>
+                        <pre>               &lt;p>Detalles del objeto:&lt;/p></pre>
+                        <pre>               &lt;p>ID: { id }&lt;/p></pre>
+                        <pre>          &lt;/div></pre>
+                        <pre>     )</pre>
+                        <pre>}</pre>
+                    </code>
+                </fieldset>
+            </details>
+        </details></section>
+        <section class="atajos-es7">
+            <h2>Atajos de la Extensión <code>ES7+ React/Redux/React-Native snippets</code></h2>
+            <table>
+                <thead><tr><th>Atajo</th><th>Descripción</th></tr></thead>
+                <tr><td><code>ctrl + alt + r</code></td><td>Muestra la lista de atajos de la extensión</td></tr>
+                <tr><td><code>rafce</code></td><td>Genera una función</td></tr>
+                <tr><td><code>rfce</code></td><td>Genera una función</td></tr>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

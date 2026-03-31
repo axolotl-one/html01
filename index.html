@@ -6,26 +6,47 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/estilo01.css">
+    <link rel="stylesheet" href="./styles/estilo02.css">
     <title>Mi primer HTML en GitHub</title>
 </head>
-
 <body>
-    <nav>
-        <h1 id="mainHeader"></h1>
-    </nav>
-    <main>
-        <section>
-            <a href="./pages/comandos.html">Ver Notas de Comandos</a>
-            <a href="./pages/notasGit.html">Ver Notas de Git</a>
-            <a href="./pages/notasHTML.html">Ver Notas de HTML</a>
-            <a href="./pages/notasCSS.html">Ver Notas de CSS</a>
-            <a href="./pages/notasPY.html">Ver Notas de Python</a>
-        </section>
-    </main>
-    <footer>
-        <h5 id="legendVersion"></h5>
-    </footer>
-    <script src="./scripts/updateVersion.js"></script>
+<nav>
+<header>
+    <h1 id="version-commit"></h1>
+    <label>Inicio <input type="radio" name="indice" onclick="verBloque('section','inicio')"></label>
+    <label>Historial <input type="radio" name="indice" onclick="verBloque('section','historial')"></label>
+</header>
+<main>
+    <section id="inicio">
+        <a href="./pages/comandos.html">PATRON CMD</a>
+        <a href="./pages/git.html">PATRON GIT</a>
+        <a href="./pages/html.html">PATRON HTML</a>
+        <a href="./pages/css.html">PATRON CSS</a>
+        <a href="./pages/csharp.html">PATRON C#</a>
+        <a href="./pages/js.html">PATRON JS</a>
+        <a href="./pages/py.html">PATRON PY</a>
+        <a href="./pages/notasReactJS.html">Ver Notas de ReactJS</a>
+        <a href="./pages/reactjs.html">PATRON REACTJS</a>
+        <a href="./pages/sql.html">PATRON SQL</a>
+        <a href="./pages/vsc.html">PATRON VSC</a>
+    </section>
+    <section id="historial">
+        <p>Aquí se mostrará el Historial de Commits</p>
+    </section>
+</main>
+<footer>
+    <details>
+        <summary id="version-legend"></summary>
+        <div id="version-readme"></div>
+    </details>
+</footer>
+</nav>
+<script>
+    function verBloque(selector,id){
+        document.querySelectorAll(selector).forEach(sec=>sec.style.display = 'none');
+        document.getElementById(id).style.display = 'block'
+    }
+</script>
+<script src="./scripts/get-version.js"></script>
 </body>
 </html>

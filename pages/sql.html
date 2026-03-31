@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/estilo01.css">
+    <title>PATRON SQL</title>
+</head>
+<body>
+    <section>
+        <h3>Instrucciones de SQL para Definición de Datos </h3>
+        <p><code>CREATE</code> Crea bases de datos, tablas, vistas, etceterá</p>
+        <p><code>ALTER</code> Agrega o quita campos a una tabla. También modifica los campos como el tipo de dato o tamaño</p>
+        <p><code>DROP</code> Elimina un objeto o tabla de una base de datos</p>
+        <p><code>TRUNCATE</code> Elimina todos los registros de una tabla sin borrar sus campos</p>
+        <h3>Instrucciones de SQL para Manipulación de Datos (DML)(CRUDs)</h3>
+        <p><code>INSERT</code> Agrega registros a una tabla</p>
+        <p><code>UPDATE</code> Actualiza los cambios en registros existentes</p>
+        <p><code>DELETE</code> Borra registros de una tabla</p>
+        <p><code>SELECT</code> Busca o consulta información de una base de datos</p>
+        <h3>Instrucciones para Transactions</h3>
+        <p><code>BEGIN TRANSACTION</code> Inicia una transacción</p>
+        <p><code>COMMIT</code> Indica que la transacción fue completada con éxito</p>
+        <p><code>ROLLBACK</code> Indica un fallo en la transacción y debe restablecer la Base de Datos</p>
+    </section>
+    <section>
+        <h3>Instrucciones Complementarias de Consultas SQL</h3>
+        <p><code>INNER JOIN</code> une la información de campos diferentes en una tabla de consulta</p>
+        <p><code>LIKE</code> compara los caracteres mostrando solo las coincidencias, consume tiempo</p>
+        <p><code>AS</code> crea alias en consultas: <code>Tabla01 AS NuevoNombre</code></p>
+        <p><code>SELECT DISTINCT</code> eliminan los registros duplicados de las columnas de una tabla seleccionadas</p>
+        <details>
+            <summary>Estructura DISTINCT</summary>
+            <code class="codeblock">
+                <pre>SELECT DISTINCT campo1, campo2 ... campoN FROM NombreTabla</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Ejemplo de DISTINCT</summary>
+            <code class="codeblock">
+                <pre>SELECT DISTINCT [Orden Detalles], ProductoID, Productos, Producto Nombre FROM [Orden Detalles]</pre>
+                <pre>INNER JOIN Ordenes ON [Orden Detalles], OrdenID = Ordenes.OrdenID</pre>
+                <pre>INNER JOIN Productos ON [Orden Detalles], ProductoID = Productos.ProductoID</pre>
+                <pre>WHERE OrdenFecha >= '04-07-1996'</pre>
+                <pre>AND OrdenFecha &lt;= '05-07-1996'</pre>
+                <pre>ORDER BY [Orden Detalles].ProductoID</pre>
+                <pre>-- Esto hará una consulta sobre los registros de productos sin repeticiones</pre>
+            </code>
+        </details>
+        <p>Subconsultas con <code>WHERE</code></p>
+        <details>
+            <summary>Ejemplo de Subconsulta</summary>
+            <code class="codeblock">
+                <pre>SELECT DISTINCT campos FROM TablaA</pre>
+                <pre>INNER JOIN TablaB ON LlavePrimaria = LlaveForanea</pre>
+                <pre>WHERE 'Valor' IN (SELECT campos FROM TablaC WHERE campo.ID = TablaC.ID)</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Ejemplo de Subconsulta</summary>
+            <code class="codeblock">
+                <pre>SELECT DISTINCT [OrdenDetalles], ProductoID, Productos.ProductoNombre FROM [OrdenDetalles]</pre>
+                <pre>INNER JOIN Productos ON [OrdenDetalles].ProductoID = Productos.ProductoID</pre>
+                <pre>WHERE 'USA' IN(SELECT Pais FROM Proveedores WHERE Productos.ProveedorID = ProveedorID FROM Proveedores)</pre>
+                <pre>AND ProductoNombre LIKE 'L%'</pre>
+            </code>
+        </details>
+        <p><code>INTO</code> es una instrucción que genera una tabla nueva a la Base de Datos a partir de los datos generados de la
+        tabla de referencia y no interactua con los datos de la tabla original evitando alteraciones al ser una copia. Si ya existe, se elimina para actualizar</p>
+        <details>
+            <summary>Estructura con INTO</summary>
+            <code class="codeblock">
+                <pre>IF OBJECT_ID (TablaCopiaInto) IS NOT NULL</pre>
+                <pre>BEGIN</pre>
+                <pre>     DROP TABLE TablaCopiaInto</pre>
+                <pre>     -- Borra la tabla copia de INTO si existe</pre>
+                <pre>     -- Evita un error al volver a crear la tabla</pre>
+                <pre>END</pre>
+                <pre> </pre>
+                <pre>SELECT TablaCopiaInto</pre>
+                <pre>INTO TablaCopiaInto</pre>
+                <pre>FROM TablaOriginal</pre>
+            </code>
+        </details>
+        <p><code>GROUP BY</code> agrupa un conjunto de registros de una consulta</p>
+        <details>
+            <summary>Estructura con GROUP BY</summary>
+            <code class="codeblock">
+                <pre>SELECT campo1, campo3 FROM tabla01</pre>
+                <pre>INNER JOIN tabla02 ON tabla01.campo01 = tabla04.campo06</pre>
+                <pre>GROUP BY campo01 --campo a agrupar-- ORDER BY campo03</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Ejemplo con GROUP BY</summary>
+            <code class="codeblock">
+                <pre>Region, Categoria, SUM(OrdenDetalles.PrecioUnitario*OrdenDetalles.Cantidad) AS total</pre>
+                <pre>FROM Regiones, Territorio, EmpleadoTerritorio, Empleados, Ordenes, OrdenDetalles, Productos, Categorias</pre>
+                <pre>-- Sustituye INNER JOIN por FROM tabla01, tabla02, ..., tablaN</pre>
+                <pre>WHERE Regiones.RegionID = Territorios.RegionID</pre>
+                <pre>AND Territorios.TerritorioID = EmpleadoTerritorio.TerritorioID</pre>
+                <pre>AND EmpleadoTerritorio.EmpleadoID = Empleados.EmpleadoID</pre>
+                <pre>AND Empleados.EmpleadoID = Ordenes.EmpleadoID</pre>
+                <pre>AND Ordenes.OrdenID = OrdenDetalles.OrdenID</pre>
+                <pre>AND OrdenDetalles.ProductoID = Productos.ProductoID</pre>
+                <pre>AND Productos.CategoriaID = Categorias.CategoriaID</pre>
+                <pre>GROUP BY Region, Categoria ORDER BY Region</pre>
+                <pre>--Ejemplo de Resultado:</pre>
+                <pre>--1 | CENTRO   | ALIMENTOS</pre>
+                <pre>--2 | CENTRO   | BEBIDAS</pre>
+                <pre>--3 | CENTRO   | MASCOTAS</pre>
+                <pre>--4 | ORIENTE  | ALIMENTOS</pre>
+                <pre>--5 | ORIENTE  | BEBIDAS</pre>
+                <pre>--6 | ORIENTE  | MASCOTAS</pre>
+                <pre>--7 | PONIENTE | ALIMENTOS</pre>
+            </code>
+        </details>
+    </section>
+    <section>
+        <h3>Estructuras</h3>
+        <details>
+            <summary>Creación de una Función Escalar</summary>
+            <code class="codeblock">
+                <pre>-- Estructura para la Creación de una función escalar</pre>
+                <pre>CREATE FUNCTION NombreFuncion(nombre y tipo de dato)</pre>
+                <pre>RETURNS TipoDato</pre>
+                <pre>AS</pre>
+                <pre>BEGIN</pre>
+                <pre>     -- Bloque de la Función</pre>
+                <pre>END</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Ejemplo de una Función Escalar</summary>
+            <code class="codeblock">
+                <pre>-- Ejemplo de una función para calcular el IVA</pre>
+                <pre>CREATE FUNCTION CalculoIVA(@Price money) RETURNS money</pre>
+                <pre>AS</pre>
+                <pre>BEGIN</pre>
+                <pre>     DECLARE @IVA money</pre>
+                <pre>     SET @IVA = @Price * 1.16</pre>
+                <pre>     RETURN @IVA</pre>
+                <pre>END</pre>
+                <pre>-- Hacer clic en Execute para crear la función en el sistema gestor de BD</pre>
+                <pre>-- Hacer clic en New Query para llamar a la función creada y ejecutar la instrucción:</pre>
+                <pre>-- SELECT ProductID, ProductName, UnitPrice, dbo CalculoIVA(UnitPrice) AS IVA FROM Products</pre>
+                <pre>-- Obtiene el id, nombre y precio original de la tabla productos</pre>
+                <pre>-- Obtiene adicional el campo IVA que asigna el valor del IVA usando la función CalculoIVA</pre>
+                <pre>-- NOTA: Las funciones se ejecutan si se encuentran dentro de una sentencia como SELECT</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Creación de una Función en Linea</summary>
+            <code class="codeblock">
+                <pre>-- Estructura para la Creación de una función en linea</pre>
+                <pre>CREATE FUNCTION NombreFuncion(nombre y tipo de dato)</pre>
+                <pre>RETURNS TipoDato</pre>
+                <pre>RETURN({CODIGO DE CONSULA})</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Ejemplo de una Función en Linea</summary>
+            <code class="codeblock">
+                <pre>-- Ejemplo de una Función en Linea</pre>
+                <pre>-- Función para filtrar un país en concreto sobre un registro de clientes</pre>
+                <pre>CREATE FUNCTION FiltrarClientesPorPais(@Pais nvachar(15)) RETURNS table</pre>
+                <pre>RETURN (SELECT ClienteID, NombreCompania, Pais FROM TablaClientes WHERE Pais = @Pais)</pre>
+                <pre>-- Hacer clic en Execute para crear la función en el sistema gestor de BD</pre>
+                <pre>-- Hacer clic en New Query para llamar a la función al ejecutar la instrucción:</pre>
+                <pre>-- SELECT * FROM dbo FiltrarClientesPorPais('MEXICO')</pre>
+                <pre>-- De esta forma se mostraran los clientes donde el campo Pais sea 'MEXICO'</pre>
+                <pre>-- NOTA: Dentro de estas funciones esta renstrigida la sentencia ORDER BY</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Creación de una Función en Linea de Múltiples Sentencias</summary>
+            <code class="codeblock">
+                <pre>-- Estructura para la Creación de una función en linea de Múltiples Sentencias</pre>
+                <pre>CREATE FUNCTION NombreFuncion(Parámetros de Entrada)</pre>
+                <pre>RETURNS NombreVariable table({ESTRUCTURA DE LA TABLA})</pre>
+                <pre>AS</pre>
+                <pre>BEGIN</pre>
+                <pre>     -- Estructura de la Función</pre>
+                <pre>END</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Ejemplo de una Función en Linea de Múltiples Sentencias</summary>
+            <code class="codeblock">
+                <pre>-- Ejemplo de una Función en Linea de Múltiples Sentencias</pre>
+                <pre>CREATE FUNCTION FiltrarClientesPorPais(@Pais nvachar(15))</pre>
+                <pre>RETURNS @TablaPais table(ClienteID nachar(5)) Compania nvachar(15) Contacto nvachar(30) Pais nvachar(15)</pre>
+                <pre>AS</pre>
+                <pre>BEGIN</pre>
+                <pre>     INSERT INTO @TablaPais</pre>
+                <pre>     SELECT ClienteID, Compania, Contacto, Pais FROM TablaClientes</pre>
+                <pre>     WHERE Pais = @Pais</pre>
+                <pre>     RETURN</pre>
+                <pre>END</pre>
+                <pre>-- Hacer clic en Execute para crear la función en el sistema gestor de BD</pre>
+                <pre>-- Hacer clic en New Query para llamar a la función al ejecutar la instrucción:</pre>
+                <pre>-- SELECT * FROM dbo FiltrarClientesPorPais('MEXICO')</pre>
+                <pre>-- De esta forma se mostraran los clientes donde el campo Pais sea 'MEXICO'</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Creación de un Trigger(Disparador)</summary>
+            <code class="codeblock">
+                <pre>-- Estructura</pre>
+                <pre>CREATE TRIGGER NombreDelTrigger</pre>
+                <pre>ON NombreTabla</pre>
+                <pre>AFTER DML(INSERT, DELATE O UPDATE) -- Con AFTER: Primero Instrucción DML, después TRIGGER</pre>
+                <pre>FOR DML(INSERT, DELATE O UPDATE) -- Con FOR: Primero TRIGGER, después Instrucción DML</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Ejemplo de un TRIGGER</summary>
+            <code class="codeblock">
+                <pre>-- TRIGGER para actualizar los registros de la tabla Productos después de una inserción a la tabla OrdenDetalle</pre>
+                <pre>CREATE TRIGGER ActualizarAlamcen</pre>
+                <pre>ON [TablaOrdenDetalles]</pre>
+                <pre>FOR INSERT --Se ejecutará el TRIGGER antes de la inserción</pre>
+                <pre>AS</pre>
+                <pre>BEGIN</pre>
+                <pre>     DECLARE @CantidadIngresada smallint, @ProductoID int, @CantidadExistente smallint</pre>
+                <pre>     SELECT @CantidadIngresada = Unidades, @ProductoID = ProductoID FROM inserted</pre>
+                <pre>     SELECT @CantidadExistente = UnidadesEnAlmacen FROM TablaProductos WHERE ProductoID = @ProductoID</pre>
+                <pre>     UPDATE TablaProductos SET UnitsInStock = @CantidadExistente - @CantidadIngresada WHERE ProductoID = @ProductoID</pre>
+                <pre>END</pre>
+                <pre>-- Cambiar CREATE a ALTER para modificar el TRIGGER después de crearlo</pre>
+                <pre>-- Ejemplo de Consula: INSERT INTO [TablaOrdenDetalles](OrdenID, ProductoID, Unidades) VALUES(3452, 6415, 3)</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Creación de un Procedimiento Almacenado</summary>
+            <code class="codeblock">
+                <pre>CREATE PROCEDURE NombreDelProcedimiento</pre>
+                <pre>AS</pre>
+                <pre>     -- Bloque de Código</pre>
+                <pre>GO</pre>
+                <pre>-- Consulta de Ejecución: EXECUTE NombreDelProcedimiento</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Ejemplo de un Procedimiento Alamcenado</summary>
+            <code class="codeblock">
+                <pre>CREATE PROCEDURE BuscarClientesMexicanos</pre>
+                <pre>AS</pre>
+                <pre>     SELECT * FROM TablaClientes</pre>
+                <pre>     WHERE Pais = 'México'</pre>
+                <pre>GO</pre>
+                <pre>-- Consulta de Ejecución: EXECUTE BuscarClientesMexicanos</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Creación de un Procedimiento Almacenado con Parametros</summary>
+            <code class="codeblock">
+                <pre>CREATE PROCEDURE NombreDelProcedimiento @NombresDeParametros tipodedato(longitud), @ReturnID tipodedato OUTPUT</pre>
+                <pre>AS</pre>
+                <pre>BEGIN</pre>
+                <pre>     -- Bloque de Código</pre>
+                <pre>END</pre>
+                <pre>-- Cambiar CREATE por ALTER para modificar o DROP para eliminar el procedimientos</pre>
+                <pre>-- Consulta de Ejecución: EXECUTE NombreDelProcedimiento</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Ejemplo de un Procedimiento Almacenado</summary>
+            <code class="codeblock">
+                <pre>CREATE PROCEDURE ActualizarCliente @ClienteID nchar(5), @Compania nvarchar(40), @ReturnID nchar(5) OUTPUT</pre>
+                <pre>AS</pre>
+                <pre>BEGIN</pre>
+                <pre>     INSERT INTO Clientes(ClienteID, Compania) VALUES (@ClienteID, @Compania)</pre>
+                <pre>     IF(@@ERROR &lt;> 0)</pre>
+                <pre>          BEGIN</pre>
+                <pre>               UPDATE Clientes</pre>
+                <pre>               SET Clientes, ClienteID = @ClienteID</pre>
+                <pre>               Clientes, Compania = @Compania</pre>
+                <pre>               WHERE Clientes, ClienteID = @ClienteID</pre>
+                <pre>               PRINT('Se realizó un UPDATE')</pre>
+                <pre>          END</pre>
+                <pre>     ELSE</pre>
+                <pre>          BEGIN</pre>
+                <pre>               PRINT('Se realizó un INSERT')</pre>
+                <pre>          END</pre>
+                <pre>     SELECT @ReturnID = ClienteID FROM Clientes WHERE Clientes. ClienteID = @ClienteID</pre>
+                <pre>END</pre>
+                <pre>-- Consulta de Ejecución: DECLARE @retorno nchar(5) \n EXECUTE AgregarCliente '00021','PUZZLE',@retorno OUTPUT \n SELECT @retorno</pre>
+            </code>
+        </details>
+        <details>
+            <summary>Ejemplo de una Transacción</summary>
+            <code class="codeblock">
+                <pre>BEGIN TRANSACTION</pre>
+                <pre>     UPDATE Clientes SET CodigoPostal = '02341' WHERE ClienteID = '00456'</pre>
+                <pre>     INSERT INTO Clientes (ClientesID, Compania) VALUES ('00454','MANZANA')</pre>
+                <pre>     IF(@@ERROR &lt;> 0)</pre>
+                <pre>          BEGIN</pre>
+                <pre>               ROLLBACK</pre>
+                <pre>               PRINT('ERROR')</pre>
+                <pre>          END</pre>
+                <pre>     ELSE</pre>
+                <pre>          BEGIN</pre>
+                <pre>               COMMIT</pre>
+                <pre>               BIEN</pre>
+                <pre>          END</pre>
+            </code>
+        </details>
+    </section>
+    <section>
+        <h3>Esquemas</h3>
+        <p><code>Esquema Estrella</code>Todas las tablas (dimensiones) recaen en una tabla "hechos" coformada por las llaves primarias de las tablas. Permite consultas directas desde tabla "hechos" (N1)</p>
+        <p><code>Esquema Copo de Nieve</code>Se deriva del Esquema Estrella, aquí las dimensiones en este esquema permiten normalizarse a la tercera forma permitiendo ahorrar memoria, baja la agilidad de consultas</p>
+        <p><code>Esquema Constelación</code>Se deriva del Esquema Estrella, aqui las tablas de hechos son multiples, lo que facilita las consultas concretas. Se complica el mantenimiento a medida que crece la Base</p>
+    </section>
+    <section>
+        <h3>Datawarehouse (almacen de datos)</h3>
+        <p>Oriendatado al analisis de información</p>
+        <p>Orientado al tema, variante en el tiempo, no volatil (solo de lectura)</p>
+        <p>Util para realizar consultas informes sin alterar la base de datos principal</p>
+        <article>
+            <h3>Principio de separacion de los datos de DB y DWH (ETL)</h3>
+            <p>Extracción: Obtener la información deseada de la BD</p>
+            <p>Tranformación: Adecuarlos a los esquemas de DWH</p>
+            <p>Carga: Almacenar los datos en el DWH</p>
+        </article>
+        <article>
+            <h3>Datas Marts</h3>
+            <p>Se alimentan del DWH donde cada una se encarga de un area especifica como un departamento y da acceso limitado al personal designado</p>
+        </article>
+    </section>
+    <section>
+        <h2>Glosario</h2>
+        <h3>Procedimientos Almacenados</h3>
+        <p>conjunto de instrucciones que son ejecutadas, pueden recibir parámetros de entrada y generar o no resultados, dentro de ellas se pueden almacenar otros procedimientos almacenadoa</p>
+        <p>regresan un valor de estado para indicar si la operación fue concluida con exito</p>
+        <p>Los usuarios pueden ejecutar procedimientos almacenados para tareas especificas sin necesidad de meterse con el código SQL, son operaciones más seguras y permite reutilizar código que fácilita su mantenimiento</p>
+        <p>Son llamados con la instrucción EXECUTE, a diferencia de las funciones que son llamadas desde instrucciones DML (SELECT, UPDATE, DELETE), limita el acceso a usuarios a la Base de Datos</p>
+        <h3>Criterios ACID: Atomicidad, Consistencia, Aislamiento, Durabilidad:</h3>
+        <p>1. Realiza completamente la transacción o se cancela, 2. Ser finito, 3. Una operación no puede afectar a otras, 4. Persitencia de la operación realizada</h3>
+    </section>
+</body>
+</html>

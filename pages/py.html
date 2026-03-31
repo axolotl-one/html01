@@ -2,15 +2,16 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/estilo01.css">
-    <title>Notas Python</title>
+    <title>PATRON PYTHON</title>
 </head>
 <body>
     <nav>
-        <h1>Notas Python</h1>
+        <h1>PATRON PY</h1>
         <a href="../">Volver al Inicio</a>
     </nav>
     <main>
@@ -445,7 +446,12 @@
     </main>
     <footer>
         <a href="../">Volver al Inicio</a>
-        <h5 id="legendVersion"></h5>
+        <details>
+            <summary id="version-legend"></summary>
+            <p id="version-commit"></p>
+            <div id="version-readme"></div>
+        </details>
     </footer>
+    <script src="../scripts/get-version.js"></script>
 </body>
 </html>
