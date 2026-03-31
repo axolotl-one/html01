@@ -1,0 +1,30 @@
+{
+    "keywords":
+    [
+        {"Clases" : ["Estructura de Datos","Tipos de datos","Estructuras de Control"]},
+        {"clase":0, "keyword":"class", "info":"Define una clase, es una plantilla para crear objetos"}
+    ],
+
+    "tiposdatos":
+    [
+        {"keyword":"sbyte","bits":8,"tipo":"+-"},
+        {"keyword":"byte","bits":8,"tipo":"+"},
+        {"keyword":"short","bits":16,"tipo":"+-"},
+        {"keyword":"ushort","bits":16,"tipo":"+"},
+        {"keyword":"int","bits":32,"tipo":"+-"},
+        {"keyword":"uint","bits":32,"tipo":"+"},
+        {"keyword":"long","bits":64,"tipo":"+-"},
+        {"keyword":"ulong","bits":64,"tipo":"+"},
+        {"keyword":"float","bits":32,"tipo":"."},
+        {"keyword":"double","bits":64,"tipo":"."},
+        {"keyword":"decimal","bits":128,"tipo":"."},
+        {"keyword":"bool","bits":1,"tipo":"tf"},
+        {"keyword":"char","bits":16,"tipo":"ch"},
+        {"keyword":"string","bits":"Variable","tipo":""},
+        {"keyword":"object","bits":"Variable","tipo":""}
+    ],
+    "conversiones":
+    [
+
+    ]
+}
