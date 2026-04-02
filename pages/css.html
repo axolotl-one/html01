@@ -1,301 +1,304 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/estilo02.css">
-    <title>PATRON CSS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/estilo02.css">
+  <title>PATRON CSS</title>
 </head>
 <body>
 <nav>
-    <header>
-        <h1>PATRON CSS </h1>
-        <label><input type="radio" name="indice" onclick="verBloque('section','inicio')">
-            Inicio</label>
-        <label><input type="radio" name="indice" onclick="verBloque('section','selectores')">
-            Selectores</label>
-        <label><input type="radio" name="indice" onclick="verBloque('section','modelo-cajas')">
-            Modelo de Cajas</label>
-        <label><input type="radio" name="indice" onclick="verBloque('section','posicionales')">
-            Posicionales</label>
-        <label><input type="radio" name="indice" onclick="verBloque('section','display-flex')">
-            Display Flex</label>
-        <label><input type="radio" name="indice" onclick="verBloque('section','pseudoclases')">
-            Pseudoclases</label>
-        <label><input type="radio" name="indice" onclick="verBloque('section','pseudoelementos')">
-            Pseudoelementos</label>
-        <label><input type="radio" name="indice" onclick="verBloque('section','pre-estilos')">
-            Estilos Predefinidos</label>
-        <a href="../">Volver al Inicio</a>
-    </header>
-    <main>
-        <section id="inicio">
-            <h2>Conceptos Básicos</h2></summary>
-            <article id="concepto-css">
-                <h3><code>CSS ("Cascading Style Sheets" u "Hoja de Estilos en Cascada")</code></h3>
-                <p>Es un lenguaje utilizado para darle estilo a una página web, un maquillador que la hace atractiva para los usuarios.</p>
-                <p>Separa el contenido de una página web de su diseño, organiza mejor el código para el programador y hace la página más ágil</p>
-                <ol><li>Aplicar estilos de manera selectiva</li><li>Crear diseños reponsivos</li><li>Adaptar la página a multiples tamaños de pantalla</li></ol></p>
-                <p>Vinculación de una archivo CSS en HTML:</p><p><code>&lt;link rel="stylesheet" href="style.css"></code></p>
-            </article>
-        </section>
-        <section id="selectores">
-            <h2>Selectores</h2>
-            <article id="estructura-selector">
-                <h3>Ejemplo de Estructura de un Selector</h3>
-                <code class="codeblock">
-                    <pre>p { </pre>
-                    <pre>   color : red; /* Cambia el color de fuente a rojo */</pre>
-                    <pre>}</pre>
-                </code>
-                <p><code>p</code>: es el selector (id, clase, tipo, étc)</p>
-                <p><code>color</code>: es una propiedad del selector</p>
-                <p><code>red</code>: es un valor de la propiedad mencionada</p>
-                <p><code>color : red;</code>: juntas hacen una declaración para el selector</p>
-                <p><code>/* Cambia el color de fuente a rojo */</code>: es un comentario</p>
-            </article>
-            <article id="especificidad-css">
-                <h3>Niveles de Especificidad sobre Selectores de CSS</h3>
-                <table>
-                    <thead><tr><th>Nivel</th><th>Tipo de Selector</th><th>Sintaxis</th><th>Ejemplo Selector</th><th>Ejemplo de Elemento Asociado</th></tr></thead>
-                    <tr><td>(1,0,0)</td><td>ID</td><td><code>#id</code> <code>{ &equiv; }</code></td><td><code>#seccion-aguila</code> <code>{ &equiv; }</code></td><td><code>&lt;div id="seccion-aguila" class="ave"></code></td></tr>
-                    <tr><td>(0,1,0)</td><td>Clase</td><td><code>.clase</code> <code>{ &equiv; }</code></td><td><code>.ave</code> <code>{ &equiv; }</code></td>
-                        <td><p><code>&lt;div id="seccion-aguila" class="ave"></code></p><p><code>&lt;div id="seccion-halcon" class="ave"></code></p></td></tr>
-                    <tr><td>(0,2,0)</td><td>Clase con Clase</td><td><code>.clase1.clase2</code> <code>{ &equiv; }</code></td><td><code>.ave.grande</code> <code>{ &equiv; }</code></td>
-                        <td><p><code>&lt;p class="ave grande">Aguila&lt;/p></code></p><p><code>&lt;p class="ave grande">Halcón&lt;/p></code></p></td></tr>
-                    <tr><td>(0,1,0)</td><td>Atributo</td><td><code>[atributo]</code> <code>{ &equiv; }</code></td><td><code>input[type="submit"]</code> <code>{ &equiv; }</code></td>
-                        <td><p><code>&lt;input type"submit" value="Enviar Solicitud"></code></p><p><code>&lt;input type"submit" value="Iniciar Sesión"></code></p></td></tr>
-                    <tr><td>(0,1,0)</td><td>Pseudoclase</td><td><code>:pseudoclase</code> <code>{ &equiv; }</code></td><td><code>button:hover { &equiv; }</code></td>
-                        <td><p><code>&lt;button>Click Aquí&lt;/button></code></p></td></tr>
-                    <tr><td>(0,0,1)</td><td><p>Elemento</p><p>(Etiqueta HTML)</p></td><td><code>elemento</code> <code>{ &equiv; }</code></td><td><code>p</code> <code>{ &equiv; }</code></td>
-                        <td><p><code>&lt;p><span>Remplazo MainHeader</span>&lt;/p></code></p><p><code>&lt;p>Lorem ipsum dolor sit amet consectetur.&lt;/p></code></p></td></tr>
-                    <tr><td>(0,1,1)</td><td>Elemento con Clase</td><td><code>elemento.clase</code> <code>{ &equiv; }</code></td><td><code>p.nocturno</code> <code>{ &equiv; }</code></td>
-                        <td><p><code>&lt;p class="ave nocturno">Lechuza&lt;/p></code></p><p><code>&lt;p class="ave nocturno">Buho&lt;/p></code></p></td></tr>
-                    <tr><td>(0,0,1)</td><td>Pseudoelemento</td><td><code>::pseudoelemento</code> <code>{ &equiv; }</code></td></tr>
-                    <tr><td>(0,0,0)</td><td>Universal</td><td><code>*</code> <code>{ &equiv; }</code></td><td><code>*</code> <code>{ &equiv; }</code></td>
-                        <td><p><code>&lt;p>Lorem ipsum dolor sit amet consectetur.&lt;/p></code></p></td></tr>
-                </table>
-            </article>
-            <article>
-                <h3>Selectores Combinados</h3>
-                <p>Se combinan distintos selectores para seleccionar elementos (etiqutas HTML) basadas en su interrelación dentro del maquetado HTML</p>
-                <table>
-                    <thead><tr><th>Tipo de Combinación</th><th>Sintaxis</th><th>Descripción</th></tr></thead>
-                    <tr><td>Descendiente General</td><td><code>padre descendiente { &equiv; }</code></td><td>Selecciona todos los elementos <code>descendiente</code> de cualquier generación contenida en el elemento <code>padre</code>.</td></tr>
-                    <tr><td>Hijo Directo</td><td><code>padre > hijo { &equiv; }</code></td><td>Selecciona todos los elementos del selector <code>hijo</code> que son hijos directos de primera generación contenida en el elemento <code>padre</code>.</td></tr>
-                    <tr><td>Hermano General</td><td><code>hermano ~ hermano-menor { &equiv; }</code></td><td>Selecciona todos los elementos <code>hermano-menor</code> que son hermanos del elemento <code>hermano</code> y estan después de él.</td></tr>
-                    <tr><td>Hermano Menor Directo</td><td><code>hermano + hermano-directo { &equiv; }</code></td><td>Selecciona al primer elemento <code>hermano-directo</code> que esta después del elemento <code>hermano</code>.</td></tr>
-                </table>
-                <h3>Ejemplos de Selectores Combinados</h3>
-                <table>
-                    <thead><tr><th>Nivel</th><th>Combinación de Selectores</th><th>Lógica</th><th>Elementos Asociados</th></tr></thead>
-                    <tr><td>(0,0,2)</td><td><code>footer h2</code></td><td>Selecciona todos los <code>h2</code> descendientes de cualquier generación de <code>footer</code></td>
-                        <td><p><code>25. &lt;h2>Versión 11.1.5&lt;/h2></code></p></td></tr>
-                    <tr><td>(0,1,2)</td><td><code>main p.grande</code></td><td>Selecciona todos los <code>p</code> con clase <code>grande</code> descendientes de cualquier generación de <code>main</code></td>
-                        <td><p><code>10. &lt;p class="ave grande">Aguila&lt;/p></code></p><p><code>11. &lt;p class="ave grande">Halcón&lt;/p></code></p>
-                            <p><code>17. &lt;p class="lagarto grande">Dragón de Komodo&lt;/p></code></p><p><code>18. &lt;p class="lagarto grande">Iguana&lt;/p></code></p></td></tr>
-                    <tr><td>(0,1,1)</td><td><code>p.lagarto</code></td><td>Selecciona <code>p</code> con la clase <code>lagarto</code></td><td><p><code>17. &lt;p class="lagarto grande">Dragón de Komodo&lt;/p></code></p>
-                        <p><code>18. &lt;p class="lagarto grande">Iguana&lt;/p></code></p><p><code>19. &lt;p class="lagarto chico">Camaleón&lt;/p></code></p><p><code>20. &lt;p class="lagarto chico">Lagartija&lt;/p></code></p></td></tr>
-                    <tr><td>(0,0,2)</td><td><code>main > p</code></td><td>Selecciona todos los <code>p</code> que son hijos directos de <code>main</code></td>
-                        <td><p><code>22. &lt;p>Fin de la lista&lt;/p></code></p></td></tr>
-                    <tr><td>(0,0,2)</td><td><code>h1 + p</code></td><td>Selecciona el primer hermano <code>p</code> encontrado después de un <code>h1</code></td>
-                        <td><p><code>04. &lt;p>Bienvenidos a esta página web&lt;/p></code></p></td></tr>
-                    <tr><td>(0,0,2)</td><td><code>h1 ~ p</code></td><td>Selecciona todos los hermanos <code>p</code> encontrados después de un <code>h1</code></td>
-                        <td><p><code>04. &lt;p>Bienvenidos a esta página web&lt;/p></code></p><p><code>05. &lt;p>Aquí presentamos una lista de Animales&lt;/p></code></p></td></tr>
-                </table>
-                <p>Maquetado de Refencia:</p>
-                <code class="codeblock">
-                    <pre>1. &lt;body></pre>
-                    <pre>2. &lt;header></pre>
-                    <pre>3.        &lt;h1>Hola Mundo!&lt;/h1></pre>
-                    <pre>4.        &lt;p>Bienvenidos a esta página web&lt;/p></pre>
-                    <pre>5.        &lt;p>Aquí presentamos una lista de Animales&lt;/p></pre>
-                    <pre>6.    &lt;/header></pre>
-                    <pre>7.    &lt;main></pre>
-                    <pre>8.        &lt;section></pre>
-                    <pre>9.            &lt;h2 id="lista-aves">Lista de Aves&lt;/h2></pre>
-                    <pre>10.           &lt;p class="ave grande">Aguila&lt;/p></pre>
-                    <pre>11.           &lt;p class="ave grande">Halcón&lt;/p></pre>
-                    <pre>12.           &lt;p class="ave nocturno">Lechuza&lt;/p></pre>
-                    <pre>13.           &lt;p class="ave nocturno">Buho&lt;/p></pre>
-                    <pre>14.       &lt;/section></pre>
-                    <pre>15.       &lt;section></pre>
-                    <pre>16.           &lt;h2 id="lista-lagartos">Lista de Lagartos&lt;/h2></pre>
-                    <pre>17.           &lt;p class="lagarto grande">Dragón de Komodo&lt;/p></pre>
-                    <pre>18.           &lt;p class="lagarto grande">Iguana&lt;/p></pre>
-                    <pre>19.           &lt;p class="lagarto chico">Camaleón&lt;/p></pre>
-                    <pre>20.           &lt;p class="lagarto chico">Lagartija&lt;/p></pre>
-                    <pre>21.       &lt;/section></pre>
-                    <pre>22.       &lt;p>Fin de la lista&lt;/p></pre>
-                    <pre>23.   &lt;/main></pre>
-                    <pre>24.   &lt;footer></pre>
-                    <pre>25.       &lt;h2>Versión 11.1.5&lt;/h2></pre>
-                    <pre>26.   &lt;/footer></pre>
-                    <pre>27.&lt;/body></pre>
-                </code>
-            </article>
-        </section>
-        <section id="modelo-cajas">
-            <h2>Modelo de Cajas (Box Model)</h2>
-            <article>
-                <h3>box-sizing</h3>
-                <table>
-                    <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
-                    <tr><td>content-box</td><td>(valor predeterminado) al definir el alto o largo de un elemento, se definirá solo sobre el contenido</td></tr>
-                    <tr><td>border-box</td><td>Al definir el largo o alto de un elemento, se definirá sobre el borde y se incluirá el borde, padding y contenido</td></tr>
-                </table>
-            </article>
-            <article>
-                <h3>margin</h3>
-                <p>Define las dimensiones del margen externo (fuera del borde) a partir de un valor numerico junto con una proporción (px, %, vh, vw, em, rem...)</p>
-                <table>
-                    <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
-                    <tr><td><code>valor-1</code></td><td><code>valor-1</code> asigna el valor longitudinal para <code>margin-top, margin-left, margin-right, margin-bottom;</code></td></tr>
-                    <tr><td><code>valor-1 valor-2</code></td><td><p><code>valor-1</code> asigna el valor longitudinal para <code>margin-top, margin-bottom</code>;</p>
-                        <p><code>valor-2</code> asigna el valor longitudinal para <code>margin-left; margin-right</code></p></td></tr>
-                    <tr><td><code>valor-1 valor-2 valor-3</code></td><td><p><code>valor-1</code> asigna el valor longitudinal para <code>margin-top</code>;</p>
-                        <p><code>valor-2</code> asigna el valor longitudinal para <code>margin-left; margin-right</code>;</p>
-                        <p><code>valor-3</code> asigna el valor longitudinal para <code>bottom</code></p></td></tr>
-                    <tr><td><code>valor-1 valor-2 valor-3 valor-4</code></td><td><p><code>valor-1</code> asigna el valor longitudinal para <code>margin-top</code>;</p>
-                        <p><code>valor-2</code> asigna el valor longitudinal para <code>margin-right</code>;</p>
-                        <p><code>valor-3</code> asigna el valor longitudinal para <code>margin-bottom</code>;</p>
-                        <p><code>valor-4</code> asigna el valor longitudinal para <code>margin-left</code></p></td></tr>
-                </table>
-            </article>
-        </section>
-        <section id="posicionales">
-            <h2>Propiedades Posicionales</h2>
-            <article>
-                <h3>display</h3>
-                <table>
-                    <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
-                    <tr><td>inline</td><td>Ordena al elemento mismo en una misma linea horizontal junto con otros elementos inline, útil para textos.</td></tr>
-                    <tr><td>inline-block</td><td>Ordena al elemento mismo en una misma linea con compartamiento interno block, útil para barras de navegación.</td></tr>
-                    <tr><td>block</td><td>Ordena al elemento mismo como elemento separado verticalmente, útil para secciones básicas.</td></tr>
-                    <tr><td>flex</td><td>Permite manipular el orden y posición de los elementos hijos con respecto a un eje unidimensional.</td></tr>
-                    <tr><td>grid</td><td>Permite manipular el orden y posición de los elementos hijos con respecto a un sistema de coordenadas.</td></tr>
-                    <tr><td>none</td><td>Ignora por completo la existencia del contenedor</td></tr>
-                </table>
-            </article>
-            <article>
-                <h3>position</h3>
-                <table>
-                    <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
-                    <tr><td>static</td><td>(valor predeterminado) Inhabilita el movimiento de top, bottom, left y right;</td></tr>
-                    <tr><td>relative</td><td>Realiza cualquier desplazamiento adicional a partir de su posición inicial, ocupa el espacio original</td></tr>
-                    <tr><td>absolute</td><td>Realiza cualquier desplazamiento adicional a partir del punto (0,0) del contenedor padre</td></tr>
-                    <tr><td>fixed</td><td>Su posición permanece fija con respecto a pantalla del dispositivo</td></tr>
-                    <tr><td>sticky</td><td>Su posición permanece fija con respecto a su contenedor padre y estática fuera de él</td></tr>
-                </table>
-            </article>
-            <article>
-                <h3>z-index</h3>
-                <p>Evalúa el nivel de capas de superposición en el que apareceran los elementos, un valor entero positivo aparecerá sobre otro de mivel menor o negativo.</p>
-            </article>
-        </section>
-        <section id="display-flex">
-            <h2>Propiedades de display: flex;</h2>
-            <article>
-                <h3>flex-direction</h3>
-                <table>
-                    <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
-                    <tr><td>row</td><td>(valor predeterminado) Ordena los elementos sobre el eje horizontal de izquierda a derecha</td></tr>
-                    <tr><td>row-reverse</td><td>Ordena los elementos sobre el eje horizontal de derecha a izquierda</td></tr>
-                    <tr><td>column</td><td>Ordena los elementos sobre el eje vertical (Y) desde la parte superior a la parte inferior</td></tr>
-                    <tr><td>column-reverse</td><td>Ordena los elementos sobre el eje vertical (Y) desde la parte inferior a la parte superior</td></tr>
-                </table>
-            </article>
-            <article>
-                <h3>justify-content</h3>
-                <p>Alinea o justifica el contenido del contenedor padre con respecto al eje principal</p>
-                <table>
-                    <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
-                    <tr><td>flex-start</td><td>(valor predeterminado) Alinea al comienzo sin justificar el contenido</td></tr>
-                    <tr><td>flex-end</td><td>Alinea al final sin justificar el contenido</td></tr>
-                    <tr><td>center</td><td>Centraliza los elementos sin justificar el contenido</td></tr>
-                    <tr><td>space-between</td><td>Justifica utilizando todo el largo con espacios equitativos entre los elementos, pero sin espacio entre los bordes laterales</td></tr>
-                    <tr><td>space-around</td><td>Justifica utilizando todo el largo con espacios equitativos entre los elementos, pero dejando la mitad de espacio en los bordes laterales</td></tr>
-                    <tr><td>space-evenly</td><td>Justifica utilizando todo el largo con espacios equitativos entre los elementos sin distinción con los bordes laterales</td></tr>
-                </table>
-            </article>
-            <article>
-                <h3>align-items</h3>
-                <p>Alinea los elementos con respecto al eje transversal</p>
-                <table>
-                    <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
-                    <tr><td>stretch</td><td>(valor predeterminado)</td></tr>
-                    <tr><td>baseline</td></tr>
-                    <tr><td>flex-start</td></tr>
-                    <tr><td>flex-end</td></tr>
-                    <tr><td>center</td></tr>
-                </table>
-            </article>
-            <article>
-                <h3>align-content</h3>
-                <p>Alinea o justifica los elementos con respecto al eje transversal</p>
-                <table>
-                    <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
-                    <tr><td>stretch</td><td>(valor predeterminado)</td></tr>
-                    <tr><td>flex-start</td></tr>
-                    <tr><td>flex-end</td></tr>
-                    <tr><td>center</td></tr>
-                    <tr><td>space-between</td><td>abarca todo el area, sin espacio en los laterales</td></tr>
-                    <tr><td>space-around</td><td>deja mitad de espacio en laterales</td></tr>
-                    <tr><td>space-evenly</td><td>deja el mismo espacion en laterales</td></tr>
-                </table>
-            </article>
-        </section>
+<header>
+  <h1>PATRON CSS </h1>
+  <label>Inicio<input type="radio" name="indice" onclick="verBloque('section','inicio')"></label>
+  <label>Selectores<input type="radio" name="indice" onclick="verBloque('section','selectores')"></label>
+  <label>Modelo de Cajas<input type="radio" name="indice" onclick="verBloque('section','modelo-cajas')"></label>
+  <label>Posicionales<input type="radio" name="indice" onclick="verBloque('section','posicionales')"></label>
+  <label>Display Flex<input type="radio" name="indice" onclick="verBloque('section','display-flex')"></label>
+  <label>Pseudoclases<input type="radio" name="indice" onclick="verBloque('section','pseudoclases')"></label>
+  <label>Pseudoelementos<input type="radio" name="indice" onclick="verBloque('section','pseudoelementos')"></label>
+  <label>Estilos Predefinidos<input type="radio" name="indice" onclick="verBloque('section','pre-estilos')"></label>
+  <a href="../">Volver al Inicio</a>
+</header>
+<main>
+  <h2>Conceptos Básicos</h2></summary>
+  <section id="inicio">
+      <article id="concepto-css">
+        <h3><code>CSS ("Cascading Style Sheets" u "Hoja de Estilos en Cascada")</code></h3>
+        <p>Es un lenguaje utilizado para darle estilo a una página web, un maquillador que la hace atractiva para los usuarios.</p>
+        <p>Separa el contenido de una página web de su diseño, organiza mejor el código para el programador y hace la página más ágil</p>
+        <ol><li>Aplicar estilos de manera selectiva</li><li>Crear diseños reponsivos</li><li>Adaptar la página a multiples tamaños de pantalla</li></ol></p>
+        <p>Vinculación de una archivo CSS en HTML:</p><p><code>&lt;link rel="stylesheet" href="style.css"></code></p>
+      </article>
+  </section>
+  <section id="selectores">
+    <h2>Selectores</h2>
+    <article id="estructura-selector">
+      <h3>Ejemplo de Estructura de un Selector</h3>
+      <code class="codeblock">
+        <pre>p { </pre>
+        <pre>   color : red; /* Cambia el color de fuente a rojo */</pre>
+        <pre>}</pre>
+      </code>
+      <p><code>p</code>: es el selector (id, clase, tipo, étc)</p>
+      <p><code>color</code>: es una propiedad del selector</p>
+      <p><code>red</code>: es un valor de la propiedad mencionada</p>
+      <p><code>color : red;</code>: juntas hacen una declaración para el selector</p>
+      <p><code>/* Cambia el color de fuente a rojo */</code>: es un comentario</p>
+    </article>
+    <article id="especificidad-css">
+      <h3>Niveles de Especificidad sobre Selectores de CSS</h3>
+      <table>
+        <thead><tr><th>Nivel</th><th>Tipo de Selector</th><th>Sintaxis</th><th>Ejemplo Selector</th><th>Ejemplo de Elemento Asociado</th></tr></thead>
+        <tr><td>(1,0,0)</td><td>ID</td><td><code>#id</code> <code>{ &equiv; }</code></td><td><code>#seccion-aguila</code> <code>{ &equiv; }</code></td><td><code>&lt;div id="seccion-aguila" class="ave"></code></td></tr>
+        <tr><td>(0,1,0)</td><td>Clase</td><td><code>.clase</code> <code>{ &equiv; }</code></td><td><code>.ave</code> <code>{ &equiv; }</code></td>
+          <td><p><code>&lt;div id="seccion-aguila" class="ave"></code></p><p><code>&lt;div id="seccion-halcon" class="ave"></code></p></td></tr>
+        <tr><td>(0,2,0)</td><td>Clase con Clase</td><td><code>.clase1.clase2</code> <code>{ &equiv; }</code></td><td><code>.ave.grande</code> <code>{ &equiv; }</code></td>
+          <td><p><code>&lt;p class="ave grande">Aguila&lt;/p></code></p><p><code>&lt;p class="ave grande">Halcón&lt;/p></code></p></td></tr>
+        <tr><td>(0,1,0)</td><td>Atributo</td><td><code>[atributo]</code> <code>{ &equiv; }</code></td><td><code>input[type="submit"]</code> <code>{ &equiv; }</code></td>
+          <td><p><code>&lt;input type"submit" value="Enviar Solicitud"></code></p><p><code>&lt;input type"submit" value="Iniciar Sesión"></code></p></td></tr>
+        <tr><td>(0,1,0)</td><td>Pseudoclase</td><td><code>:pseudoclase</code> <code>{ &equiv; }</code></td><td><code>button:hover { &equiv; }</code></td>
+          <td><p><code>&lt;button>Click Aquí&lt;/button></code></p></td></tr>
+        <tr><td>(0,0,1)</td><td><p>Elemento</p><p>(Etiqueta HTML)</p></td><td><code>elemento</code> <code>{ &equiv; }</code></td><td><code>p</code> <code>{ &equiv; }</code></td>
+          <td><p><code>&lt;p><span>Remplazo MainHeader</span>&lt;/p></code></p><p><code>&lt;p>Lorem ipsum dolor sit amet consectetur.&lt;/p></code></p></td></tr>
+        <tr><td>(0,1,1)</td><td>Elemento con Clase</td><td><code>elemento.clase</code> <code>{ &equiv; }</code></td><td><code>p.nocturno</code> <code>{ &equiv; }</code></td>
+          <td><p><code>&lt;p class="ave nocturno">Lechuza&lt;/p></code></p><p><code>&lt;p class="ave nocturno">Buho&lt;/p></code></p></td></tr>
+        <tr><td>(0,0,1)</td><td>Pseudoelemento</td><td><code>::pseudoelemento</code> <code>{ &equiv; }</code></td></tr>
+        <tr><td>(0,0,0)</td><td>Universal</td><td><code>*</code> <code>{ &equiv; }</code></td><td><code>*</code> <code>{ &equiv; }</code></td>
+          <td><p><code>&lt;p>Lorem ipsum dolor sit amet consectetur.&lt;/p></code></p></td></tr>
+      </table>
+    </article>
+    <article>
+      <h3>Selectores Combinados</h3>
+      <p>Se combinan distintos selectores para seleccionar elementos (etiqutas HTML) basadas en su interrelación dentro del maquetado HTML</p>
+      <table>
+        <thead><tr><th>Tipo de Combinación</th><th>Sintaxis</th><th>Descripción</th></tr></thead>
+        <tr><td>Descendiente General</td><td><code>padre descendiente { &equiv; }</code></td><td>Selecciona todos los elementos <code>descendiente</code> de cualquier generación contenida en el elemento <code>padre</code>.</td></tr>
+        <tr><td>Hijo Directo</td><td><code>padre > hijo { &equiv; }</code></td><td>Selecciona todos los elementos del selector <code>hijo</code> que son hijos directos de primera generación contenida en el elemento <code>padre</code>.</td></tr>
+        <tr><td>Hermano General</td><td><code>hermano ~ hermano-menor { &equiv; }</code></td><td>Selecciona todos los elementos <code>hermano-menor</code> que son hermanos del elemento <code>hermano</code> y estan después de él.</td></tr>
+        <tr><td>Hermano Menor Directo</td><td><code>hermano + hermano-directo { &equiv; }</code></td><td>Selecciona al primer elemento <code>hermano-directo</code> que esta después del elemento <code>hermano</code>.</td></tr>
+      </table>
+      <h3>Ejemplos de Selectores Combinados</h3>
+      <table>
+        <thead><tr><th>Nivel</th><th>Combinación de Selectores</th><th>Lógica</th><th>Elementos Asociados</th></tr></thead>
+        <tr><td>(0,0,2)</td><td><code>footer h2</code></td><td>Selecciona todos los <code>h2</code> descendientes de cualquier generación de <code>footer</code></td>
+          <td><p><code>25. &lt;h2>Versión 11.1.5&lt;/h2></code></p></td></tr>
+        <tr><td>(0,1,2)</td><td><code>main p.grande</code></td><td>Selecciona todos los <code>p</code> con clase <code>grande</code> descendientes de cualquier generación de <code>main</code></td>
+          <td><p><code>10. &lt;p class="ave grande">Aguila&lt;/p></code></p><p><code>11. &lt;p class="ave grande">Halcón&lt;/p></code></p>
+              <p><code>17. &lt;p class="lagarto grande">Dragón de Komodo&lt;/p></code></p><p><code>18. &lt;p class="lagarto grande">Iguana&lt;/p></code></p></td></tr>
+        <tr><td>(0,1,1)</td><td><code>p.lagarto</code></td><td>Selecciona <code>p</code> con la clase <code>lagarto</code></td><td><p><code>17. &lt;p class="lagarto grande">Dragón de Komodo&lt;/p></code></p>
+              <p><code>18. &lt;p class="lagarto grande">Iguana&lt;/p></code></p><p><code>19. &lt;p class="lagarto chico">Camaleón&lt;/p></code></p><p><code>20. &lt;p class="lagarto chico">Lagartija&lt;/p></code></p></td></tr>
+        <tr><td>(0,0,2)</td><td><code>main > p</code></td><td>Selecciona todos los <code>p</code> que son hijos directos de <code>main</code></td>
+            <td><p><code>22. &lt;p>Fin de la lista&lt;/p></code></p></td></tr>
+        <tr><td>(0,0,2)</td><td><code>h1 + p</code></td><td>Selecciona el primer hermano <code>p</code> encontrado después de un <code>h1</code></td>
+            <td><p><code>04. &lt;p>Bienvenidos a esta página web&lt;/p></code></p></td></tr>
+        <tr><td>(0,0,2)</td><td><code>h1 ~ p</code></td><td>Selecciona todos los hermanos <code>p</code> encontrados después de un <code>h1</code></td>
+            <td><p><code>04. &lt;p>Bienvenidos a esta página web&lt;/p></code></p><p><code>05. &lt;p>Aquí presentamos una lista de Animales&lt;/p></code></p></td></tr>
+      </table>
+      <p>Maquetado de Refencia:</p>
+      <code class="codeblock">
+        <pre>1. &lt;body></pre>
+        <pre>2. &lt;header></pre>
+        <pre>3.        &lt;h1>Hola Mundo!&lt;/h1></pre>
+        <pre>4.        &lt;p>Bienvenidos a esta página web&lt;/p></pre>
+        <pre>5.        &lt;p>Aquí presentamos una lista de Animales&lt;/p></pre>
+        <pre>6.    &lt;/header></pre>
+        <pre>7.    &lt;main></pre>
+        <pre>8.        &lt;section></pre>
+        <pre>9.            &lt;h2 id="lista-aves">Lista de Aves&lt;/h2></pre>
+        <pre>10.           &lt;p class="ave grande">Aguila&lt;/p></pre>
+        <pre>11.           &lt;p class="ave grande">Halcón&lt;/p></pre>
+        <pre>12.           &lt;p class="ave nocturno">Lechuza&lt;/p></pre>
+        <pre>13.           &lt;p class="ave nocturno">Buho&lt;/p></pre>
+        <pre>14.       &lt;/section></pre>
+        <pre>15.       &lt;section></pre>
+        <pre>16.           &lt;h2 id="lista-lagartos">Lista de Lagartos&lt;/h2></pre>
+        <pre>17.           &lt;p class="lagarto grande">Dragón de Komodo&lt;/p></pre>
+        <pre>18.           &lt;p class="lagarto grande">Iguana&lt;/p></pre>
+        <pre>19.           &lt;p class="lagarto chico">Camaleón&lt;/p></pre>
+        <pre>20.           &lt;p class="lagarto chico">Lagartija&lt;/p></pre>
+        <pre>21.       &lt;/section></pre>
+        <pre>22.       &lt;p>Fin de la lista&lt;/p></pre>
+        <pre>23.   &lt;/main></pre>
+        <pre>24.   &lt;footer></pre>
+        <pre>25.       &lt;h2>Versión 11.1.5&lt;/h2></pre>
+        <pre>26.   &lt;/footer></pre>
+        <pre>27.&lt;/body></pre>
+      </code>
+    </article>
+  </section>
+  <section id="modelo-cajas">
+    <h2>Modelo de Cajas (Box Model)</h2>
+    <article>
+      <h3>box-sizing</h3>
+      <table>
+        <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
+        <tr><td>content-box</td><td>(valor predeterminado) al definir el alto o largo de un elemento, se definirá solo sobre el contenido</td></tr>
+        <tr><td>border-box</td><td>Al definir el largo o alto de un elemento, se definirá sobre el borde y se incluirá el borde, padding y contenido</td></tr>
+      </table>
+    </article>
+    <article>
+      <h3>margin</h3>
+      <p>Define las dimensiones del margen externo (fuera del borde) a partir de un valor numerico junto con una proporción (px, %, vh, vw, em, rem...)</p>
+      <table>
+        <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
+        <tr><td><code>valor-1</code></td><td><code>valor-1</code> asigna el valor longitudinal para <code>margin-top, margin-left, margin-right, margin-bottom;</code></td></tr>
+        <tr><td><code>valor-1 valor-2</code></td><td><p><code>valor-1</code> asigna el valor longitudinal para <code>margin-top, margin-bottom</code>;</p>
+          <p><code>valor-2</code> asigna el valor longitudinal para <code>margin-left; margin-right</code></p></td></tr>
+        <tr><td><code>valor-1 valor-2 valor-3</code></td><td><p><code>valor-1</code> asigna el valor longitudinal para <code>margin-top</code>;</p>
+          <p><code>valor-2</code> asigna el valor longitudinal para <code>margin-left; margin-right</code>;</p>
+          <p><code>valor-3</code> asigna el valor longitudinal para <code>bottom</code></p></td></tr>
+        <tr><td><code>valor-1 valor-2 valor-3 valor-4</code></td><td><p><code>valor-1</code> asigna el valor longitudinal para <code>margin-top</code>;</p>
+          <p><code>valor-2</code> asigna el valor longitudinal para <code>margin-right</code>;</p>
+          <p><code>valor-3</code> asigna el valor longitudinal para <code>margin-bottom</code>;</p>
+          <p><code>valor-4</code> asigna el valor longitudinal para <code>margin-left</code></p></td></tr>
+      </table>
+    </article>
+  </section>
+  <section id="posicionales">
+    <h2>Propiedades Posicionales</h2>
+    <article>
+      <h3>display</h3>
+        <table>
+          <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
+          <tr><td>inline</td><td>Ordena al elemento mismo en una misma linea horizontal junto con otros elementos inline, útil para textos.</td></tr>
+          <tr><td>inline-block</td><td>Ordena al elemento mismo en una misma linea con compartamiento interno block, útil para barras de navegación.</td></tr>
+          <tr><td>block</td><td>Ordena al elemento mismo como elemento separado verticalmente, útil para secciones básicas.</td></tr>
+          <tr><td>flex</td><td>Permite manipular el orden y posición de los elementos hijos con respecto a un eje unidimensional.</td></tr>
+          <tr><td>grid</td><td>Permite manipular el orden y posición de los elementos hijos con respecto a un sistema de coordenadas.</td></tr>
+          <tr><td>none</td><td>Ignora por completo la existencia del contenedor</td></tr>
+      </table>
+    </article>
+    <article>
+      <h3>position</h3>
+      <table>
+        <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
+        <tr><td>static</td><td>(valor predeterminado) Inhabilita el movimiento de top, bottom, left y right;</td></tr>
+        <tr><td>relative</td><td>Realiza cualquier desplazamiento adicional a partir de su posición inicial, ocupa el espacio original</td></tr>
+        <tr><td>absolute</td><td>Realiza cualquier desplazamiento adicional a partir del punto (0,0) del contenedor padre</td></tr>
+        <tr><td>fixed</td><td>Su posición permanece fija con respecto a pantalla del dispositivo</td></tr>
+        <tr><td>sticky</td><td>Su posición permanece fija con respecto a su contenedor padre y estática fuera de él</td></tr>
+      </table>
+    </article>
+    <article>
+      <h3>z-index</h3>
+      <p>Evalúa el nivel de capas de superposición en el que apareceran los elementos, un valor entero positivo aparecerá sobre otro de mivel menor o negativo.</p>
+    </article>
+  </section>
+  <section id="display-flex">
+    <h2>Propiedades de display: flex;</h2>
+    <article>
+      <h3>flex-direction</h3>
+      <table>
+        <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
+        <tr><td>row</td><td>(valor predeterminado) Ordena los elementos sobre el eje horizontal de izquierda a derecha</td></tr>
+        <tr><td>row-reverse</td><td>Ordena los elementos sobre el eje horizontal de derecha a izquierda</td></tr>
+        <tr><td>column</td><td>Ordena los elementos sobre el eje vertical (Y) desde la parte superior a la parte inferior</td></tr>
+        <tr><td>column-reverse</td><td>Ordena los elementos sobre el eje vertical (Y) desde la parte inferior a la parte superior</td></tr>
+      </table>
+    </article>
+    <article>
+      <h3>justify-content</h3>
+      <p>Alinea o justifica el contenido del contenedor padre con respecto al eje principal</p>
+      <table>
+        <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
+        <tr><td>flex-start</td><td>(valor predeterminado) Alinea al comienzo sin justificar el contenido</td></tr>
+        <tr><td>flex-end</td><td>Alinea al final sin justificar el contenido</td></tr>
+        <tr><td>center</td><td>Centraliza los elementos sin justificar el contenido</td></tr>
+        <tr><td>space-between</td><td>Justifica utilizando todo el largo con espacios equitativos entre los elementos, pero sin espacio entre los bordes laterales</td></tr>
+        <tr><td>space-around</td><td>Justifica utilizando todo el largo con espacios equitativos entre los elementos, pero dejando la mitad de espacio en los bordes laterales</td></tr>
+        <tr><td>space-evenly</td><td>Justifica utilizando todo el largo con espacios equitativos entre los elementos sin distinción con los bordes laterales</td></tr>
+      </table>
+    </article>
+    <article>
+      <h3>align-items</h3>
+      <p>Alinea los elementos con respecto al eje transversal</p>
+      <table>
+        <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
+        <tr><td>stretch</td><td>(valor predeterminado)</td></tr>
+        <tr><td>baseline</td></tr>
+        <tr><td>flex-start</td></tr>
+        <tr><td>flex-end</td></tr>
+        <tr><td>center</td></tr>
+      </table>
+    </article>
+    <article>
+      <h3>align-content</h3>
+      <p>Alinea o justifica los elementos con respecto al eje transversal</p>
+      <table>
+        <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
+        <tr><td>stretch</td><td>(valor predeterminado)</td></tr>
+        <tr><td>flex-start</td></tr>
+        <tr><td>flex-end</td></tr>
+        <tr><td>center</td></tr>
+        <tr><td>space-between</td><td>abarca todo el area, sin espacio en los laterales</td></tr>
+        <tr><td>space-around</td><td>deja mitad de espacio en laterales</td></tr>
+        <tr><td>space-evenly</td><td>deja el mismo espacion en laterales</td></tr>
+      </table>
+    </article>
+  </section>
 
-        <section id="propiedadesBackground">
-            <article>
-                <h3>Background</h3>
-            </article>
-        </section>
+  <section id="propiedadesBackground">
+    <article>
+      <h3>Background</h3>
+    </article>
+  </section>
 
-        <section id="pseudoclases">
-            <h2>Pseudoclases</h2>
-            <table>
-                <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
-                <tr><td>:hover</td><td>Realiza un cambio sobre un elemento al pasar el cursor sobre él</td></tr>
-                <tr><td>:active</td><td>Realiza un cambio sobre el elemento al dar click en él</td></tr>
-                <tr><td>:visited</td></tr>
-            </table>
-        </section>
-        <section id="pseudoelementos">
-            <h2>Pseudoelementos</h2>
-            <table>
-                <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
-                <tr><td>::after</td><td>Después</td></tr>
-                <tr><td>::before</td><td>Antes</td></tr>
-            </table>
-        </section>
-        <section id="pre-estilos">
-            <h2>Estilos Predifinidos</h2>
-            <article>
-                <h3>Desbordamiento horizontal con scroll auto sobre elementos inline-block</h3>
-                <code class="codeblock">
-                    <pre>.contenedor-padre {</pre>
-                    <pre>   white-space: nowrap; /* Impide saltos de línea automáticos */</pre>
-                    <pre>   overflow-x: auto;    /* Muestra scroll horizontal si es necesario */</pre>
-                    <pre>   overflow-y: hidden;  /* Oculta scroll vertical si lo hubiera */</pre>
-                    <pre>   width: 100% }        /* Define el ancho */</pre>
-                    <pre>.elemento-hijo {</pre>
-                    <pre>   display: inline-block }</pre>
-                </code>
-            </article>
-        </section>
-    </main>
-    <footer>
-        <a href="../">Volver al Inicio</a>
-        <details>
-            <summary id="version-legend"></summary>
-            <p id="version-commit"></p>
-            <div id="version-readme"></div>
-        </details>
-    </footer>
+  <section id="pseudoclases">
+    <h2>Pseudoclases</h2>
+    <table>
+      <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
+      <tr><td>:hover</td><td>Realiza un cambio sobre un elemento al pasar el cursor sobre él</td></tr>
+      <tr><td>:active</td><td>Realiza un cambio sobre el elemento al dar click en él</td></tr>
+      <tr><td>:visited</td></tr>
+    </table>
+  </section>
+  <section id="pseudoelementos">
+    <h2>Pseudoelementos</h2>
+    <table>
+      <thead><tr><th>Valores</th><th>Descripción</th></tr></thead>
+      <tr><td>::after</td><td>Después</td></tr>
+      <tr><td>::before</td><td>Antes</td></tr>
+    </table>
+  </section>
+  <section id="pre-estilos">
+    <h2>Estilos Predifinidos</h2>
+    <article>
+      <h3>Desbordamiento horizontal con scroll auto sobre elementos inline-block</h3>
+      <code class="codeblock">
+        <pre>.contenedor-padre {</pre>
+        <pre>   white-space: nowrap; /* Impide saltos de línea automáticos */</pre>
+        <pre>   overflow-x: auto;    /* Muestra scroll horizontal si es necesario */</pre>
+        <pre>   overflow-y: hidden;  /* Oculta scroll vertical si lo hubiera */</pre>
+        <pre>   width: 100% }        /* Define el ancho */</pre>
+        <pre>.elemento-hijo {</pre>
+        <pre>   display: inline-block }</pre>
+      </code>
+    </article>
+  </section>
+  <div id="navbar-mobile">
+    <label for="quit-navbar-mobile">&equiv;</label>
+    <input type="checkbox" id="quit-navbar-mobile">
+    <label>Inicio<input type="radio" name="indice" onclick="verBloque('section','inicio')"></label>
+    <label>Selectores<input type="radio" name="indice" onclick="verBloque('section','selectores')"></label>
+    <label>Modelo de Cajas<input type="radio" name="indice" onclick="verBloque('section','modelo-cajas')"></label>
+    <label>Posicionales<input type="radio" name="indice" onclick="verBloque('section','posicionales')"></label>
+    <label>Display Flex<input type="radio" name="indice" onclick="verBloque('section','display-flex')"></label>
+    <label>Pseudoclases<input type="radio" name="indice" onclick="verBloque('section','pseudoclases')"></label>
+    <label>Pseudoelementos<input type="radio" name="indice" onclick="verBloque('section','pseudoelementos')"></label>
+    <label>Estilos Predefinidos<input type="radio" name="indice" onclick="verBloque('section','pre-estilos')"></label>
+  </div>
+</main>
+<footer>
+  <details>
+    <summary id="version-legend"></summary>
+    <p id="version-commit"></p>
+    <div id="version-readme"></div>
+  </details>
+</footer>
 </nav>
 <script src="../scripts/get-version.js"></script>
 <!-- TODO:

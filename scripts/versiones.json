@@ -1,5 +1,7 @@
 {
     "versiones": [
-        { "commit":40, "version":"11.6.0", "tag":":construction:", "tema":"Implementación de JSON para data de C#", "html":93.3, "css":5.5, "js":1.2}
+        { "commit":40, "version":"11.6.0", "tag":":construction:", "tema":"Implementación de JSON para data de C#", "html":93.3, "css":5.5, "js":1.2},
+        { "commit":41, "version":"12.0.0", "tag":":fire:", "tema":"Refactorización del Sitio (archivos, rutas, código)", "html":93.3, "css":5.5, "js":1.2},
+        { "commit":40, "version":"12.0.1", "tag":":construction:", "tema":"Implementación de JSON para data de C#", "html":93.3, "css":5.5, "js":1.2}
     ]
 }
