@@ -1,6 +1,12 @@
-const csharp = await cargarDatos("../scripts/csharp.json")
-const tabKeywords = document.getElementById("tab-keywords");
-cargarTablaKeywords();
+import { cargarDatos, cargarTabla } from "./async-json.js";
+const csharp = await cargarDatos("../scripts/csharp.json");
+
+cargarTabla({ idTabla: "tab-keywords", sectJSON: csharp.keywords, 
+    campos: [
+        {campo: "Keyword", get: function(obj) { return obj.keyword; }},
+        {campo: "Categoría", get: function(obj) { return csharp.clases.keywords[obj.clase]; }},
+        {campo: "Descripción", get: function(obj) { return obj.info; }},
+]})
 
 cargarTabla({ idTabla: "tab-datos-enteros", sectJSON: csharp.tiposdatos,
     seleccion: function(obj) { return obj.tipo === 0 ? true : false; },
@@ -78,50 +84,3 @@ cargarTabla({idTabla: "tab-tipos-datos", sectJSON: csharp.tiposdatos, campos: [
     {campo:"Rango<sub>10</sub>", get: function(obj){ return obj.tipo === 1 ? "0 a " + (Math.pow(2, obj.bits) - 1) : obj.tipo === 0 
         ? - Math.pow(2, obj.bits - 1) + " a " + (Math.pow(2, obj.bits - 1) - 1) : obj.tipo === 3 ? "0 a 1" : "No Aplica"; }}
 ]});
-
-async function cargarDatos(ruta) {
-    const respuesta = await fetch(ruta);
-    const data = await respuesta.json();
-    return data;
-}
-
-async function cargarTabla({idTabla, sectJSON, campos, seleccion = function() { return true; }}) {
-    const tabla = document.getElementById(idTabla);
-    await cargarCabezera(tabla, campos);
-    await sectJSON.forEach((element) => {
-        const fila = document.createElement("tr"); 
-        campos.forEach((campo) => {
-            if(!seleccion(element)) return;
-            const celda = document.createElement("td");
-            celda.innerHTML = campo.get(element);
-            fila.append(celda); })
-        tabla.append(fila);
-    })
-}
-
-async function cargarCabezera(tabla, campos) {
-    const thead = document.createElement("thead");
-    await campos.forEach(campo => {
-        const celda = document.createElement("th");
-        celda.innerHTML = campo.campo;
-        thead.append(celda) })
-    tabla.append(thead);
-}
-
-async function cargarTablaKeywords() {
-    const clases = csharp.clases.keywords;
-    console.log(clases)
-    await csharp.keywords.forEach((keyword) => {
-        const fila = document.createElement("tr");
-        const tdkeyw = document.createElement("td");
-        const tdtipo = document.createElement("td");
-        const tdinfo = document.createElement("td"); 
-        tdkeyw.innerHTML = keyword.keyword;
-        tdtipo.innerHTML = clases[keyword.clase];
-        tdinfo.innerHTML = keyword.info;
-        fila.append(tdkeyw);
-        fila.append(tdtipo);
-        fila.append(tdinfo);
-        tabKeywords.append(fila);
-    })    
-}

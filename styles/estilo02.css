@@ -25,7 +25,7 @@ nav, main, section, article {
     min-width: 100%;
 }
 
-table{
+table {
     display: block;
     border-collapse: collapse;
     overflow: auto;
@@ -73,26 +73,17 @@ a:active, label:active, button:active {
 }
 
 
-h1{
-    font-size: 36px;
-}
+#singularPython summary { font-size: inherit; }
 
-h2{
-    font-size: 30px;
-}
+h1 { font-size: 36px; }
 
-h3{
-    font-size: 24px;
-}
+h2 { font-size: 30px; }
 
-h4{
-    font-size: 20px;
-    font-style: italic;
-}
+h3 { font-size: 24px; }
 
-h5{
-    font-size: 15px;
-}
+h4 { font-size: 20px; font-style: italic; }
+
+h5{ font-size: 15px; }
 
 summary * {
     display: inline;
@@ -104,13 +95,8 @@ section {
     /* Empuja navbar-mobile al fondo */
 }
 
-#singularPython summary{
-    font-size: inherit;
-}
-
-code{
+code, code.codeblock {
     font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
     background-color: #333333;
     border-radius: 5px;
     padding: 2px 4px;
@@ -119,36 +105,23 @@ code{
 code.codeblock {
     display: block;
     overflow: auto;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #333333;
-    border-radius: 5px;
     padding: 5px 10px;
     margin: 10px 0;
-    max-width: 98dvw;
+    min-width: 100%;
+    max-width: min-content;
 }
 
-code.codeblock p, code.codeblock pre{
-    min-width: fit-content;
-    font-family: inherit;
+code.codeblock * {
+    font-family: 'Courier New', Courier, monospace;
+    margin-block: 0;
     margin: 0;
+    min-width: max-content;
 }
 
 .sintax-error {
     background-color: #292929;
     border-radius: 5px;
     color: #aaa;
-}
-
-/* .tab1{
-
-} */
-
-.tab2{
-    padding-left: 20px;
-}
-
-.tab3{
-    padding-left: 40px;
 }
 
 input[type="radio"], input[type="checkbox"]{
@@ -174,16 +147,6 @@ header {
 
 header, table, code.codeblock, #navbar-mobile {
     scrollbar-color: #555 #222;
-}
-
-[title]{
-    display: inline-block;
-    border-radius: 7px;
-    transition: 0.5s;
-}
-
-[title]:hover {
-  background-color: #444;
 }
 
 main{
@@ -212,12 +175,15 @@ main{
     transform: translateY(120%);
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 675px){
     header h1 ~ label {
         display: none;
     }
-    body, table td p {
-        font-size: 15px;
+    body, table td p, code.codeblock * {
+        font-size: 16px;
+    }
+    code.codeblock * {
+        font-weight: 550;
     }
     a, label{
         overflow-wrap: nowrap;
@@ -226,7 +192,7 @@ main{
         border-bottom: dotted 2px;
     }
     td, th {
-        min-width: 80px;
+        min-width: 75px;
     }
     header div#navbar {
         max-height: 70px;
