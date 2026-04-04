@@ -180,10 +180,12 @@ main{
         display: none;
     }
     body, table td p, code.codeblock * {
+        -webkit-text-size-adjust: 100%; /* Evita auto-zoom de texto de safari */
+        text-size-adjust: 100%;
         font-size: 16px;
     }
     code.codeblock * {
-        font-weight: 550;
+        font-weight: 600;
     }
     a, label{
         overflow-wrap: nowrap;
