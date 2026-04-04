@@ -93,8 +93,17 @@
         {"keyword":"object","bits":null,"tipo":6, "sufijo": 0, "info": "Declara un variable que posteriormente puede adquirir métodos y propiedades de una clase"}
     ],
 
-    "conversiones":
-    [
-
+    "synterxvariables":[
+        {"code":"int valor#1 = 0;", "info":"al usar caracteres especiales \"#, &, %, !, ñ, ...\"", "err": true},
+        {"code":"int tamaño = 5;", "info":"al usar caracteres especiales \"#, &, %, !, ñ, ...\"", "err":true},
+        {"code":"Int x = 87;", "info":"al usar el declarador de tipo con mayúscula", "err":true},
+        {"code":"int y = 30", "info":"al no terminar la declaración con punto y coma \";\"", "err":true},
+        {"code":"int z = 7 &lt; 10;", "info":"al asignar un dato de tipo incompatible (asigna un dato bool en una variable int)", "err":true},
+        {"code":"double 8vo = 1 / 8;", "info":"al iniciar el ID con un número", "err":true},
+        {"code":"double decimal = 4.25;", "info":"al usar una palabra reservada como ID", "err":true},
+        {"code":"float n = 8.23", "info":"al no colocar el sufijo \"f\" para float después del valor númerico", "err":true},
+        {"code":"byte valor = 300;", "info":"al usar un valor que excede el limite de bits del tipo de dato", "err":true},
+        {"code":"int z = 7;", "info":"al declarar una variable con ID ya existente (linea 5)", "err":true},
+        {"code":"char letra = \"a\";", "info":"al usar comillas dobles para char, se debe usar comillas simples", "err":true}
     ]
 }

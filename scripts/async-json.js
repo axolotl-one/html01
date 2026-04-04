@@ -29,8 +29,38 @@ async function cargarCabezera(tabla, campos) {
   tabla.append(thead);
 }
 
-export async function cargarCodigo(idCodigo) {
-  const code = document.getElementById(idCodigo);
+export async function cargarCodigo(idCodigo, arrayJSON) {
+  const bloque = document.getElementById(idCodigo);
+  bloque.classList.add("codeblock");
+  await arrayJSON.forEach((linea, index) => {
+    const codigo = document.createElement("pre");
+    codigo.innerHTML = index + 1 + ". " + linea.code;
+    if(!linea.info) { bloque.append(codigo); return }
+    const det = document.createElement("details");
+    const sum = document.createElement("summary");
+    const info = document.createElement("pre");
+    if(linea.err) info.classList.add("sintax-error");
+    info.innerHTML = "  > Error " + linea.info;
+    sum.append(codigo);
+    det.append(sum);
+    det.append(info);
+    bloque.append(det);
+  })
+}
+
+export async function cargarCodigoRect(idCodigo, arrayJSON) {
+  const bloque = document.getElementById(idCodigo);
+  bloque.classList.add("codeblock");
+  await arrayJSON.forEach((linea, index) => {
+    const codigo = document.createElement("pre");
+    codigo.innerHTML = index + 1 + ". " + linea.code;
+    bloque.append(codigo);
+    if(!linea.info) return;
+    const info = document.createElement("pre");
+    if(linea.err) info.classList.add("sintax-error");
+    info.innerHTML = "  > Error " + linea.info;
+    bloque.append(info);
+  })
 }
 
 /* Ej de carga de tablaindividual con una clase foranea

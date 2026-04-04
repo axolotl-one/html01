@@ -4,6 +4,7 @@
     { "commit":41, "version":"12.0.0", "tag":":fire:", "tema":"Refactorización del Sitio (archivos, rutas, código)", "html":93.3, "css":5.5, "js":1.2 },
     { "commit":42, "version":"12.0.1", "tag":":sparkles:", "tema":"Add Navbar Mobile para PATRON CSS", "html":90.9, "css":3.4, "js":5.7 },
     { "commit":43, "version":"12.1.0", "tag":":hammer:", "tema":"Empaquetado de Funciones de Carga JSON", "html":90.7, "css":3.2, "js":6.1 },
-    { "commit":43, "version":"12.1.1", "tag":":bug:", "tema":"Corrección de estilo font-size autozoom para safari", "html":90.7, "css":3.2, "js":6.1 }
+    { "commit":44, "version":"12.1.1", "tag":":bug:", "tema":"Corrección de estilo font-size autozoom para safari", "html":90.6, "css":3.3, "js":6.1 },
+    { "commit":45, "version":"12.2.0", "tag":":hammer:", "tema":"Empaquetado de Funciones de Carga JSON para codeblocks", "html":90.7, "css":3.2, "js":6.1 }
   ]
 }

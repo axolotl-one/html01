@@ -1,4 +1,4 @@
-import { cargarDatos, cargarTabla } from "./async-json.js";
+import { cargarDatos, cargarTabla, cargarCodigo, cargarCodigoRect } from "./async-json.js";
 const csharp = await cargarDatos("../scripts/csharp.json");
 
 cargarTabla({ idTabla: "tab-keywords", sectJSON: csharp.keywords, 
@@ -84,3 +84,6 @@ cargarTabla({idTabla: "tab-tipos-datos", sectJSON: csharp.tiposdatos, campos: [
     {campo:"Rango<sub>10</sub>", get: function(obj){ return obj.tipo === 1 ? "0 a " + (Math.pow(2, obj.bits) - 1) : obj.tipo === 0 
         ? - Math.pow(2, obj.bits - 1) + " a " + (Math.pow(2, obj.bits - 1) - 1) : obj.tipo === 3 ? "0 a 1" : "No Aplica"; }}
 ]});
+
+cargarCodigo("synterxvariables", csharp.synterxvariables);
+cargarCodigoRect("synterxvariables", csharp.synterxvariables);
