@@ -62,7 +62,7 @@
         </code>
     </section>
     <section id="concatenaciones">
-        <h2>Operador <code>+</code></h2>
+        <h2>1. Operador <code>+</code></h2>
         <p>1. Identifica el tipo de dato de ambos operandos</p>
         <p>2. Si ambos son de tipo númerico, el operador <code>+</code> realiza una suma aritmetica.</p>
         <p>3. Si al menos uno de los operandos es <code>string</code>, el operador <code>+</code> lo convierte a string y los une en un solo <code>string</code></p>
@@ -79,11 +79,20 @@
             <pre>  "10"  +  "5"</pre>
             <pre>  = "105"</pre>
         </code>
-        <h2>Errores de Concatenación</h2>
+        <h3>Errores de Concatenación</h3>
         <code class="codeblock">
-            <pre>int + bool => error por incompatibilidad de los tipos de datos</pre>
             <pre>int + int => error si el resultado se asigna a un <code>string</code></pre>
+            <pre>int + bool => error por incompatibilidad de los tipos de datos</pre>
+            <pre>char + bool => error por incompatibilidad de los tipos de datos</pre>
         </code>
+        <h2>2. <code>string.Format(string format, object arg0);</code></h2>
+        <p>Es un método que permite "formatear" por medio de "{ }" las variables, operaciones u objetos a concatenar</p>
+        <p>Parametros:</p>
+        <p><code>string format</code>: recibe una sola string con las marcas de formato entre "{ }".</p>
+        <p><code>object arg0</code>: permite solicitar n cantidad de elementos a concatenar en la string, según a lo que requiera el usuario</p>
+        <h2>3. Interpolación de Cadenas con <code>$"string{variable}";</code></h2>
+        <p>Permite formatear directamente a cualquier variable desde la marca de formato "{ }" sin necesidad de una lista de variables</p>
+        <p>Esta disponible a partir del framework .NET 6.0 y posterior, (Versiones de VS posteriores a 2015)</p>
     </section>
     <section id="vectores">
         <h2>Vectores (Arreglos Unidimensionales)</h2>
