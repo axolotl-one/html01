@@ -6,6 +6,7 @@
     { "commit":43, "version":"12.1.0", "tag":":hammer:", "tema":"Empaquetado de Funciones de Carga JSON", "html":90.7, "css":3.2, "js":6.1 },
     { "commit":44, "version":"12.1.1", "tag":":bug:", "tema":"Corrección de estilo font-size autozoom para safari", "html":90.6, "css":3.3, "js":6.1 },
     { "commit":45, "version":"12.2.0", "tag":":hammer:", "tema":"Empaquetado de Funciones de Carga JSON para codeblocks", "html":89.9, "css":3.3, "js":6.8 },
-    { "commit":46, "version":"12.2.1", "tag":":construction:", "tema":"Nuevos formatos de Concatenación", "html":89.9, "css":3.3, "js":6.8 }
+    { "commit":46, "version":"12.2.1", "tag":":construction:", "tema":"Nuevos formatos de Concatenación", "html":89.9, "css":3.3, "js":6.8 },
+    { "commit":47, "version":"12.2.2", "tag":":sparkles:", "tema":"Nueva Section: Tablas de Operadores", "html":89.9, "css":3.3, "js":6.8 }
   ]
 }

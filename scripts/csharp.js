@@ -87,3 +87,44 @@ cargarTabla({idTabla: "tab-tipos-datos", sectJSON: csharp.tiposdatos, campos: [
 
 cargarCodigo("synterxvariables", csharp.synterxvariables);
 cargarCodigoRect("synterxvariables", csharp.synterxvariables);
+
+cargarTabla({idTabla: "tab-operadores-aritmeticos", sectJSON: csharp.operadores,
+    seleccion: function(obj){ return obj.clase === 0 ? true: false; },
+    campos: [
+        {campo:"Operador", get: function(obj){ return "<code>" + obj.signo + "</code>"}},
+        {campo:"Nombre", get: function(obj){ return obj.nombre}},
+        {campo:"Argumentos", get: function(obj){ return obj.args}},
+        {campo:"Descripción", get: function(obj){ return obj.info}}
+]});
+cargarTabla({idTabla: "tab-operadores-relacionales", sectJSON: csharp.operadores,
+    seleccion: function(obj){ return obj.clase === 1 ? true: false; },
+    campos: [
+        {campo:"Operador", get: function(obj){ return "<code>" + obj.signo + "</code>"}},
+        {campo:"Nombre", get: function(obj){ return obj.nombre}},
+        {campo:"Argumentos", get: function(obj){ return obj.args}},
+        {campo:"Descripción", get: function(obj){ return obj.info}}
+]});
+cargarTabla({idTabla: "tab-operadores-logicos", sectJSON: csharp.operadores,
+    seleccion: function(obj){ return obj.clase === 2 ? true: false; },
+    campos: [
+        {campo:"Operador", get: function(obj){ return "<code>" + obj.signo + "</code>"}},
+        {campo:"Nombre", get: function(obj){ return obj.nombre}},
+        {campo:"Argumentos", get: function(obj){ return obj.args}},
+        {campo:"Descripción", get: function(obj){ return obj.info}}
+]});
+cargarTabla({idTabla: "tab-operadores-asignacion", sectJSON: csharp.operadores,
+    seleccion: function(obj){ return obj.clase === 3 ? true: false; },
+    campos: [
+        {campo:"Operador", get: function(obj){ return "<code>" + obj.signo + "</code>"}},
+        {campo:"Nombre", get: function(obj){ return obj.nombre}},
+        {campo:"Argumentos", get: function(obj){ return obj.args}},
+        {campo:"Descripción", get: function(obj){ return obj.info}}
+]});
+cargarTabla({idTabla: "tab-operadores-concatenacion", sectJSON: csharp.operadores,
+    seleccion: function(obj){ return obj.clase === 4 ? true: false },
+    campos: [
+        {campo:"Operador", get: function(obj){ return "<code>" + obj.signo + "</code>"}},
+        {campo:"Nombre", get: function(obj){ return obj.nombre}},
+        {campo:"Argumentos", get: function(obj){ return obj.args}},
+        {campo:"Descripción", get: function(obj){ return obj.info}}
+]});
