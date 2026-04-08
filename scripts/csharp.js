@@ -128,3 +128,9 @@ cargarTabla({idTabla: "tab-operadores-concatenacion", sectJSON: csharp.operadore
         {campo:"Argumentos", get: function(obj){ return obj.args}},
         {campo:"Descripción", get: function(obj){ return obj.info}}
 ]});
+cargarTabla({idTabla: "tab-jerarquia-operadores", sectJSON: csharp.operadores,
+    campos: [
+        {campo:"Nivel", get: function(obj){ return obj.nivel }},
+        {campo:"Operador", get: function(obj){ return "<code>" + obj.signo + "</code>"}},
+        {campo:"Nombre", get: function(obj){ return obj.nombre}},
+]})
