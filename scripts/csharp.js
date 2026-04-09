@@ -134,3 +134,38 @@ cargarTabla({idTabla: "tab-jerarquia-operadores", sectJSON: csharp.operadores,
         {campo:"Operador", get: function(obj){ return "<code>" + obj.signo + "</code>"}},
         {campo:"Nombre", get: function(obj){ return obj.nombre}},
 ]})
+
+/*
+La jerarquía de operadores en C# define el orden de evaluación: los paréntesis () tienen la prioridad más alta, seguidos de operadores unarios (++, --, !), multiplicativos (*, /, %), aditivos (+, -), relacionales (<, >), igualdad (==, !=) y lógicos (&&, ||). Los operadores con mayor precedencia se evalúan primero. 
+Luis Llamas
+Luis Llamas
+ +4
+Aquí se muestra la jerarquía de mayor a menor prioridad:
+Tabla de Precedencia de Operadores (C#)
+Primarios/Paréntesis: () [] . x++ x--
+Unarios/Prefijos: ++x --x + - ! ~ (tipo)
+Multiplicativos: * / %
+Aditivos: + -
+Desplazamiento: << >>
+Relacionales y Tipo: < > <= >= is as
+Igualdad: == !=
+Lógico AND (Bit a bit): &
+Lógico XOR (Bit a bit): ^
+Lógico OR (Bit a bit): |
+AND Condicional: &&
+OR Condicional: ||
+Coalescencia Nula/Ternario: ?? ?:
+Asignación: = += -= *= /= 
+Microsoft Learn
+Microsoft Learn
+ +4
+Puntos Clave
+Paréntesis: Use paréntesis () para forzar el orden de evaluación, ya que tienen la máxima prioridad.
+Asociatividad: Si los operadores tienen la misma prioridad, se evalúan de izquierda a derecha (casi todos) o de derecha a izquierda (asignaciones y unarios).
+Cortocircuito: Los operadores && y || evalúan de izquierda a derecha y se detienen si el resultado ya está determinado. 
+Luis Llamas
+Luis Llamas
+ +4
+Ejemplo de evaluación:
+int resultado = 5 + 3 * 2; // Resultado es 11, la multiplicación (*) se hace antes que la suma (+).
+?/*/
