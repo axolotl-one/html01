@@ -4,13 +4,12 @@ export async function cargarDatos(ruta) {
   return data;
 }
 
-export async function cargarTabla({ idTabla, sectJSON, campos, seleccion = function () { return true; } }) {
+export async function cargarTabla({ idTabla, sectJSON, campos }) {
   const tabla = document.getElementById(idTabla);
   await cargarCabezera(tabla, campos);
   await sectJSON.forEach((element) => {
     const fila = document.createElement("tr");
     campos.forEach((campo) => {
-      if (!seleccion(element)) return;
       const celda = document.createElement("td");
       celda.innerHTML = campo.get(element);
       fila.append(celda);
@@ -18,6 +17,8 @@ export async function cargarTabla({ idTabla, sectJSON, campos, seleccion = funct
     tabla.append(fila);
   })
 }
+
+// async function cargarFila(tabla, sectJSON, campos, seleccion) { }
 
 async function cargarCabezera(tabla, campos) {
   const thead = document.createElement("thead");

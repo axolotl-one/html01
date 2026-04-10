@@ -9,6 +9,7 @@
     { "commit":46, "version":"12.2.1", "tag":":construction:", "tema":"Nuevos formatos de Concatenación", "html":89.9, "css":3.3, "js":6.8 },
     { "commit":47, "version":"12.2.2", "tag":":sparkles:", "tema":"Nueva Section: Tablas de Operadores", "html":88.7, "css":3.2, "js":8.1 },
     { "commit":48, "version":"12.2.3", "tag":":sparkles:", "tema":"Sect Operadores: Jerarquía de operaciones", "html":88.5, "css":3.2, "js":8.3 },
-    { "commit":49, "version":"12.2.4", "tag":":construction:", "tema":"Sect Operadores: Actualización de Info de Operadores", "html":88.5, "css":3.2, "js":8.3 }
+    { "commit":49, "version":"12.2.4", "tag":":construction:", "tema":"Sect Operadores: Actualización de Info de Operadores", "html":87.6, "css":3.2, "js":9.2 },
+    { "commit":50, "version":"12.2.5", "tag":":hammer:", "tema":"Async-JSON: Remplazo selección() por .filter()", "html":87.6, "css":3.2, "js":9.2 }
   ]
 }
