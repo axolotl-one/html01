@@ -10,6 +10,7 @@
     { "commit":47, "version":"12.2.2", "tag":":sparkles:", "tema":"Nueva Section: Tablas de Operadores", "html":88.7, "css":3.2, "js":8.1 },
     { "commit":48, "version":"12.2.3", "tag":":sparkles:", "tema":"Sect Operadores: Jerarquía de operaciones", "html":88.5, "css":3.2, "js":8.3 },
     { "commit":49, "version":"12.2.4", "tag":":construction:", "tema":"Sect Operadores: Actualización de Info de Operadores", "html":87.6, "css":3.2, "js":9.2 },
-    { "commit":50, "version":"12.2.5", "tag":":hammer:", "tema":"Async-JSON: Remplazo selección() por .filter()", "html":87.6, "css":3.2, "js":9.2 }
+    { "commit":50, "version":"12.2.5", "tag":":hammer:", "tema":"Async-JSON: Remplazo selección() por .filter()", "html":87.7, "css":3.2, "js":9.1 },
+    { "commit":51, "version":"12.2.6", "tag":":hammer:", "tema":"Async-JSON: Nueva function cargarSubtablas()", "html":87.7, "css":3.2, "js":9.1 }
   ]
 }

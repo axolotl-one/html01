@@ -1,4 +1,4 @@
-import { cargarDatos, cargarTabla, cargarCodigo, cargarCodigoRect } from "./async-json.js";
+import { cargarDatos, cargarTabla, cargarSubtablas, cargarCodigo, cargarCodigoRect } from "./async-json.js";
 const csharp = await cargarDatos("../scripts/csharp.json");
 
 cargarTabla({ idTabla: "tab-keywords", sectJSON: csharp.keywords, 
@@ -88,48 +88,22 @@ cargarTabla({idTabla: "tab-tipos-datos", sectJSON: csharp.tiposdatos, campos: [
 cargarCodigo("synterxvariables", csharp.synterxvariables);
 cargarCodigoRect("synterxvariables", csharp.synterxvariables);
 
-cargarTabla({idTabla: "tab-operadores-aritmeticos",
-    sectJSON: csharp.operadores.filter((obj) => { return obj.clase === 0 ? true: false; }),
-    campos: [
+cargarSubtablas({
+    tablas: [
+        { id: "tab-operadores-aritmeticos", contenido: csharp.operadores.filter((obj) => obj.clase === 0 )},
+        { id: "tab-operadores-relacionales", contenido: csharp.operadores.filter((obj) => obj.clase === 1 )},
+        { id: "tab-operadores-logicos", contenido: csharp.operadores.filter((obj) => obj.clase === 2 )},
+        { id: "tab-operadores-asignacion", contenido: csharp.operadores.filter((obj) => obj.clase === 3 )},
+        { id: "tab-operadores-concatenacion", contenido: csharp.operadores.filter((obj) => obj.clase === 4 )}
+    ], campos: [
         {campo:"Operador", get: function(obj){ return "<code>" + obj.signo + "</code>"}},
         {campo:"Nombre", get: function(obj){ return obj.nombre}},
-        {campo:"Argumentos", get: function(obj){ return obj.args}},
+        {campo:"Núm. Datos", get: function(obj){ return obj.args}},
         {campo:"Descripción", get: function(obj){ return obj.info}}
-]});
-cargarTabla({idTabla: "tab-operadores-relacionales",
-    sectJSON: csharp.operadores.filter((obj) => { return obj.clase === 1 ? true: false; }),
-    campos: [
-        {campo:"Operador", get: function(obj){ return "<code>" + obj.signo + "</code>"}},
-        {campo:"Nombre", get: function(obj){ return obj.nombre}},
-        {campo:"Argumentos", get: function(obj){ return obj.args}},
-        {campo:"Descripción", get: function(obj){ return obj.info}}
-]});
-cargarTabla({idTabla: "tab-operadores-logicos",
-    sectJSON: csharp.operadores.filter((obj) => { return obj.clase === 2 ? true: false; }),
-    campos: [
-        {campo:"Operador", get: function(obj){ return "<code>" + obj.signo + "</code>"}},
-        {campo:"Nombre", get: function(obj){ return obj.nombre}},
-        {campo:"Argumentos", get: function(obj){ return obj.args}},
-        {campo:"Descripción", get: function(obj){ return obj.info}}
-]});
-cargarTabla({idTabla: "tab-operadores-asignacion",
-    sectJSON: csharp.operadores.filter((obj) => { return obj.clase === 3 ? true: false; }),
-    campos: [
-        {campo:"Operador", get: function(obj){ return "<code>" + obj.signo + "</code>"}},
-        {campo:"Nombre", get: function(obj){ return obj.nombre}},
-        {campo:"Argumentos", get: function(obj){ return obj.args}},
-        {campo:"Descripción", get: function(obj){ return obj.info}}
-]});
-cargarTabla({idTabla: "tab-operadores-concatenacion",
-    sectJSON: csharp.operadores.filter((obj) => { return obj.clase === 4 ? true: false }),
-    campos: [
-        {campo:"Operador", get: function(obj){ return "<code>" + obj.signo + "</code>"}},
-        {campo:"Nombre", get: function(obj){ return obj.nombre}},
-        {campo:"Núm. datos", get: function(obj){ return obj.args}},
-        {campo:"Descripción", get: function(obj){ return obj.info}}
-]});
+]})
+
 cargarTabla({idTabla: "tab-jerarquia-operadores",
-    sectJSON: csharp.operadores,
+    sectJSON: csharp.operadores.sort((a,b) => a.nivel - b.nivel),
     campos: [
         {campo:"Nivel", get: function(obj){ return obj.nivel }},
         {campo:"Operador", get: function(obj){ return "<code>" + obj.signo + "</code>"}},

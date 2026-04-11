@@ -18,6 +18,11 @@ export async function cargarTabla({ idTabla, sectJSON, campos }) {
   })
 }
 
+export async function cargarSubtablas({ tablas, campos }) {
+  tablas.forEach((tabla) => {
+    cargarTabla({idTabla: tabla.id, sectJSON: tabla.contenido, campos: campos})
+});}
+
 // async function cargarFila(tabla, sectJSON, campos, seleccion) { }
 
 async function cargarCabezera(tabla, campos) {
