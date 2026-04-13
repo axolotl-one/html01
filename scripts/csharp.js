@@ -90,11 +90,11 @@ cargarCodigoRect("synterxvariables", csharp.synterxvariables);
 
 cargarSubtablas({
     tablas: [
-        { id: "tab-operadores-aritmeticos", contenido: csharp.operadores.filter((obj) => obj.clase === 0 )},
-        { id: "tab-operadores-relacionales", contenido: csharp.operadores.filter((obj) => obj.clase === 1 )},
-        { id: "tab-operadores-logicos", contenido: csharp.operadores.filter((obj) => obj.clase === 2 )},
-        { id: "tab-operadores-asignacion", contenido: csharp.operadores.filter((obj) => obj.clase === 3 )},
-        { id: "tab-operadores-concatenacion", contenido: csharp.operadores.filter((obj) => obj.clase === 4 )}
+        { id: "tab-operadores-aritmeticos", contenido: csharp.operadores.filter((obj) => obj.clase === 1 )},
+        { id: "tab-operadores-relacionales", contenido: csharp.operadores.filter((obj) => obj.clase === 2 )},
+        { id: "tab-operadores-logicos", contenido: csharp.operadores.filter((obj) => obj.clase === 3 )},
+        { id: "tab-operadores-asignacion", contenido: csharp.operadores.filter((obj) => obj.clase === 4 )},
+        { id: "tab-operadores-concatenacion", contenido: csharp.operadores.filter((obj) => obj.clase === 5 )}
     ], campos: [
         {campo:"Operador", get: function(obj){ return "<code>" + obj.signo + "</code>"}},
         {campo:"Nombre", get: function(obj){ return obj.nombre}},
