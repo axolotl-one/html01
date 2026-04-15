@@ -1,4 +1,4 @@
-import { cargarDatos, cargarTabla, cargarSubtablas, cargarCodigo, cargarCodigoRect } from "./async-json.js";
+import { cargarDatos, cargarTabla, cargarSubtablas, cargarLista, cargarCodigo, cargarCodigoRect } from "./async-json.js";
 const csharp = await cargarDatos("../scripts/csharp.json");
 
 cargarTabla({ idTabla: "tab-keywords", sectJSON: csharp.keywords, 
@@ -87,6 +87,7 @@ cargarTabla({idTabla: "tab-tipos-datos", sectJSON: csharp.tiposdatos, campos: [
 
 cargarCodigo("synterxvariables", csharp.synterxvariables);
 cargarCodigoRect("synterxvariables", csharp.synterxvariables);
+cargarLista("vsc-consola", csharp.vscappconsole);
 
 cargarSubtablas({
     tablas: [
@@ -112,9 +113,6 @@ cargarTabla({idTabla: "tab-jerarquia-operadores",
 
 /*
 La jerarquía de operadores en C# define el orden de evaluación: los paréntesis () tienen la prioridad más alta, seguidos de operadores unarios (++, --, !), multiplicativos (*, /, %), aditivos (+, -), relacionales (<, >), igualdad (==, !=) y lógicos (&&, ||). Los operadores con mayor precedencia se evalúan primero. 
-Luis Llamas
-Luis Llamas
- +4
 Aquí se muestra la jerarquía de mayor a menor prioridad:
 Tabla de Precedencia de Operadores (C#)
 Primarios/Paréntesis: () [] . x++ x--
@@ -131,16 +129,10 @@ AND Condicional: &&
 OR Condicional: ||
 Coalescencia Nula/Ternario: ?? ?:
 Asignación: = += -= *= /= 
-Microsoft Learn
-Microsoft Learn
- +4
 Puntos Clave
 Paréntesis: Use paréntesis () para forzar el orden de evaluación, ya que tienen la máxima prioridad.
 Asociatividad: Si los operadores tienen la misma prioridad, se evalúan de izquierda a derecha (casi todos) o de derecha a izquierda (asignaciones y unarios).
 Cortocircuito: Los operadores && y || evalúan de izquierda a derecha y se detienen si el resultado ya está determinado. 
-Luis Llamas
-Luis Llamas
- +4
 Ejemplo de evaluación:
 int resultado = 5 + 3 * 2; // Resultado es 11, la multiplicación (*) se hace antes que la suma (+).
 ?/*/

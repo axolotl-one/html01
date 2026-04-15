@@ -12,6 +12,7 @@
     { "commit":49, "version":"12.2.4", "tag":":construction:", "tema":"Sect Operadores: Actualización de Info de Operadores", "html":87.6, "css":3.2, "js":9.2 },
     { "commit":50, "version":"12.2.5", "tag":":hammer:", "tema":"Async-JSON: Remplazo selección() por .filter()", "html":87.7, "css":3.2, "js":9.1 },
     { "commit":51, "version":"12.2.6", "tag":":hammer:", "tema":"Async-JSON: Nueva function cargarSubtablas()", "html":88.4, "css":3.2, "js":8.4 },
-    { "commit":51, "version":"12.2.7", "tag":":construction:", "tema":"Csharp.json: Operadores Primarios", "html":88.4, "css":3.2, "js":8.4 }
+    { "commit":52, "version":"12.2.7", "tag":":construction:", "tema":"Csharp.json: Operadores Primarios", "html":88.5, "css":3.2, "js":8.3 },
+    { "commit":53, "version":"12.2.8", "tag":":hammer:", "tema":"Sect VSC-C#: Instrucciones para crear App Console en VSC", "html":88.5, "css":3.2, "js":8.3 }
   ]
 }

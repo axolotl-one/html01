@@ -35,23 +35,34 @@ async function cargarCabezera(tabla, campos) {
   tabla.append(thead);
 }
 
-export async function cargarCodigo(idCodigo, arrayJSON) {
-  const bloque = document.getElementById(idCodigo);
+export async function cargarLista(idLista, arrayJSON) {
+  const lista = document.getElementById(idLista);
+  await arrayJSON.forEach((linea, index) => {
+    lista.append(crearInstruccion(linea, "paso", index, "p", "p"));
+  })
+}
+
+export async function cargarCodigo(idBloque, arrayJSON) {
+  const bloque = document.getElementById(idBloque);
   bloque.classList.add("codeblock");
   await arrayJSON.forEach((linea, index) => {
-    const codigo = document.createElement("pre");
-    codigo.innerHTML = index + 1 + ". " + linea.code;
-    if(!linea.info) { bloque.append(codigo); return }
-    const det = document.createElement("details");
-    const sum = document.createElement("summary");
-    const info = document.createElement("pre");
-    if(linea.err) info.classList.add("sintax-error");
-    info.innerHTML = "  > Error " + linea.info;
-    sum.append(codigo);
-    det.append(sum);
-    det.append(info);
-    bloque.append(det);
+    bloque.append(crearInstruccion(linea, "code", index, "pre", "pre"));
   })
+}
+
+function crearInstruccion(linea, keyLinea, index, etLine, etInfo){
+  const instrc = document.createElement(etLine);
+  instrc.innerHTML = index + 1 + ". " + linea[keyLinea];
+  if(!linea.info) return instrc;
+  const det = document.createElement("details");
+  const sum = document.createElement("summary");
+  const info = document.createElement(etInfo);
+  if(linea.err) { info.classList.add("sintax-error"); info.innerHTML = "  > Error " + linea.info; }
+  else { info.innerHTML = linea.info; }
+  sum.append(instrc);
+  det.append(sum);
+  det.append(info);
+  return det;
 }
 
 export async function cargarCodigoRect(idCodigo, arrayJSON) {

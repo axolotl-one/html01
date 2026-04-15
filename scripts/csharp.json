@@ -140,5 +140,23 @@
         {"code":"byte valor = 300;", "info":"al usar un valor que excede el limite de bits del tipo de dato", "err":true},
         {"code":"int z = 7;", "info":"al declarar una variable con ID ya existente (linea 5)", "err":true},
         {"code":"char letra = \"a\";", "info":"al usar comillas dobles para char, se debe usar comillas simples", "err":true}
+    ],
+
+    "vscappconsole":[
+        {"paso":"Abrir el Explorador de Archivos de Sistema para verificar la Ruta de la Carpeta de Proyectos", "info":"Si no hay carpeta, crea una", "err": false},
+        {"paso":"Abrir VSCode y buscar File > Open Folder > Carpeta de Proyectos", "info":"Ruta: VSC > Archivo > Abrir Carpeta de Proyectos", "err": false},
+        {"paso":"Verificar desde el Panel de Extensiones que \"C#\" o \"C# Dev Kit\" esten instalados", "info":"Atajo: <code>Ctrl + Shft + X</code>", "err": false},
+        {"paso":"Abrir Nueva Terminal de VSCode. Atajo: <code>Ctrl + Shft + ñ</code>", "info":"Ruta: terminal > new terminal", "err": false},
+        {"paso":"Ejecutar <code>dotnet --list-sdks</code> para verificar que el Compilador este instalado", "info":"Ej: 8.0.403", "err": false},
+        {"paso":"Ejecutar <code>dotnet new console -n nombreApp</code> para crear una Aplicación de Consola", "info":"Ej: dotnet new console -n TiposDatos", "err": false},
+        {"paso":"Ejecutar <code>cd nombreApp</code> para dirigirse a la carpeta generada", "info":"Ej: cd TiposDatos", "err": false},
+        {"paso":"Ejecutar <code>code . -r</code> para abrir carpeta del proyecto en VSC", "info":"En caso de carpeta erronea: file > close folder", "err": false},
+        {"paso":"Abrir el archivo <code>Program.cs</code> para visualizar el código fuente", "info":"Se mostrará por defecto: <code>Console.WriteLine(\"Hello, World!\");</code>", "err": false},
+        {"paso":"Restructurar código base: <button onclick=\"navigator.clipboard.writeText('using System;\\nnamespace MENTORIA{\\nclass Program{\\nstatic void Main(string[] args){\\nConsole.ReadKey(true);}}}')\">Copiar Código</button>",
+            "info":"<code>using System;namespace MENTORIA{class Program{static void Main(string[] args){Console.ReadKey(true);}}}</code>", "err": false},
+        {"paso":"Ajustar indentaciones con el Atajo: <code>Ctrl + Shft + f</code>", "info":"", "err": false},
+        {"paso":"GUARDAR CADA CAMBIO CON <code>Ctrl + s</code>", "info":"Omitir si el Autoguardado esta activo", "err": false},
+        {"paso":"Ejecutar Prueba con el comando <code>dotnet run</code>", "info":"", "err": false},
+        {"paso":"", "info":"", "err": false}
     ]
 }
